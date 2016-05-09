@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhoufangyuan.me/2016/05/09/hello-world/</loc>
+    
+    <lastmod>2016-05-09T16:49:22.361Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhoufangyuan.me/love/index.html</loc>
     
     <lastmod>2016-05-09T16:45:12.940Z</lastmod>
@@ -33,20 +40,6 @@
     <loc>http://zhoufangyuan.me/404/index.html</loc>
     
     <lastmod>2016-05-09T15:38:04.520Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhoufangyuan.me/2016/05/09/new/</loc>
-    
-    <lastmod>2016-05-09T14:47:04.868Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhoufangyuan.me/2016/05/09/hello-world/</loc>
-    
-    <lastmod>2016-05-09T07:40:42.554Z</lastmod>
     
   </url>
   
