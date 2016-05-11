@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhoufangyuan.me/"/>
-  <updated>2016-05-11T12:36:45.830Z</updated>
+  <updated>2016-05-11T12:43:26.503Z</updated>
   <id>http://zhoufangyuan.me/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://zhoufangyuan.me/2016/05/11/2016-05-11/"/>
     <id>http://zhoufangyuan.me/2016/05/11/2016-05-11/</id>
     <published>2016-05-11T11:58:27.000Z</published>
-    <updated>2016-05-11T12:36:45.830Z</updated>
+    <updated>2016-05-11T12:43:26.503Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;Default和Rejected-Commit-Defailt&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Defailt&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Defailt&quot;&gt;&lt;/a&gt;Default和Rejected Commit Defailt&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;第一次提交时看到报错，于是去查看报错，此时文件又已经进入提交队列了，所以后面我修改后再保存也无法提交&lt;br&gt;阴差阳错看到Default和Rejected Commit Defailt发现被待提交未提交的文件都存在Rejected Commit Defailt底下了&lt;br&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/Defailt.PNG&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
+    <content type="html">&lt;h2 id=&quot;Default和Rejected-Commit-Default&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Default&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Default&quot;&gt;&lt;/a&gt;Default和Rejected Commit Default&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;第一次提交时看到报错，于是去查看报错，此时文件又已经进入提交队列了，所以后面我修改后再保存也无法提交&lt;br&gt;阴差阳错看到Default和Rejected Commit Default发现被待提交未提交的文件都存在Rejected Commit Default底下了&lt;br&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/Default.PNG&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Default和Rejected-Commit-Defailt&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Defailt&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Defail
+      &lt;h2 id=&quot;Default和Rejected-Commit-Default&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Default&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Defaul
     
     </summary>
     
