@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://zhoufangyuan.me/tags/index.html</loc>
+    <loc>http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/</loc>
     
-    <lastmod>2016-05-19T08:07:23.840Z</lastmod>
+    <lastmod>2016-05-20T03:52:47.593Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://zhoufangyuan.me/2016/05/11/2016-05-11/</loc>
     
-    <lastmod>2016-05-11T12:43:26.503Z</lastmod>
+    <lastmod>2016-05-20T03:51:22.549Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhoufangyuan.me/tags/index.html</loc>
+    
+    <lastmod>2016-05-19T08:07:23.840Z</lastmod>
     
   </url>
   

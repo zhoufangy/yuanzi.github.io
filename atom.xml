@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhoufangyuan.me/"/>
-  <updated>2016-05-11T12:43:26.503Z</updated>
+  <updated>2016-05-20T03:52:47.593Z</updated>
   <id>http://zhoufangyuan.me/</id>
   
   <author>
@@ -16,17 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>spring-mvc-lazybone 学习笔记</title>
+    <link href="http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/"/>
+    <id>http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/</id>
+    <published>2016-05-19T08:58:27.000Z</published>
+    <updated>2016-05-20T03:52:47.593Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;第一步搭建一个Maven项目&quot;&gt;&lt;a href=&quot;#第一步搭建一个Maven项目&quot; class=&quot;headerlink&quot; title=&quot;第一步搭建一个Maven项目&quot;&gt;&lt;/a&gt;第一步搭建一个Maven项目&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/Default.PNG&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第一步搭建一个Maven项目&quot;&gt;&lt;a href=&quot;#第一步搭建一个Maven项目&quot; class=&quot;headerlink&quot; title=&quot;第一步搭建一个Maven项目&quot;&gt;&lt;/a&gt;第一步搭建一个Maven项目&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot;
+    
+    </summary>
+    
+      <category term="Maven" scheme="http://zhoufangyuan.me/categories/Maven/"/>
+    
+    
+      <category term="Maven" scheme="http://zhoufangyuan.me/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
     <title>IntelliJ IDEA SVN 提交被终止后无法提交文件问题</title>
     <link href="http://zhoufangyuan.me/2016/05/11/2016-05-11/"/>
     <id>http://zhoufangyuan.me/2016/05/11/2016-05-11/</id>
     <published>2016-05-11T11:58:27.000Z</published>
-    <updated>2016-05-11T12:43:26.503Z</updated>
+    <updated>2016-05-20T03:51:22.549Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;Default和Rejected-Commit-Default&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Default&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Default&quot;&gt;&lt;/a&gt;Default和Rejected Commit Default&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;第一次提交时看到报错，于是去查看报错，此时文件又已经进入提交队列了，所以后面我修改后再保存也无法提交&lt;br&gt;阴差阳错看到Default和Rejected Commit Default发现被待提交未提交的文件都存在Rejected Commit Default底下了&lt;br&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/Default.PNG&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
+    <content type="html">&lt;h2 id=&quot;Default和Rejected-Commit-Default&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Default&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Default&quot;&gt;&lt;/a&gt;Default和Rejected Commit Default&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;提交后取消，不能提交问题&lt;/p&gt;
+&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/Default.PNG&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Default和Rejected-Commit-Default&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Default&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Defaul
+      &lt;h2 id=&quot;Default和Rejected-Commit-Default&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Default&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Default&quot;&gt;&lt;/a&gt;Default和Rejected Commit Default&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;提交后取消，不能提交问题&lt;/p&gt;
+&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default&lt;br&gt;
     
     </summary>
     
