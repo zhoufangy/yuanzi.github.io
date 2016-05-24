@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhoufangyuan.me/2016/05/23/SSL/</loc>
+    
+    <lastmod>2016-05-24T01:24:58.902Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/</loc>
     
-    <lastmod>2016-05-23T00:37:12.584Z</lastmod>
+    <lastmod>2016-05-23T03:15:53.251Z</lastmod>
     
   </url>
   
@@ -16,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://zhoufangyuan.me/2016/05/11/2016-05-11/</loc>
+    <loc>http://zhoufangyuan.me/2016/05/11/commit/</loc>
     
     <lastmod>2016-05-21T11:06:58.498Z</lastmod>
     

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhoufangyuan.me/"/>
-  <updated>2016-05-23T00:37:12.584Z</updated>
+  <updated>2016-05-24T01:24:58.902Z</updated>
   <id>http://zhoufangyuan.me/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>IntelliJ IDEA SVN 更新报错</title>
+    <link href="http://zhoufangyuan.me/2016/05/23/SSL/"/>
+    <id>http://zhoufangyuan.me/2016/05/23/SSL/</id>
+    <published>2016-05-23T03:14:27.000Z</published>
+    <updated>2016-05-24T01:24:58.902Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Error-Server-SSL-certificate-rejected&quot;&gt;&lt;a href=&quot;#Error-Server-SSL-certificate-rejected&quot; class=&quot;headerlink&quot; title=&quot;Error:Server SSL certificate rejected&quot;&gt;&lt;/a&gt;Error:Server SSL certificate rejected&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;更新报错，SSL失效&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;SVN 设置 -&amp;gt; 已保存数据 -&amp;gt;清除认证数据 -&amp;gt; 更新 -&amp;gt; 输入账户信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/svnSet.png&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Error-Server-SSL-certificate-rejected&quot;&gt;&lt;a href=&quot;#Error-Server-SSL-certificate-rejected&quot; class=&quot;headerlink&quot; title=&quot;Error:Server SSL certificate rejected&quot;&gt;&lt;/a&gt;Error:Server SSL certificate rejected&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;更新报错，SSL失效&lt;br&gt;
+    
+    </summary>
+    
+      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/"/>
+    
+      <category term="SVN" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/SVN/"/>
+    
+    
+      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/tags/IntelliJ-IDEA/"/>
+    
+      <category term="SVN" scheme="http://zhoufangyuan.me/tags/SVN/"/>
+    
+  </entry>
+  
+  <entry>
     <title>spring-mvc-lazybone 学习笔记</title>
     <link href="http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/"/>
     <id>http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/</id>
     <published>2016-05-19T08:58:27.000Z</published>
-    <updated>2016-05-23T00:37:12.584Z</updated>
+    <updated>2016-05-23T03:15:53.251Z</updated>
     
     <content type="html">&lt;h2 id=&quot;1-搭建一个Maven项目&quot;&gt;&lt;a href=&quot;#1-搭建一个Maven项目&quot; class=&quot;headerlink&quot; title=&quot;1.搭建一个Maven项目&quot;&gt;&lt;/a&gt;1.搭建一个Maven项目&lt;/h2&gt;</content>
     
@@ -39,8 +67,8 @@
   
   <entry>
     <title>IntelliJ IDEA SVN 提交被终止后无法提交文件问题</title>
-    <link href="http://zhoufangyuan.me/2016/05/11/2016-05-11/"/>
-    <id>http://zhoufangyuan.me/2016/05/11/2016-05-11/</id>
+    <link href="http://zhoufangyuan.me/2016/05/11/commit/"/>
+    <id>http://zhoufangyuan.me/2016/05/11/commit/</id>
     <published>2016-05-11T11:58:27.000Z</published>
     <updated>2016-05-21T11:06:58.498Z</updated>
     
