@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="IntelliJ IDEA,SVN," />
+  <meta name="keywords" content="OpenResty,Nginx," />
 
 
 
@@ -84,18 +84,19 @@
 
 
 
-<meta name="description" content="Error:Server SSL certificate rejected问题更新报错，SSL失效">
+<meta name="description" content="1.安装编译OpenResty官网下载安装包openresty-1.x.x.x.tar.gz
+12345678#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IntelliJ IDEA SVN 更新报错">
-<meta property="og:url" content="http://zhoufangyuan.me/2016/05/23/SSL/index.html">
+<meta property="og:title" content="OpenResty使用">
+<meta property="og:url" content="http://zhoufangyuan.me/2016/06/06/openresty/index.html">
 <meta property="og:site_name" content="Yuanzi">
-<meta property="og:description" content="Error:Server SSL certificate rejected问题更新报错，SSL失效">
-<meta property="og:image" content="http://zhoufangyuan.me/images/svnSet.png">
-<meta property="og:updated_time" content="2016-05-24T01:25:00.000Z">
+<meta property="og:description" content="1.安装编译OpenResty官网下载安装包openresty-1.x.x.x.tar.gz
+12345678#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
+<meta property="og:updated_time" content="2016-06-07T08:33:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IntelliJ IDEA SVN 更新报错">
-<meta name="twitter:description" content="Error:Server SSL certificate rejected问题更新报错，SSL失效">
-<meta name="twitter:image" content="http://zhoufangyuan.me/images/svnSet.png">
+<meta name="twitter:title" content="OpenResty使用">
+<meta name="twitter:description" content="1.安装编译OpenResty官网下载安装包openresty-1.x.x.x.tar.gz
+12345678#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
 
 
 
@@ -113,7 +114,7 @@
   };
 </script>
 
-  <title> IntelliJ IDEA SVN 更新报错 | Yuanzi </title>
+  <title> OpenResty使用 | Yuanzi </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +268,7 @@
             
             
               
-                IntelliJ IDEA SVN 更新报错
+                OpenResty使用
               
             
           </h1>
@@ -279,8 +280,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T11:14:27+08:00" content="2016-05-23">
-              2016-05-23
+            <time itemprop="dateCreated" datetime="2016-06-06T19:58:27+08:00" content="2016-06-06">
+              2016-06-06
             </time>
           </span>
 
@@ -293,8 +294,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/IntelliJ-IDEA/" itemprop="url" rel="index">
-                    <span itemprop="name">IntelliJ IDEA</span>
+                  <a href="/categories/OpenResty/" itemprop="url" rel="index">
+                    <span itemprop="name">OpenResty</span>
                   </a>
                 </span>
 
@@ -305,8 +306,8 @@
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/IntelliJ-IDEA/SVN/" itemprop="url" rel="index">
-                    <span itemprop="name">SVN</span>
+                  <a href="/categories/OpenResty/Nginx/" itemprop="url" rel="index">
+                    <span itemprop="name">Nginx</span>
                   </a>
                 </span>
 
@@ -321,8 +322,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/SSL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/SSL/" itemprop="commentsCount"></span>
+                <a href="/2016/06/06/openresty/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/06/openresty/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -332,7 +333,7 @@
 
           
           
-             <span id="/2016/05/23/SSL/" class="leancloud_visitors" data-flag-title="IntelliJ IDEA SVN 更新报错">
+             <span id="/2016/06/06/openresty/" class="leancloud_visitors" data-flag-title="OpenResty使用">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -354,9 +355,12 @@
       
 
       
-        <h2 id="Error-Server-SSL-certificate-rejected"><a href="#Error-Server-SSL-certificate-rejected" class="headerlink" title="Error:Server SSL certificate rejected"></a>Error:Server SSL certificate rejected</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>更新报错，SSL失效<br><a id="more"></a></p>
-<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>SVN 设置 -&gt; 已保存数据 -&gt;清除认证数据 -&gt; 更新 -&gt; 输入账户信息</p>
-<p><img src="http://zhoufangyuan.me/images/svnSet.png" alt="证物"></p>
+        <h3 id="1-安装编译"><a href="#1-安装编译" class="headerlink" title="1.安装编译"></a>1.安装编译</h3><a href="http://openresty.org/cn/download.html" title="[external] [OpenResty]" target="_blank" rel="external">OpenResty官网下载安装包openresty-1.x.x.x.tar.gz</a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -xzvf openresty-1.x.x.x.tar.gz</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make instal</span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">sudo service openresty -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf</span></span><br><span class="line"><span class="comment">#修改</span></span><br><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name zhoufangyuan.me, www.zhoufangyuan.me;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass              http://47.88.9.206:4000/;</span><br><span class="line">            proxy_redirect          off;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Real-IP       <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-加载重新配置的nginx文件并启动"><a href="#3-加载重新配置的nginx文件并启动" class="headerlink" title="3.加载重新配置的nginx文件并启动"></a>3.加载重新配置的nginx文件并启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/<span class="built_in">local</span>/openresty/nginx/sbin/nginx  -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<h3 id="3-管理openresty"><a href="#3-管理openresty" class="headerlink" title="3.管理openresty"></a>3.管理openresty</h3><a href="https://fzrxefe.googlecode.com/files/openresty.init.d.script" title="[external] [OpenResty]" target="_blank" rel="external">google code</a>下载init.d 重命名openresty，放到服务器/etc/init.d目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /etc/init.d/openresty</span><br><span class="line">sudo update-rc.d openresty defaults</span><br><span class="line"><span class="comment">#启动Nginx:</span></span><br><span class="line">sudo service openresty start</span><br><span class="line"><span class="comment">#停止Nginx:</span></span><br><span class="line">sudo service openresty stop</span><br><span class="line"><span class="comment">#重启Nginx:</span></span><br><span class="line">sudo service openresty restart</span><br><span class="line"><span class="comment">#测试配置文件:</span></span><br><span class="line">sudo service openresty <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -377,9 +381,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/IntelliJ-IDEA/" rel="tag">#IntelliJ IDEA</a>
+            <a href="/tags/OpenResty/" rel="tag">#OpenResty</a>
           
-            <a href="/tags/SVN/" rel="tag">#SVN</a>
+            <a href="/tags/Nginx/" rel="tag">#Nginx</a>
           
         </div>
       
@@ -388,16 +392,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/19/spring-mvc-lazybone/" rel="next" title="spring-mvc-lazybone 学习笔记">
-                <i class="fa fa-chevron-left"></i> spring-mvc-lazybone 学习笔记
+              <a href="/2016/05/23/SSL/" rel="next" title="IntelliJ IDEA SVN 更新报错">
+                <i class="fa fa-chevron-left"></i> IntelliJ IDEA SVN 更新报错
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/06/openresty/" rel="prev" title="OpenResty使用">
-                OpenResty使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/07/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -424,8 +428,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/23/SSL/"
-           data-title="IntelliJ IDEA SVN 更新报错" data-url="http://zhoufangyuan.me/2016/05/23/SSL/">
+      <div class="ds-thread" data-thread-key="2016/06/06/openresty/"
+           data-title="OpenResty使用" data-url="http://zhoufangyuan.me/2016/06/06/openresty/">
       </div>
     
   </div>
@@ -541,7 +545,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-Server-SSL-certificate-rejected"><span class="nav-number">1.</span> <span class="nav-text">Error:Server SSL certificate rejected</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">1.2.</span> <span class="nav-text">解决</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装编译"><span class="nav-number">1.</span> <span class="nav-text">1.安装编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置文件"><span class="nav-number">2.</span> <span class="nav-text">2.配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-加载重新配置的nginx文件并启动"><span class="nav-number">3.</span> <span class="nav-text">3.加载重新配置的nginx文件并启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-管理openresty"><span class="nav-number">4.</span> <span class="nav-text">3.管理openresty</span></a></li></ol></div>
             
           </div>
         </section>
