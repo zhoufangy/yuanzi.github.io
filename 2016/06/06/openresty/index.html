@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Yuanzi">
 <meta property="og:description" content="1.安装编译OpenResty官网下载安装包openresty-1.x.x.x.tar.gz
 #解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
-<meta property="og:updated_time" content="2016-06-13T06:12:57.000Z">
+<meta property="og:updated_time" content="2016-06-15T15:07:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenResty使用">
 <meta name="twitter:description" content="1.安装编译OpenResty官网下载安装包openresty-1.x.x.x.tar.gz
@@ -365,7 +365,7 @@
       
 
       
-        <h3 id="1-安装编译"><a href="#1-安装编译" class="headerlink" title="1.安装编译"></a>1.安装编译</h3><a href="http://openresty.org/cn/download.html" title="[external] [OpenResty]" target="_blank" rel="external">OpenResty官网下载安装包openresty-1.x.x.x.tar.gz</a>
+        <h3 id="1-安装编译"><a href="#1-安装编译" class="headerlink" title="1.安装编译"></a>1.安装编译</h3><a href="http://openresty.org/cn/download.html" title="openResty" target="_blank" rel="external">OpenResty官网下载安装包openresty-1.x.x.x.tar.gz</a>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -xzvf openresty-1.x.x.x.tar.gz</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make instal</span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">sudo service openresty -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf</span></span><br><span class="line"><span class="comment">#修改</span></span><br><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name zhoufangyuan.me, www.zhoufangyuan.me;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass              http://0.0.0.0:4000/;</span><br><span class="line">            proxy_redirect          off;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Real-IP       <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -484,7 +484,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -492,7 +492,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>

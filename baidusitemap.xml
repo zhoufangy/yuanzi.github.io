@@ -4,8 +4,29 @@
 
     
   <url>
+    <loc>http://zhoufangyuan.me/2016/06/15/https/</loc>
+    <lastmod>2016-06-15T15:47:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>配置https</title>
+        <pubTime>2016-06-15T03:05:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="HTTPS" url="http://zhoufangyuan.me/categories/HTTPS/"/>
+          
+             
+              <breadCrumb title="Nginx" url="http://zhoufangyuan.me/categories/HTTPS/Nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zhoufangyuan.me/2016/06/06/openresty/</loc>
-    <lastmod>2016-06-13T06:12:57.000Z</lastmod>
+    <lastmod>2016-06-15T15:07:22.000Z</lastmod>
     <data>
         <display>
         <title>OpenResty使用</title>

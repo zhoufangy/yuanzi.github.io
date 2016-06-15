@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://zhoufangyuan.me/2016/06/13/checkbox/</loc>
+    <loc>http://zhoufangyuan.me/2016/06/15/https/</loc>
     
-    <lastmod>2016-06-13T06:12:57.000Z</lastmod>
+    <lastmod>2016-06-15T15:47:22.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://zhoufangyuan.me/2016/06/06/openresty/</loc>
+    
+    <lastmod>2016-06-15T15:07:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhoufangyuan.me/2016/06/13/checkbox/</loc>
     
     <lastmod>2016-06-13T06:12:57.000Z</lastmod>
     
