@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -85,25 +85,25 @@
 
 
 <meta name="description" content="1.安装编译OpenResty官网下载安装包openresty-1.x.x.x.tar.gz
-12345678#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
+#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenResty使用">
 <meta property="og:url" content="http://zhoufangyuan.me/2016/06/06/openresty/index.html">
 <meta property="og:site_name" content="Yuanzi">
 <meta property="og:description" content="1.安装编译OpenResty官网下载安装包openresty-1.x.x.x.tar.gz
-12345678#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
-<meta property="og:updated_time" content="2016-06-07T08:33:24.000Z">
+#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
+<meta property="og:updated_time" content="2016-06-13T06:12:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenResty使用">
 <meta name="twitter:description" content="1.安装编译OpenResty官网下载安装包openresty-1.x.x.x.tar.gz
-12345678#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
+#解压tar -xzvf openresty-1.x.x.x.tar.gz#安装./configuremakemake instal#启动sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -203,6 +203,16 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-stars">
+          <a href="/stars" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-star"></i> <br />
+            
+            导航
           </a>
         </li>
       
@@ -356,11 +366,11 @@
 
       
         <h3 id="1-安装编译"><a href="#1-安装编译" class="headerlink" title="1.安装编译"></a>1.安装编译</h3><a href="http://openresty.org/cn/download.html" title="[external] [OpenResty]" target="_blank" rel="external">OpenResty官网下载安装包openresty-1.x.x.x.tar.gz</a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -xzvf openresty-1.x.x.x.tar.gz</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make instal</span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">sudo service openresty -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -xzvf openresty-1.x.x.x.tar.gz</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make instal</span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">sudo service openresty -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf</span></span><br><span class="line"><span class="comment">#修改</span></span><br><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name zhoufangyuan.me, www.zhoufangyuan.me;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass              http://47.88.9.206:4000/;</span><br><span class="line">            proxy_redirect          off;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Real-IP       <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-加载重新配置的nginx文件并启动"><a href="#3-加载重新配置的nginx文件并启动" class="headerlink" title="3.加载重新配置的nginx文件并启动"></a>3.加载重新配置的nginx文件并启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/<span class="built_in">local</span>/openresty/nginx/sbin/nginx  -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
-<h3 id="3-管理openresty"><a href="#3-管理openresty" class="headerlink" title="3.管理openresty"></a>3.管理openresty</h3><a href="https://fzrxefe.googlecode.com/files/openresty.init.d.script" title="[external] [OpenResty]" target="_blank" rel="external">google code</a>下载init.d 重命名openresty，放到服务器/etc/init.d目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /etc/init.d/openresty</span><br><span class="line">sudo update-rc.d openresty defaults</span><br><span class="line"><span class="comment">#启动Nginx:</span></span><br><span class="line">sudo service openresty start</span><br><span class="line"><span class="comment">#停止Nginx:</span></span><br><span class="line">sudo service openresty stop</span><br><span class="line"><span class="comment">#重启Nginx:</span></span><br><span class="line">sudo service openresty restart</span><br><span class="line"><span class="comment">#测试配置文件:</span></span><br><span class="line">sudo service openresty <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf</span></span><br><span class="line"><span class="comment">#修改</span></span><br><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name zhoufangyuan.me, www.zhoufangyuan.me;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass              http://0.0.0.0:4000/;</span><br><span class="line">            proxy_redirect          off;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Real-IP       <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-加载重新配置的nginx文件并启动"><a href="#3-加载重新配置的nginx文件并启动" class="headerlink" title="3.加载重新配置的nginx文件并启动"></a>3.加载重新配置的nginx文件并启动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo /usr/<span class="built_in">local</span>/openresty/nginx/sbin/nginx  -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<h3 id="3-管理openresty"><a href="#3-管理openresty" class="headerlink" title="3.管理openresty"></a>3.管理openresty</h3><a href="https://fzrxefe.googlecode.com/files/openresty.init.d.script" title="[external] [OpenResty]" target="_blank" rel="external">google code</a>下载init.d 重命名openresty，放到服务器/etc/init.d目录下<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /etc/init.d/openresty</span><br><span class="line">sudo update-rc.d openresty defaults</span><br><span class="line"><span class="comment">#启动Nginx:</span></span><br><span class="line">sudo service openresty start</span><br><span class="line"><span class="comment">#停止Nginx:</span></span><br><span class="line">sudo service openresty stop</span><br><span class="line"><span class="comment">#重启Nginx:</span></span><br><span class="line">sudo service openresty restart</span><br><span class="line"><span class="comment">#测试配置文件:</span></span><br><span class="line">sudo service openresty <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -400,8 +410,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/07/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/13/checkbox/" rel="prev" title="多个商品条目批量选中上架时判断售后模板是否为空">
+                多个商品条目批量选中上架时判断售后模板是否为空 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -474,7 +484,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -482,7 +492,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -491,7 +501,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -523,8 +533,8 @@
         
           <div class="links-of-blogroll motion-element links-of-blogroll-inline">
             <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              →_→
+              <i class="fa  fa-fw fa-heart"></i>
+              
             </div>
             <ul class="links-of-blogroll-list">
               
@@ -578,7 +588,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Muse
   </a>
 </div>
 
@@ -643,13 +653,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
