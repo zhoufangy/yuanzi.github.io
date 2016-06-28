@@ -5,7 +5,7 @@ categories: [GoAccess,日志分析,Nginx]
 tags: [GoAccess,日志分析,Nginx]
 visitors:
 ---
-### What is it?
+### 关于GoAccess
 {% link GoAccess https://goaccess.io/ GoAccess %}
 GoAccess是一个开源的实时Web日志分析工具，能将有价值的HTTP统计数据生成可视化动态报告。
 ### 安装
