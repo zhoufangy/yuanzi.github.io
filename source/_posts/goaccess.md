@@ -6,8 +6,7 @@ tags: [GoAccess,日志分析,Nginx]
 visitors:
 ---
 ### 关于GoAccess
-{% link GoAccess https://goaccess.io/ GoAccess %}
-GoAccess是一个开源的实时Web日志分析工具，能将有价值的HTTP统计数据生成可视化动态报告。
+{% link GoAccess https://goaccess.io/ GoAccess %}是一个开源的实时Web日志分析工具，能将有价值的HTTP统计数据生成可视化动态报告。
 ### 安装
 {% codeblock lang:bash %}
 #下载
@@ -21,6 +20,7 @@ apt-get install libgeoip-dev
 #C系安装
 make && make install
 {% endcodeblock %}
+<!-- more -->
 ### 使用
 {% codeblock lang:bash %}
 #修改goaccess.conf中必选项
