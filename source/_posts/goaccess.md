@@ -21,8 +21,6 @@ apt-get install libgeoip-dev
 #C系安装
 make && make install
 {% endcodeblock %}
-
-### 使用
 {% codeblock lang:bash %}
 #修改goaccess.conf中必选项
 vim /usr/local/etc/goaccess.conf
@@ -39,6 +37,7 @@ date-format %d/%b/%Y
 ######################################
 log-format %h %^[%d:%t %^] "%r" %s %b "%R" "%u"
 {% endcodeblock %}
+### 使用
 {% codeblock lang:bash %}
 #处理需要分析的日志文件
 cd /usr/local/openresty/nginx/logs/
