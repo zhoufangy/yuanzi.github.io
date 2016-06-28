@@ -8,7 +8,6 @@ visitors:
 ### 关于GoAccess
 {% link GoAccess https://goaccess.io/ GoAccess %}是一个开源的实时Web日志分析工具，能将有价值的HTTP统计数据生成可视化动态报告.
 <!-- more -->
-### 使用
 ### 安装
 {% codeblock lang:bash %}
 #下载
