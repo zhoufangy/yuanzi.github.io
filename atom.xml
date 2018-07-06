@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://zhoufangyuan.me/"/>
+  <link href="http://yuanzi.info/"/>
   <updated>2016-06-07T06:49:15.870Z</updated>
-  <id>http://zhoufangyuan.me/</id>
+  <id>http://yuanzi.info/</id>
   
   <author>
     <name>Yuanzi</name>
@@ -17,15 +17,15 @@
   
   <entry>
     <title>OpenResty使用</title>
-    <link href="http://zhoufangyuan.me/2016/06/06/openresty/"/>
-    <id>http://zhoufangyuan.me/2016/06/06/openresty/</id>
+    <link href="http://yuanzi.info/2016/06/06/openresty/"/>
+    <id>http://yuanzi.info/2016/06/06/openresty/</id>
     <published>2016-06-06T11:58:27.000Z</published>
     <updated>2016-06-07T06:49:15.870Z</updated>
     
     <content type="html">&lt;h3 id=&quot;1-安装编译&quot;&gt;&lt;a href=&quot;#1-安装编译&quot; class=&quot;headerlink&quot; title=&quot;1.安装编译&quot;&gt;&lt;/a&gt;1.安装编译&lt;/h3&gt;&lt;a href=&quot;http://openresty.org/cn/download.html&quot; title=&quot;[external] [OpenResty]&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenResty官网下载安装包openresty-1.x.x.x.tar.gz&lt;/a&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#解压&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar -xzvf openresty-1.x.x.x.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make instal&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#启动&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty -c /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/conf/nginx.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;2-配置文件&quot;&gt;&lt;a href=&quot;#2-配置文件&quot; class=&quot;headerlink&quot; title=&quot;2.配置文件&quot;&gt;&lt;/a&gt;2.配置文件&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#修改&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name zhoufangyuan.me, www.zhoufangyuan.me;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_pass              http://47.88.9.206:4000/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_redirect          off;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;_header        X-Real-IP       &lt;span class=&quot;variable&quot;&gt;$remote_addr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;_header        X-Forwarded-For &lt;span class=&quot;variable&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2-配置文件&quot;&gt;&lt;a href=&quot;#2-配置文件&quot; class=&quot;headerlink&quot; title=&quot;2.配置文件&quot;&gt;&lt;/a&gt;2.配置文件&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#修改&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name yuanzi.info, www.yuanzi.info;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_pass              http://47.88.9.206:4000/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_redirect          off;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;_header        X-Real-IP       &lt;span class=&quot;variable&quot;&gt;$remote_addr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;_header        X-Forwarded-For &lt;span class=&quot;variable&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;3-加载重新配置的nginx文件并启动&quot;&gt;&lt;a href=&quot;#3-加载重新配置的nginx文件并启动&quot; class=&quot;headerlink&quot; title=&quot;3.加载重新配置的nginx文件并启动&quot;&gt;&lt;/a&gt;3.加载重新配置的nginx文件并启动&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sbin/nginx  -c /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/conf/nginx.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;3-管理openresty&quot;&gt;&lt;a href=&quot;#3-管理openresty&quot; class=&quot;headerlink&quot; title=&quot;3.管理openresty&quot;&gt;&lt;/a&gt;3.管理openresty&lt;/h3&gt;&lt;a href=&quot;https://fzrxefe.googlecode.com/files/openresty.init.d.script&quot; title=&quot;[external] [OpenResty]&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;google code&lt;/a&gt;下载init.d 重命名openresty，放到服务器/etc/init.d目录下&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo chmod +x /etc/init.d/openresty&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo update-rc.d openresty defaults&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#启动Nginx:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#停止Nginx:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty stop&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#重启Nginx:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty restart&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#测试配置文件:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
     
@@ -36,27 +36,27 @@
     
     </summary>
     
-      <category term="OpenResty" scheme="http://zhoufangyuan.me/categories/OpenResty/"/>
+      <category term="OpenResty" scheme="http://yuanzi.info/categories/OpenResty/"/>
     
-      <category term="Nginx" scheme="http://zhoufangyuan.me/categories/OpenResty/Nginx/"/>
+      <category term="Nginx" scheme="http://yuanzi.info/categories/OpenResty/Nginx/"/>
     
     
-      <category term="OpenResty" scheme="http://zhoufangyuan.me/tags/OpenResty/"/>
+      <category term="OpenResty" scheme="http://yuanzi.info/tags/OpenResty/"/>
     
-      <category term="Nginx" scheme="http://zhoufangyuan.me/tags/Nginx/"/>
+      <category term="Nginx" scheme="http://yuanzi.info/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>IntelliJ IDEA SVN 更新报错</title>
-    <link href="http://zhoufangyuan.me/2016/05/23/SSL/"/>
-    <id>http://zhoufangyuan.me/2016/05/23/SSL/</id>
+    <link href="http://yuanzi.info/2016/05/23/SSL/"/>
+    <id>http://yuanzi.info/2016/05/23/SSL/</id>
     <published>2016-05-23T03:14:27.000Z</published>
     <updated>2016-05-24T01:24:58.902Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Error-Server-SSL-certificate-rejected&quot;&gt;&lt;a href=&quot;#Error-Server-SSL-certificate-rejected&quot; class=&quot;headerlink&quot; title=&quot;Error:Server SSL certificate rejected&quot;&gt;&lt;/a&gt;Error:Server SSL certificate rejected&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;更新报错，SSL失效&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;SVN 设置 -&amp;gt; 已保存数据 -&amp;gt;清除认证数据 -&amp;gt; 更新 -&amp;gt; 输入账户信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/svnSet.png&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;img src=&quot;http://yuanzi.info/images/svnSet.png&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
     
     <summary type="html">
     
@@ -64,21 +64,21 @@
     
     </summary>
     
-      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://yuanzi.info/categories/IntelliJ-IDEA/"/>
     
-      <category term="SVN" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/SVN/"/>
+      <category term="SVN" scheme="http://yuanzi.info/categories/IntelliJ-IDEA/SVN/"/>
     
     
-      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/tags/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://yuanzi.info/tags/IntelliJ-IDEA/"/>
     
-      <category term="SVN" scheme="http://zhoufangyuan.me/tags/SVN/"/>
+      <category term="SVN" scheme="http://yuanzi.info/tags/SVN/"/>
     
   </entry>
   
   <entry>
     <title>spring-mvc-lazybone 学习笔记</title>
-    <link href="http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/"/>
-    <id>http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/</id>
+    <link href="http://yuanzi.info/2016/05/19/spring-mvc-lazybone/"/>
+    <id>http://yuanzi.info/2016/05/19/spring-mvc-lazybone/</id>
     <published>2016-05-19T08:58:27.000Z</published>
     <updated>2016-05-23T03:15:53.251Z</updated>
     
@@ -90,22 +90,22 @@
     
     </summary>
     
-      <category term="Maven" scheme="http://zhoufangyuan.me/categories/Maven/"/>
+      <category term="Maven" scheme="http://yuanzi.info/categories/Maven/"/>
     
     
-      <category term="Maven" scheme="http://zhoufangyuan.me/tags/Maven/"/>
+      <category term="Maven" scheme="http://yuanzi.info/tags/Maven/"/>
     
   </entry>
   
   <entry>
     <title>IntelliJ IDEA SVN 提交被终止后无法提交文件问题</title>
-    <link href="http://zhoufangyuan.me/2016/05/11/commit/"/>
-    <id>http://zhoufangyuan.me/2016/05/11/commit/</id>
+    <link href="http://yuanzi.info/2016/05/11/commit/"/>
+    <id>http://yuanzi.info/2016/05/11/commit/</id>
     <published>2016-05-11T11:58:27.000Z</published>
     <updated>2016-05-21T11:06:58.498Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Default和Rejected-Commit-Default&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Default&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Default&quot;&gt;&lt;/a&gt;Default和Rejected Commit Default&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;提交后取消，不能提交问题&lt;/p&gt;
-&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/Default.PNG&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
+&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;http://yuanzi.info/images/Default.PNG&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
     
     <summary type="html">
     
@@ -114,21 +114,21 @@
     
     </summary>
     
-      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://yuanzi.info/categories/IntelliJ-IDEA/"/>
     
-      <category term="SVN" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/SVN/"/>
+      <category term="SVN" scheme="http://yuanzi.info/categories/IntelliJ-IDEA/SVN/"/>
     
     
-      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/tags/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://yuanzi.info/tags/IntelliJ-IDEA/"/>
     
-      <category term="SVN" scheme="http://zhoufangyuan.me/tags/SVN/"/>
+      <category term="SVN" scheme="http://yuanzi.info/tags/SVN/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://zhoufangyuan.me/2016/05/09/hello-world/"/>
-    <id>http://zhoufangyuan.me/2016/05/09/hello-world/</id>
+    <link href="http://yuanzi.info/2016/05/09/hello-world/"/>
+    <id>http://yuanzi.info/2016/05/09/hello-world/</id>
     <published>2016-05-09T11:58:27.000Z</published>
     <updated>2016-06-07T02:03:01.221Z</updated>
     

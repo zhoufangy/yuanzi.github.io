@@ -12,4 +12,4 @@ visitors:
 ### 解决
 SVN 设置 -> 已保存数据 ->清除认证数据 -> 更新 -> 输入账户信息
 
-![证物](http://zhoufangyuan.me/images/svnSet.png)
+![证物](http://yuanzi.info/images/svnSet.png)

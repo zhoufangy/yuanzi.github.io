@@ -16,7 +16,7 @@ map $scheme $hsts_header {
 server {
         listen 80; 
         listen 443 ssl; 
-        server_name zhoufangyuan.me;
+        server_name yuanzi.info;
         ssl on;
 
         #指定证书文件 
@@ -30,7 +30,7 @@ server {
         ssl_prefer_server_ciphers  on;
 
         location / {
-                root /home/www/zhoufangyuan.me/;
+                root /home/www/yuanzi.info/;
                 index  index.html index.htm;
                 }
         #增加响应头，浏览器自动以HTTPS访问
@@ -52,7 +52,7 @@ sudo service openresty reload
 {% codeblock lang:bash %}
 server {
         listen 80; 
-        server_name  zhoufangyuan.me;
+        server_name  yuanzi.info;
         return 301 https://$server_name$request_uri;
        }
 {% endcodeblock %}
@@ -60,7 +60,7 @@ server {
 {% codeblock lang:bash %}
 server {
         listen 80; 
-        server_name  zhoufangyuan.me;
+        server_name  yuanzi.info;
         rewrite ^(.*)$ https://$server_name$1 permanent;
        }
 {% endcodeblock %}
@@ -69,7 +69,7 @@ server {
    server {  
     listen 443;  #ssl端口  
     listen 80;   #用户习惯用http访问，加上80，后面通过497状态码让它自动跳到443端口  
-    server_name  zhoufangyuan.me;  
+    server_name  yuanzi.info;  
     #为一个server{......}开启ssl支持  
     ssl    on;  
     #指定证书文件   
@@ -83,21 +83,21 @@ server {
 {% codeblock lang:html %}
 # index.html
 <html>
-<meta http-equiv="refresh" content="0;url=https://zhoufangyuan.me/">
+<meta http-equiv="refresh" content="0;url=https://yuanzi.info/">
 </html>
 
 # zhoufangyuan.conf
 
 server {  
     listen 80;  
-    server_name zhoufangyuan.me;  
+    server_name yuanzi.info;  
       
     location / {  
         #index.html放在虚拟主机监听的根目录下  
-        root /home/www/zhoufangyuan.me/;  
+        root /home/www/yuanzi.info/;  
     }
     #将404的页面重定向到https的首页
-    error_page  404 https://zhoufangyuan.me/;
+    error_page  404 https://yuanzi.info/;
 }
 {% endcodeblock %}
 以上四种方法
