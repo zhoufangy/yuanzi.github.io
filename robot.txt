@@ -6,5 +6,5 @@ Disallow: /fancybox
 Disallow: /font-awesome
 Disallow: /img
 Disallow: /js
-Sitemap: http://zhoufangyuan.me/sitemap.xml
-Sitemap: http://zhoufangyuan.me/baidusitemap.xml
+Sitemap: http://yuanzi.info/sitemap.xml
+Sitemap: http://yuanzi.info/baidusitemap.xml

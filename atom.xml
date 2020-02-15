@@ -2,11 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Yuanzi</title>
   
+  
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://zhoufangyuan.me/"/>
-  <updated>2016-06-15T15:47:22.000Z</updated>
-  <id>http://zhoufangyuan.me/</id>
+  <link href="http://zhoufangy.github.io/"/>
+  <updated>2020-02-15T10:30:19.649Z</updated>
+  <id>http://zhoufangy.github.io/</id>
   
   <author>
     <name>Yuanzi</name>
@@ -16,105 +17,174 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>配置https</title>
-    <link href="http://zhoufangyuan.me/2016/06/15/https/"/>
-    <id>http://zhoufangyuan.me/2016/06/15/https/</id>
-    <published>2016-06-15T03:05:00.000Z</published>
-    <updated>2016-06-15T15:47:22.000Z</updated>
+    <title>Hexo迁移报错目录丢失Cannot GET /</title>
+    <link href="http://zhoufangy.github.io/2020/02/15/Hexo%E8%BF%81%E7%A7%BB%E6%8A%A5%E9%94%99%E7%9B%AE%E5%BD%95%E4%B8%A2%E5%A4%B1Cannot-GET/"/>
+    <id>http://zhoufangy.github.io/2020/02/15/Hexo迁移报错目录丢失Cannot-GET/</id>
+    <published>2020-02-15T11:56:00.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;1-申请SSL证书&quot;&gt;&lt;a href=&quot;#1-申请SSL证书&quot; class=&quot;headerlink&quot; title=&quot;1.申请SSL证书&quot;&gt;&lt;/a&gt;1.申请SSL证书&lt;/h3&gt;&lt;p&gt;WoSign证书申请：阿里云/官网-&amp;gt;注册-&amp;gt;下载密钥&lt;/p&gt;
-&lt;h3 id=&quot;2-新增zhoufangyuan-conf&quot;&gt;&lt;a href=&quot;#2-新增zhoufangyuan-conf&quot; class=&quot;headerlink&quot; title=&quot;2.新增zhoufangyuan.conf&quot;&gt;&lt;/a&gt;2.新增zhoufangyuan.conf&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 利用HSTS实现HTTP-&amp;gt;HTTPS&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map &lt;span class=&quot;variable&quot;&gt;$scheme&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$hsts_header&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    https   max-age=31536000;includeSubdomains; preload;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 443 ssl; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name zhoufangyuan.me;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl on;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;#指定证书文件 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_certificate      /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sslkey/cert.pem;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_certificate_key  /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sslkey/cert.key;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_session_cache    shared:SSL:1m;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_session_timeout  5m;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_ciphers  HIGH:!aNULL:!MD5;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_prefer_server_ciphers  on;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                root /home/www/zhoufangyuan.me/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                index  index.html index.htm;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_prefer_server_ciphers  on;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                root /home/www/zhoufangyuan.me/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                index  index.html index.htm;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;#增加响应头，浏览器自动以HTTPS访问&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        add_header Strict-Transport-Security &lt;span class=&quot;variable&quot;&gt;$hsts_header&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;3-将zhoufangyuan-conf引入ngnix-conf&quot;&gt;&lt;a href=&quot;#3-将zhoufangyuan-conf引入ngnix-conf&quot; class=&quot;headerlink&quot; title=&quot;3.将zhoufangyuan.conf引入ngnix.conf&quot;&gt;&lt;/a&gt;3.将zhoufangyuan.conf引入ngnix.conf&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;include vhost/*.conf;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;4-重新加载ngnix&quot;&gt;&lt;a href=&quot;#4-重新加载ngnix&quot; class=&quot;headerlink&quot; title=&quot;4.重新加载ngnix&quot;&gt;&lt;/a&gt;4.重新加载ngnix&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty reload&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;5-HTTP-gt-HTTPS几种方法&quot;&gt;&lt;a href=&quot;#5-HTTP-gt-HTTPS几种方法&quot; class=&quot;headerlink&quot; title=&quot;5.HTTP-&amp;gt;HTTPS几种方法&quot;&gt;&lt;/a&gt;5.HTTP-&amp;gt;HTTPS几种方法&lt;/h3&gt;&lt;p&gt;#return 301&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name  zhoufangyuan.me;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; 301 https://&lt;span class=&quot;variable&quot;&gt;$server_name&lt;/span&gt;&lt;span class=&quot;variable&quot;&gt;$request_uri&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;#rewrite重写&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name  zhoufangyuan.me;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        rewrite ^(.*)$ https://&lt;span class=&quot;variable&quot;&gt;$server_name&lt;/span&gt;&lt;span class=&quot;variable&quot;&gt;$1&lt;/span&gt; permanent;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;#error_page 497&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;   server &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    listen 443;  &lt;span class=&quot;comment&quot;&gt;#ssl端口  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    listen 80;   &lt;span class=&quot;comment&quot;&gt;#用户习惯用http访问，加上80，后面通过497状态码让它自动跳到443端口  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    server_name  zhoufangyuan.me;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;#为一个server&amp;#123;......&amp;#125;开启ssl支持  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ssl    on;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;#指定证书文件   &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ssl_certificate      /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sslkey/cert.pem;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ssl_certificate_key  /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sslkey/cert.key;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;#让http请求重定向到https请求   &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    error_page 497  https://&lt;span class=&quot;variable&quot;&gt;$host&lt;/span&gt;&lt;span class=&quot;variable&quot;&gt;$uri&lt;/span&gt;?&lt;span class=&quot;variable&quot;&gt;$args&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;#index.html 刷新网页&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# index.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;refresh&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0;url=https://zhoufangyuan.me/&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# zhoufangyuan.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    listen 80;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    server_name zhoufangyuan.me;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    location / &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        #index.html放在虚拟主机监听的根目录下  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        root /home/www/zhoufangyuan.me/;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    #将404的页面重定向到https的首页&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    error_page  404 https://zhoufangyuan.me/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;以上四种方法&lt;br&gt;https访问网站正常,http跳转https失败,curl访问正常,浏览器访问失败&lt;/p&gt;
-&lt;h1 id=&quot;HSTS强制HTTPS访问&quot;&gt;&lt;a href=&quot;#HSTS强制HTTPS访问&quot; class=&quot;headerlink&quot; title=&quot;HSTS强制HTTPS访问&quot;&gt;&lt;/a&gt;HSTS强制HTTPS访问&lt;/h1&gt;&lt;p&gt;参考资料:&lt;a href=&quot;https://trac.nginx.org/nginx/ticket/289#comment:3&quot; title=&quot;https://trac.nginx.org/nginx/ticket/289#comment:3 参 考资料&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;/a&gt;&lt;/p&gt;</content>
+    <content type="html"><![CDATA[<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>迁移Hexo后部署主页丢失，访问目录报Cannot GET /。index页面可单独访问</p><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>检查缺失组建<br>npm audit fix<br>更新<br>npm install</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h4&gt;&lt;p&gt;迁移Hexo后部署主页丢失，访问目录报Cannot GET /。index页面可单独访问&lt;/p&gt;
+&lt;h4 id=&quot;解决办法&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://zhoufangy.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://zhoufangy.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>更新Xcode后Git报错</title>
+    <link href="http://zhoufangy.github.io/2020/02/15/%E6%9B%B4%E6%96%B0Xcode%E5%90%8EGit%E6%8A%A5%E9%94%99/"/>
+    <id>http://zhoufangy.github.io/2020/02/15/更新Xcode后Git报错/</id>
+    <published>2020-02-15T10:56:00.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>Accept Xcode/iOS license to Run Git</p><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>终端输入sudo xcodebuild -license<br>输入密码后同意条款,用空格键跳到最后</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">By typing <span class="string">'agree'</span> you are agreeing to the terms of the software license agreements. Type <span class="string">'print'</span> to <span class="built_in">print</span> them or anything <span class="keyword">else</span> to cancel, [agree, <span class="built_in">print</span>, cancel] agree</span><br><span class="line"></span><br><span class="line">You can view the license agreements <span class="keyword">in</span> Xcode<span class="string">'s About Box, or at /Applications/Xcode.app/Contents/Resources/English.lproj/License.rtf</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h4&gt;&lt;p&gt;Accept Xcode/iOS license to Run Git&lt;/p&gt;
+&lt;h4 id=&quot;解决办法&quot;&gt;&lt;a href=&quot;#解决办法&quot; 
+      
+    
+    </summary>
+    
+      <category term="Git" scheme="http://zhoufangy.github.io/categories/Git/"/>
+    
+    
+      <category term="Git 报错" scheme="http://zhoufangy.github.io/tags/Git-%E6%8A%A5%E9%94%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GoAccess使用</title>
+    <link href="http://zhoufangy.github.io/2016/06/28/goaccess/"/>
+    <id>http://zhoufangy.github.io/2016/06/28/goaccess/</id>
+    <published>2016-06-28T23:58:27.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="关于GoAccess"><a href="#关于GoAccess" class="headerlink" title="关于GoAccess"></a>关于GoAccess</h3><a href="https://goaccess.io/" title="GoAccess" target="_blank" rel="noopener">GoAccess</a>是一个开源的实时Web日志分析工具，能将有价值的HTTP统计数据生成可视化动态报告.<br><a id="more"></a><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#下载</span></span><br><span class="line">wget http://tar.goaccess.io/goaccess-1.0.1.tar.gz</span><br><span class="line">tar -zxvf goaccess-1.0.1.tar.gz</span><br><span class="line"><span class="built_in">cd</span> goaccess-1.0.1/</span><br><span class="line"><span class="comment">#安装依赖包</span></span><br><span class="line">apt-get install libncursesw5-dev</span><br><span class="line">apt-get install libgeoip-dev</span><br><span class="line">./configure --<span class="built_in">enable</span>-geoip --<span class="built_in">enable</span>-utf8</span><br><span class="line"><span class="comment">#C系安装</span></span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#修改goaccess.conf中必选项</span></span><br><span class="line">vim /usr/<span class="built_in">local</span>/etc/goaccess.conf</span><br><span class="line"><span class="comment">######################################</span></span><br><span class="line"><span class="comment"># Time Format Options (required)</span></span><br><span class="line"><span class="comment">######################################</span></span><br><span class="line">time-format %H:%M:%S</span><br><span class="line"><span class="comment">######################################</span></span><br><span class="line"><span class="comment"># Date Format Options (required)</span></span><br><span class="line"><span class="comment">######################################</span></span><br><span class="line">date-format %d/%b/%Y</span><br><span class="line"><span class="comment">######################################</span></span><br><span class="line"><span class="comment"># Log Format Options (required)</span></span><br><span class="line"><span class="comment">######################################</span></span><br><span class="line"><span class="built_in">log</span>-format %h %^[%d:%t %^] <span class="string">"%r"</span> %s %b <span class="string">"%R"</span> <span class="string">"%u"</span></span><br></pre></td></tr></table></figure><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#处理需要分析的日志文件</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/openresty/nginx/logs/</span><br><span class="line">goaccess -f access.log -o report.html --real-time-html --ws-url=goaccess.io</span><br><span class="line"><span class="comment">#Python创建简单HTTP服务用于访问</span></span><br><span class="line">python -m SimpleHTTPServer</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;关于GoAccess&quot;&gt;&lt;a href=&quot;#关于GoAccess&quot; class=&quot;headerlink&quot; title=&quot;关于GoAccess&quot;&gt;&lt;/a&gt;关于GoAccess&lt;/h3&gt;&lt;a href=&quot;https://goaccess.io/&quot; title=&quot;GoAccess&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GoAccess&lt;/a&gt;是一个开源的实时Web日志分析工具，能将有价值的HTTP统计数据生成可视化动态报告.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="GoAccess" scheme="http://zhoufangy.github.io/categories/GoAccess/"/>
+    
+      <category term="日志分析" scheme="http://zhoufangy.github.io/categories/GoAccess/%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"/>
+    
+      <category term="Nginx" scheme="http://zhoufangy.github.io/categories/GoAccess/%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/Nginx/"/>
+    
+    
+      <category term="GoAccess" scheme="http://zhoufangy.github.io/tags/GoAccess/"/>
+    
+      <category term="日志分析" scheme="http://zhoufangy.github.io/tags/%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"/>
+    
+      <category term="Nginx" scheme="http://zhoufangy.github.io/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置https</title>
+    <link href="http://zhoufangy.github.io/2016/06/15/https/"/>
+    <id>http://zhoufangy.github.io/2016/06/15/https/</id>
+    <published>2016-06-15T11:05:00.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-申请SSL证书"><a href="#1-申请SSL证书" class="headerlink" title="1.申请SSL证书"></a>1.申请SSL证书</h3><p>WoSign证书申请：阿里云/官网-&gt;注册-&gt;下载密钥</p><h3 id="2-新增zhoufangyuan-conf"><a href="#2-新增zhoufangyuan-conf" class="headerlink" title="2.新增zhoufangyuan.conf"></a>2.新增zhoufangyuan.conf</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 利用HSTS实现HTTP-&gt;HTTPS</span></span><br><span class="line">map <span class="variable">$scheme</span> <span class="variable">$hsts_header</span> &#123;</span><br><span class="line">    https   max-age=31536000;includeSubdomains; preload;</span><br><span class="line">&#125;        </span><br><span class="line">server &#123;</span><br><span class="line">        listen 80; </span><br><span class="line">        listen 443 ssl; </span><br><span class="line">        server_name yuanzi.info;</span><br><span class="line">        ssl on;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#指定证书文件 </span></span><br><span class="line">        ssl_certificate      /usr/<span class="built_in">local</span>/openresty/nginx/sslkey/cert.pem;</span><br><span class="line">        ssl_certificate_key  /usr/<span class="built_in">local</span>/openresty/nginx/sslkey/cert.key;</span><br><span class="line">    </span><br><span class="line">        ssl_session_cache    shared:SSL:1m;</span><br><span class="line">        ssl_session_timeout  5m;</span><br><span class="line">    </span><br><span class="line">        ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">        ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                root /home/www/yuanzi.info/;</span><br><span class="line">                index  index.html index.htm;</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="comment">#增加响应头，浏览器自动以HTTPS访问</span></span><br><span class="line">        add_header Strict-Transport-Security <span class="variable">$hsts_header</span>;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="3-将zhoufangyuan-conf引入ngnix-conf"><a href="#3-将zhoufangyuan-conf引入ngnix-conf" class="headerlink" title="3.将zhoufangyuan.conf引入ngnix.conf"></a>3.将zhoufangyuan.conf引入ngnix.conf</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">include vhost/*.conf;</span><br></pre></td></tr></table></figure><h3 id="4-重新加载ngnix"><a href="#4-重新加载ngnix" class="headerlink" title="4.重新加载ngnix"></a>4.重新加载ngnix</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service openresty reload</span><br></pre></td></tr></table></figure><h3 id="5-HTTP-gt-HTTPS几种方法"><a href="#5-HTTP-gt-HTTPS几种方法" class="headerlink" title="5.HTTP-&gt;HTTPS几种方法"></a>5.HTTP-&gt;HTTPS几种方法</h3><p>#return 301<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80; </span><br><span class="line">        server_name  yuanzi.info;</span><br><span class="line">        <span class="built_in">return</span> 301 https://<span class="variable">$server_name</span><span class="variable">$request_uri</span>;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p><p>#rewrite重写<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80; </span><br><span class="line">        server_name  yuanzi.info;</span><br><span class="line">        rewrite ^(.*)$ https://<span class="variable">$server_name</span><span class="variable">$1</span> permanent;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p><p>#error_page 497<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   server &#123;  </span><br><span class="line">    listen 443;  <span class="comment">#ssl端口  </span></span><br><span class="line">    listen 80;   <span class="comment">#用户习惯用http访问，加上80，后面通过497状态码让它自动跳到443端口  </span></span><br><span class="line">    server_name  yuanzi.info;  </span><br><span class="line">    <span class="comment">#为一个server&#123;......&#125;开启ssl支持  </span></span><br><span class="line">    ssl    on;  </span><br><span class="line">    <span class="comment">#指定证书文件   </span></span><br><span class="line">    ssl_certificate      /usr/<span class="built_in">local</span>/openresty/nginx/sslkey/cert.pem;</span><br><span class="line">    ssl_certificate_key  /usr/<span class="built_in">local</span>/openresty/nginx/sslkey/cert.key;</span><br><span class="line">    <span class="comment">#让http请求重定向到https请求   </span></span><br><span class="line">    error_page 497  https://<span class="variable">$host</span><span class="variable">$uri</span>?<span class="variable">$args</span>;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></p><p>#index.html 刷新网页<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"># index.html</span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"0;url=https://yuanzi.info/"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"># zhoufangyuan.conf</span><br><span class="line"></span><br><span class="line">server &#123;  </span><br><span class="line">    listen 80;  </span><br><span class="line">    server_name yuanzi.info;  </span><br><span class="line">      </span><br><span class="line">    location / &#123;  </span><br><span class="line">        #index.html放在虚拟主机监听的根目录下  </span><br><span class="line">        root /home/www/yuanzi.info/;  </span><br><span class="line">    &#125;</span><br><span class="line">    #将404的页面重定向到https的首页</span><br><span class="line">    error_page  404 https://yuanzi.info/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>以上四种方法<br>https访问网站正常,http跳转https失败,curl访问正常,浏览器访问失败</p><h1 id="HSTS强制HTTPS访问"><a href="#HSTS强制HTTPS访问" class="headerlink" title="HSTS强制HTTPS访问"></a>HSTS强制HTTPS访问</h1><a href="https://trac.nginx.org/nginx/ticket/289#comment:3" title="参 考资料" target="_blank" rel="noopener">参考资料</a>]]></content>
     
     <summary type="html">
     
       &lt;h3 id=&quot;1-申请SSL证书&quot;&gt;&lt;a href=&quot;#1-申请SSL证书&quot; class=&quot;headerlink&quot; title=&quot;1.申请SSL证书&quot;&gt;&lt;/a&gt;1.申请SSL证书&lt;/h3&gt;&lt;p&gt;WoSign证书申请：阿里云/官网-&amp;gt;注册-&amp;gt;下载密钥&lt;/p&gt;
-&lt;h3 id=&quot;2-新增zhoufangyuan-conf&quot;&gt;&lt;a href=&quot;#2-新增zhoufangyuan-conf&quot; class=&quot;headerlink&quot; title=&quot;2.新增zhoufangyuan.conf&quot;&gt;&lt;/a&gt;2.新增zhoufangyuan.conf&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 利用HSTS实现HTTP-&amp;gt;HTTPS&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map &lt;span class=&quot;variable&quot;&gt;$scheme&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$hsts_header&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    https   max-age=31536000;includeSubdomains; preload;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 443 ssl; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name zhoufangyuan.me;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl on;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;#指定证书文件 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_certificate      /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sslkey/cert.pem;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_certificate_key  /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sslkey/cert.key;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_session_cache    shared:SSL:1m;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_session_timeout  5m;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_ciphers  HIGH:!aNULL:!MD5;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_prefer_server_ciphers  on;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                root /home/www/zhoufangyuan.me/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                index  index.html index.htm;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_prefer_server_ciphers  on;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                root /home/www/zhoufangyuan.me/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                index  index.html index.htm;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;#增加响应头，浏览器自动以HTTPS访问&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        add_header Strict-Transport-Security &lt;span class=&quot;variable&quot;&gt;$hsts_header&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2-新增zhoufangyuan-conf&quot;&gt;&lt;a href=&quot;#2-新增zhoufangyuan-conf&quot; class=&quot;headerlink&quot; title=&quot;2.新增zhoufangyuan.conf&quot;&gt;&lt;/a&gt;2.新增zhoufangyuan.conf&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 利用HSTS实现HTTP-&amp;gt;HTTPS&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map &lt;span class=&quot;variable&quot;&gt;$scheme&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$hsts_header&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    https   max-age=31536000;includeSubdomains; preload;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 443 ssl; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name yuanzi.info;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl on;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;#指定证书文件 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_certificate      /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sslkey/cert.pem;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_certificate_key  /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sslkey/cert.key;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_session_cache    shared:SSL:1m;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_session_timeout  5m;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_ciphers  HIGH:!aNULL:!MD5;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ssl_prefer_server_ciphers  on;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                root /home/www/yuanzi.info/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                index  index.html index.htm;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;#增加响应头，浏览器自动以HTTPS访问&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        add_header Strict-Transport-Security &lt;span class=&quot;variable&quot;&gt;$hsts_header&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
-      <category term="HTTPS" scheme="http://zhoufangyuan.me/categories/HTTPS/"/>
+      <category term="HTTPS" scheme="http://zhoufangy.github.io/categories/HTTPS/"/>
     
-      <category term="Nginx" scheme="http://zhoufangyuan.me/categories/HTTPS/Nginx/"/>
+      <category term="Nginx" scheme="http://zhoufangy.github.io/categories/HTTPS/Nginx/"/>
     
     
   </entry>
   
   <entry>
     <title>多个商品条目批量选中上架时判断售后模板是否为空</title>
-    <link href="http://zhoufangyuan.me/2016/06/13/checkbox/"/>
-    <id>http://zhoufangyuan.me/2016/06/13/checkbox/</id>
-    <published>2016-06-13T02:58:27.000Z</published>
-    <updated>2016-06-13T06:12:57.000Z</updated>
+    <link href="http://zhoufangy.github.io/2016/06/13/checkbox/"/>
+    <id>http://zhoufangy.github.io/2016/06/13/checkbox/</id>
+    <published>2016-06-13T10:58:27.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;获取选中checkbox长度&lt;br&gt;获取选中条目对应非空售后模板长度&lt;br&gt;两者比较大小&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getcheckAllSiblingsVal&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name,cls&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; prams = $(&lt;span class=&quot;string&quot;&gt;&quot;table input:checkbox[name=&#39;&quot;&lt;/span&gt;+name+&lt;span class=&quot;string&quot;&gt;&quot;&#39;]:checked&quot;&lt;/span&gt;).parent()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	            .parent().siblings(&lt;span class=&quot;string&quot;&gt;&quot;.&quot;&lt;/span&gt;+cls+&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; nameLength = $(&lt;span class=&quot;string&quot;&gt;&quot;table input:checkbox[name=&#39;&quot;&lt;/span&gt;+name+&lt;span class=&quot;string&quot;&gt;&quot;&#39;]:checked&quot;&lt;/span&gt;).length;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; len = prams.length;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; pramLength = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(len&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;len;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;!=prams.eq(i).text())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				pramLength+=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(pramLength)&amp;lt;&lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(nameLength))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;</content>
+    <content type="html"><![CDATA[<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>获取选中checkbox长度<br>获取选中条目对应非空售后模板长度<br>两者比较大小<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getcheckAllSiblingsVal</span>(<span class="params">name,cls</span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> prams = $(<span class="string">"table input:checkbox[name='"</span>+name+<span class="string">"']:checked"</span>).parent()</span><br><span class="line">            .parent().siblings(<span class="string">"."</span>+cls+<span class="string">""</span>);</span><br><span class="line"><span class="keyword">var</span> nameLength = $(<span class="string">"table input:checkbox[name='"</span>+name+<span class="string">"']:checked"</span>).length;</span><br><span class="line"><span class="keyword">var</span> len = prams.length;</span><br><span class="line"><span class="keyword">var</span> pramLength = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(len&gt;<span class="number">0</span>)&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line"><span class="keyword">if</span>(<span class="string">""</span>!=prams.eq(i).text())&#123;</span><br><span class="line">pramLength+=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">parseInt</span>(pramLength)&lt;<span class="built_in">parseInt</span>(nameLength))&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;获取选中checkbox长度&lt;br&gt;获取选中条目对应非空售后模板长度&lt;br&gt;两者比较大小&lt;br&gt;&lt;figure class=&quot;highlig
+      
+      
+        &lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;获取选中checkbox长度&lt;br&gt;获取选中条目对应非空售后模板长度&lt;br&gt;两者比较大小&lt;br&gt;&lt;figure class=&quot;highlig
+      
     
     </summary>
     
-      <category term="JQuery" scheme="http://zhoufangyuan.me/categories/JQuery/"/>
+      <category term="JQuery" scheme="http://zhoufangy.github.io/categories/JQuery/"/>
     
-      <category term="checkbox" scheme="http://zhoufangyuan.me/categories/JQuery/checkbox/"/>
+      <category term="checkbox" scheme="http://zhoufangy.github.io/categories/JQuery/checkbox/"/>
     
     
-      <category term="JQuery" scheme="http://zhoufangyuan.me/tags/JQuery/"/>
+      <category term="JQuery" scheme="http://zhoufangy.github.io/tags/JQuery/"/>
     
-      <category term="checkbox" scheme="http://zhoufangyuan.me/tags/checkbox/"/>
+      <category term="checkbox" scheme="http://zhoufangy.github.io/tags/checkbox/"/>
     
   </entry>
   
   <entry>
     <title>OpenResty使用</title>
-    <link href="http://zhoufangyuan.me/2016/06/06/openresty/"/>
-    <id>http://zhoufangyuan.me/2016/06/06/openresty/</id>
-    <published>2016-06-06T11:58:27.000Z</published>
-    <updated>2016-06-15T15:07:22.000Z</updated>
+    <link href="http://zhoufangy.github.io/2016/06/06/openresty/"/>
+    <id>http://zhoufangy.github.io/2016/06/06/openresty/</id>
+    <published>2016-06-06T19:58:27.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;1-安装编译&quot;&gt;&lt;a href=&quot;#1-安装编译&quot; class=&quot;headerlink&quot; title=&quot;1.安装编译&quot;&gt;&lt;/a&gt;1.安装编译&lt;/h3&gt;&lt;a href=&quot;http://openresty.org/cn/download.html&quot; title=&quot;openResty&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenResty官网下载安装包openresty-1.x.x.x.tar.gz&lt;/a&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#解压&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar -xzvf openresty-1.x.x.x.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make instal&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#启动&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty -c /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/conf/nginx.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;2-配置文件&quot;&gt;&lt;a href=&quot;#2-配置文件&quot; class=&quot;headerlink&quot; title=&quot;2.配置文件&quot;&gt;&lt;/a&gt;2.配置文件&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#修改&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        listen 80;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        server_name zhoufangyuan.me, www.zhoufangyuan.me;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        location / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_pass              http://0.0.0.0:4000/;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_redirect          off;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;_header        X-Real-IP       &lt;span class=&quot;variable&quot;&gt;$remote_addr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proxy_&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;_header        X-Forwarded-For &lt;span class=&quot;variable&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;3-加载重新配置的nginx文件并启动&quot;&gt;&lt;a href=&quot;#3-加载重新配置的nginx文件并启动&quot; class=&quot;headerlink&quot; title=&quot;3.加载重新配置的nginx文件并启动&quot;&gt;&lt;/a&gt;3.加载重新配置的nginx文件并启动&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/sbin/nginx  -c /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/conf/nginx.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;3-管理openresty&quot;&gt;&lt;a href=&quot;#3-管理openresty&quot; class=&quot;headerlink&quot; title=&quot;3.管理openresty&quot;&gt;&lt;/a&gt;3.管理openresty&lt;/h3&gt;&lt;a href=&quot;https://fzrxefe.googlecode.com/files/openresty.init.d.script&quot; title=&quot;[external] [OpenResty]&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;google code&lt;/a&gt;下载init.d 重命名openresty，放到服务器/etc/init.d目录下&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo chmod +x /etc/init.d/openresty&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo update-rc.d openresty defaults&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#启动Nginx:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#停止Nginx:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty stop&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#重启Nginx:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty restart&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#测试配置文件:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    <content type="html"><![CDATA[<h3 id="1-安装编译"><a href="#1-安装编译" class="headerlink" title="1.安装编译"></a>1.安装编译</h3><a href="http://openresty.org/cn/download.html" title="openResty" target="_blank" rel="noopener">OpenResty官网下载安装包openresty-1.x.x.x.tar.gz</a><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -xzvf openresty-1.x.x.x.tar.gz</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make instal</span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">sudo service openresty -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf</span></span><br><span class="line"><span class="comment">#修改</span></span><br><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name yuanzi.info, www.yuanzi.info;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass              http://0.0.0.0:4000/;</span><br><span class="line">            proxy_redirect          off;</span><br><span class="line">            proxy_set_header        X-Real-IP       <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_set_header        X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="3-加载重新配置的nginx文件并启动"><a href="#3-加载重新配置的nginx文件并启动" class="headerlink" title="3.加载重新配置的nginx文件并启动"></a>3.加载重新配置的nginx文件并启动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo /usr/<span class="built_in">local</span>/openresty/nginx/sbin/nginx  -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure><h3 id="3-管理openresty"><a href="#3-管理openresty" class="headerlink" title="3.管理openresty"></a>3.管理openresty</h3><a href="https://fzrxefe.googlecode.com/files/openresty.init.d.script" title="[external] [OpenResty]" target="_blank" rel="noopener">google code</a>下载init.d 重命名openresty，放到服务器/etc/init.d目录下<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /etc/init.d/openresty</span><br><span class="line">sudo update-rc.d openresty defaults</span><br><span class="line"><span class="comment">#启动Nginx:</span></span><br><span class="line">sudo service openresty start</span><br><span class="line"><span class="comment">#停止Nginx:</span></span><br><span class="line">sudo service openresty stop</span><br><span class="line"><span class="comment">#重启Nginx:</span></span><br><span class="line">sudo service openresty restart</span><br><span class="line"><span class="comment">#测试配置文件:</span></span><br><span class="line">sudo service openresty <span class="built_in">test</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1-安装编译&quot;&gt;&lt;a href=&quot;#1-安装编译&quot; class=&quot;headerlink&quot; title=&quot;1.安装编译&quot;&gt;&lt;/a&gt;1.安装编译&lt;/h3&gt;&lt;a href=&quot;http://openresty.org/cn/download.html&quot; title=&quot;openResty&quot;&gt;OpenResty官网下载安装包openresty-1.x.x.x.tar.gz&lt;/a&gt;
+      &lt;h3 id=&quot;1-安装编译&quot;&gt;&lt;a href=&quot;#1-安装编译&quot; class=&quot;headerlink&quot; title=&quot;1.安装编译&quot;&gt;&lt;/a&gt;1.安装编译&lt;/h3&gt;&lt;a href=&quot;http://openresty.org/cn/download.html&quot; title=&quot;openResty&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpenResty官网下载安装包openresty-1.x.x.x.tar.gz&lt;/a&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#解压&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tar -xzvf openresty-1.x.x.x.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make instal&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#启动&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo service openresty -c /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/openresty/nginx/conf/nginx.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
-      <category term="OpenResty" scheme="http://zhoufangyuan.me/categories/OpenResty/"/>
+      <category term="OpenResty" scheme="http://zhoufangy.github.io/categories/OpenResty/"/>
     
-      <category term="Nginx" scheme="http://zhoufangyuan.me/categories/OpenResty/Nginx/"/>
+      <category term="Nginx" scheme="http://zhoufangy.github.io/categories/OpenResty/Nginx/"/>
     
     
-      <category term="OpenResty" scheme="http://zhoufangyuan.me/tags/OpenResty/"/>
+      <category term="Nginx" scheme="http://zhoufangy.github.io/tags/Nginx/"/>
     
-      <category term="Nginx" scheme="http://zhoufangyuan.me/tags/Nginx/"/>
+      <category term="OpenResty" scheme="http://zhoufangy.github.io/tags/OpenResty/"/>
     
   </entry>
   
   <entry>
     <title>IntelliJ IDEA SVN 更新报错</title>
-    <link href="http://zhoufangyuan.me/2016/05/23/SSL/"/>
-    <id>http://zhoufangyuan.me/2016/05/23/SSL/</id>
-    <published>2016-05-23T03:14:27.000Z</published>
-    <updated>2016-05-24T01:25:00.000Z</updated>
+    <link href="http://zhoufangy.github.io/2016/05/23/SSL/"/>
+    <id>http://zhoufangy.github.io/2016/05/23/SSL/</id>
+    <published>2016-05-23T11:14:27.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;Error-Server-SSL-certificate-rejected&quot;&gt;&lt;a href=&quot;#Error-Server-SSL-certificate-rejected&quot; class=&quot;headerlink&quot; title=&quot;Error:Server SSL certificate rejected&quot;&gt;&lt;/a&gt;Error:Server SSL certificate rejected&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;更新报错，SSL失效&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;SVN 设置 -&amp;gt; 已保存数据 -&amp;gt;清除认证数据 -&amp;gt; 更新 -&amp;gt; 输入账户信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/svnSet.png&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
+    <content type="html"><![CDATA[<h2 id="Error-Server-SSL-certificate-rejected"><a href="#Error-Server-SSL-certificate-rejected" class="headerlink" title="Error:Server SSL certificate rejected"></a>Error:Server SSL certificate rejected</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>更新报错，SSL失效<br><a id="more"></a></p><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>SVN 设置 -&gt; 已保存数据 -&gt;清除认证数据 -&gt; 更新 -&gt; 输入账户信息</p><p><img src="http://yuanzi.info/images/svnSet.png" alt="证物"></p>]]></content>
     
     <summary type="html">
     
@@ -122,48 +192,50 @@
     
     </summary>
     
-      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://zhoufangy.github.io/categories/IntelliJ-IDEA/"/>
     
-      <category term="SVN" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/SVN/"/>
+      <category term="SVN" scheme="http://zhoufangy.github.io/categories/IntelliJ-IDEA/SVN/"/>
     
     
-      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/tags/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://zhoufangy.github.io/tags/IntelliJ-IDEA/"/>
     
-      <category term="SVN" scheme="http://zhoufangyuan.me/tags/SVN/"/>
+      <category term="SVN" scheme="http://zhoufangy.github.io/tags/SVN/"/>
     
   </entry>
   
   <entry>
     <title>spring-mvc-lazybone 学习笔记</title>
-    <link href="http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/"/>
-    <id>http://zhoufangyuan.me/2016/05/19/spring-mvc-lazybone/</id>
-    <published>2016-05-19T08:58:27.000Z</published>
-    <updated>2016-05-23T03:15:54.000Z</updated>
+    <link href="http://zhoufangy.github.io/2016/05/19/spring-mvc-lazybone/"/>
+    <id>http://zhoufangy.github.io/2016/05/19/spring-mvc-lazybone/</id>
+    <published>2016-05-19T16:58:27.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;1-搭建一个Maven项目&quot;&gt;&lt;a href=&quot;#1-搭建一个Maven项目&quot; class=&quot;headerlink&quot; title=&quot;1.搭建一个Maven项目&quot;&gt;&lt;/a&gt;1.搭建一个Maven项目&lt;/h2&gt;</content>
+    <content type="html"><![CDATA[<h2 id="1-搭建一个Maven项目"><a href="#1-搭建一个Maven项目" class="headerlink" title="1.搭建一个Maven项目"></a>1.搭建一个Maven项目</h2>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;1-搭建一个Maven项目&quot;&gt;&lt;a href=&quot;#1-搭建一个Maven项目&quot; class=&quot;headerlink&quot; title=&quot;1.搭建一个Maven项目&quot;&gt;&lt;/a&gt;1.搭建一个Maven项目&lt;/h2&gt;
+      
+      
+        &lt;h2 id=&quot;1-搭建一个Maven项目&quot;&gt;&lt;a href=&quot;#1-搭建一个Maven项目&quot; class=&quot;headerlink&quot; title=&quot;1.搭建一个Maven项目&quot;&gt;&lt;/a&gt;1.搭建一个Maven项目&lt;/h2&gt;
+      
     
     </summary>
     
-      <category term="Maven" scheme="http://zhoufangyuan.me/categories/Maven/"/>
+      <category term="Maven" scheme="http://zhoufangy.github.io/categories/Maven/"/>
     
     
-      <category term="Maven" scheme="http://zhoufangyuan.me/tags/Maven/"/>
+      <category term="Maven" scheme="http://zhoufangy.github.io/tags/Maven/"/>
     
   </entry>
   
   <entry>
     <title>IntelliJ IDEA SVN 提交被终止后无法提交文件问题</title>
-    <link href="http://zhoufangyuan.me/2016/05/11/commit/"/>
-    <id>http://zhoufangyuan.me/2016/05/11/commit/</id>
-    <published>2016-05-11T11:58:27.000Z</published>
-    <updated>2016-05-21T11:07:00.000Z</updated>
+    <link href="http://zhoufangy.github.io/2016/05/11/commit/"/>
+    <id>http://zhoufangy.github.io/2016/05/11/commit/</id>
+    <published>2016-05-11T19:58:27.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;Default和Rejected-Commit-Default&quot;&gt;&lt;a href=&quot;#Default和Rejected-Commit-Default&quot; class=&quot;headerlink&quot; title=&quot;Default和Rejected Commit Default&quot;&gt;&lt;/a&gt;Default和Rejected Commit Default&lt;/h2&gt;&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;提交后取消，不能提交问题&lt;/p&gt;
-&lt;h3 id=&quot;解决&quot;&gt;&lt;a href=&quot;#解决&quot; class=&quot;headerlink&quot; title=&quot;解决&quot;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;http://zhoufangyuan.me/images/Default.PNG&quot; alt=&quot;证物&quot;&gt;&lt;/p&gt;</content>
+    <content type="html"><![CDATA[<h2 id="Default和Rejected-Commit-Default"><a href="#Default和Rejected-Commit-Default" class="headerlink" title="Default和Rejected Commit Default"></a>Default和Rejected Commit Default</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>提交后取消，不能提交问题</p><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default<br><a id="more"></a><br><img src="http://yuanzi.info/images/Default.PNG" alt="证物"></p>]]></content>
     
     <summary type="html">
     
@@ -172,29 +244,32 @@
     
     </summary>
     
-      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://zhoufangy.github.io/categories/IntelliJ-IDEA/"/>
     
-      <category term="SVN" scheme="http://zhoufangyuan.me/categories/IntelliJ-IDEA/SVN/"/>
+      <category term="SVN" scheme="http://zhoufangy.github.io/categories/IntelliJ-IDEA/SVN/"/>
     
     
-      <category term="IntelliJ IDEA" scheme="http://zhoufangyuan.me/tags/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://zhoufangy.github.io/tags/IntelliJ-IDEA/"/>
     
-      <category term="SVN" scheme="http://zhoufangyuan.me/tags/SVN/"/>
+      <category term="SVN" scheme="http://zhoufangy.github.io/tags/SVN/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://zhoufangyuan.me/2016/05/09/hello-world/"/>
-    <id>http://zhoufangyuan.me/2016/05/09/hello-world/</id>
-    <published>2016-05-09T11:58:27.000Z</published>
-    <updated>2016-06-07T11:18:31.000Z</updated>
+    <link href="http://zhoufangy.github.io/2016/05/09/hello-world/"/>
+    <id>http://zhoufangy.github.io/2016/05/09/hello-world/</id>
+    <published>2016-05-09T19:58:27.000Z</published>
+    <updated>2020-02-15T10:30:19.649Z</updated>
     
-    <content type="html">&lt;p&gt;o(╯□╰)o，不知道说啥，嗯，就这样吧~&lt;/p&gt;</content>
+    <content type="html"><![CDATA[<p>o(╯□╰)o，不知道说啥，嗯，就这样吧~</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;o(╯□╰)o，不知道说啥，嗯，就这样吧~&lt;/p&gt;
+      
+      
+        &lt;p&gt;o(╯□╰)o，不知道说啥，嗯，就这样吧~&lt;/p&gt;
+      
     
     </summary>
     
