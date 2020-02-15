@@ -4,6 +4,17 @@
   
     
     <entry>
+      <title><![CDATA[Travis CI 自动部署Hexo博客至Github]]></title>
+      <url>http://zhoufangy.github.io/2020/02/15/Travis-CI-%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E8%87%B3Github/</url>
+      <content type="html"><![CDATA[<h5 id="1-Github配置"><a href="#1-Github配置" class="headerlink" title="1.Github配置"></a>1.Github配置</h5><p>Github创建项目xxx.github.io,master为静态页面展示项目，code为hexo代码。</p>
+<h5 id="2-Travis-CI配置"><a href="#2-Travis-CI配置" class="headerlink" title="2.Travis CI配置"></a>2.Travis CI配置</h5><p> 用 Github 账号注册并登录 Travis CI，配置好 Travis CI 在 Github 的权限和 Token。</p>
+<h5 id="3-在code分支下新建配置文件-travis-yml"><a href="#3-在code分支下新建配置文件-travis-yml" class="headerlink" title="3.在code分支下新建配置文件 .travis.yml"></a>3.在code分支下新建配置文件 .travis.yml</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo: <span class="literal">false</span></span><br><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">  - 10 </span><br><span class="line">cache: npm</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - code <span class="comment"># 当hexo分支有新的commit时执行 </span></span><br><span class="line">script:</span><br><span class="line">  - hexo generate </span><br><span class="line">deploy:</span><br><span class="line">  provider: pages</span><br><span class="line">  skip-cleanup: <span class="literal">true</span></span><br><span class="line">  <span class="built_in">local</span>-dir: public</span><br><span class="line">  target-branch: master <span class="comment"># 注意这里是部署到master, 默认是到gh-pages</span></span><br><span class="line">  github-token: <span class="variable">$GH_TOKEN</span></span><br><span class="line">  keep-history: <span class="literal">true</span></span><br><span class="line">  on:</span><br><span class="line">    branch: code <span class="comment"># 博客的源码分支</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<h5 id="4-推送代码至code分支，完成部署"><a href="#4-推送代码至code分支，完成部署" class="headerlink" title="4.推送代码至code分支，完成部署"></a>4.推送代码至code分支，完成部署</h5><h5 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h5><p><a href="https://blog.csdn.net/badcow/article/details/102503102" target="_blank" rel="noopener">https://blog.csdn.net/badcow/article/details/102503102</a></p>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo迁移报错目录丢失Cannot GET /]]></title>
       <url>http://zhoufangy.github.io/2020/02/15/Hexo%E8%BF%81%E7%A7%BB%E6%8A%A5%E9%94%99%E7%9B%AE%E5%BD%95%E4%B8%A2%E5%A4%B1Cannot-GET/</url>
       <content type="html"><![CDATA[<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>迁移Hexo后部署主页丢失，访问目录报Cannot GET /。index页面可单独访问</p>

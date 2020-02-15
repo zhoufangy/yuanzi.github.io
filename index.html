@@ -297,6 +297,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhoufangy.github.io/2020/02/15/Travis-CI-自动部署Hexo至Github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuanzi">
+      <meta itemprop="description" content="......">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanzi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/15/Travis-CI-自动部署Hexo至Github/" itemprop="url">
+                  Travis CI 自动部署Hexo博客至Github
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-02-15 18:51:07 / Modified: 11:04:43" itemprop="dateCreated datePublished" datetime="2020-02-15T18:51:07+00:00">2020-02-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="1-Github配置"><a href="#1-Github配置" class="headerlink" title="1.Github配置"></a>1.Github配置</h5><p>Github创建项目xxx.github.io,master为静态页面展示项目，code为hexo代码。</p>
+<h5 id="2-Travis-CI配置"><a href="#2-Travis-CI配置" class="headerlink" title="2.Travis CI配置"></a>2.Travis CI配置</h5><p> 用 Github 账号注册并登录 Travis CI，配置好 Travis CI 在 Github 的权限和 Token。</p>
+<h5 id="3-在code分支下新建配置文件-travis-yml"><a href="#3-在code分支下新建配置文件-travis-yml" class="headerlink" title="3.在code分支下新建配置文件 .travis.yml"></a>3.在code分支下新建配置文件 .travis.yml</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo: <span class="literal">false</span></span><br><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">  - 10 </span><br><span class="line">cache: npm</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - code <span class="comment"># 当hexo分支有新的commit时执行 </span></span><br><span class="line">script:</span><br><span class="line">  - hexo generate </span><br><span class="line">deploy:</span><br><span class="line">  provider: pages</span><br><span class="line">  skip-cleanup: <span class="literal">true</span></span><br><span class="line">  <span class="built_in">local</span>-dir: public</span><br><span class="line">  target-branch: master <span class="comment"># 注意这里是部署到master, 默认是到gh-pages</span></span><br><span class="line">  github-token: <span class="variable">$GH_TOKEN</span></span><br><span class="line">  keep-history: <span class="literal">true</span></span><br><span class="line">  on:</span><br><span class="line">    branch: code <span class="comment"># 博客的源码分支</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<h5 id="4-推送代码至code分支，完成部署"><a href="#4-推送代码至code分支，完成部署" class="headerlink" title="4.推送代码至code分支，完成部署"></a>4.推送代码至code分支，完成部署</h5><h5 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h5><p><a href="https://blog.csdn.net/badcow/article/details/102503102" target="_blank" rel="noopener">https://blog.csdn.net/badcow/article/details/102503102</a></p>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zhoufangy.github.io/2020/02/15/Hexo迁移报错目录丢失Cannot-GET/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -343,7 +485,7 @@
                 
               
 
-              <time title="Created: 2020-02-15 11:56:00 / Modified: 10:44:50" itemprop="dateCreated datePublished" datetime="2020-02-15T11:56:00+00:00">2020-02-15</time>
+              <time title="Created: 2020-02-15 11:56:00 / Modified: 11:04:43" itemprop="dateCreated datePublished" datetime="2020-02-15T11:56:00+00:00">2020-02-15</time>
             
 
             
@@ -501,7 +643,7 @@
                 
               
 
-              <time title="Created: 2020-02-15 10:56:00 / Modified: 10:44:50" itemprop="dateCreated datePublished" datetime="2020-02-15T10:56:00+00:00">2020-02-15</time>
+              <time title="Created: 2020-02-15 10:56:00 / Modified: 11:04:43" itemprop="dateCreated datePublished" datetime="2020-02-15T10:56:00+00:00">2020-02-15</time>
             
 
             
@@ -677,7 +819,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-15 10:44:50" itemprop="dateModified" datetime="2020-02-15T10:44:50+00:00">2020-02-15</time>
+                <time title="Modified: 2020-02-15 11:04:43" itemprop="dateModified" datetime="2020-02-15T11:04:43+00:00">2020-02-15</time>
               
             
           </span>
@@ -865,7 +1007,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-15 10:44:50" itemprop="dateModified" datetime="2020-02-15T10:44:50+00:00">2020-02-15</time>
+                <time title="Modified: 2020-02-15 11:04:43" itemprop="dateModified" datetime="2020-02-15T11:04:43+00:00">2020-02-15</time>
               
             
           </span>
@@ -1047,7 +1189,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-15 10:44:50" itemprop="dateModified" datetime="2020-02-15T10:44:50+00:00">2020-02-15</time>
+                <time title="Modified: 2020-02-15 11:04:43" itemprop="dateModified" datetime="2020-02-15T11:04:43+00:00">2020-02-15</time>
               
             
           </span>
@@ -1223,7 +1365,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-15 10:44:50" itemprop="dateModified" datetime="2020-02-15T10:44:50+00:00">2020-02-15</time>
+                <time title="Modified: 2020-02-15 11:04:43" itemprop="dateModified" datetime="2020-02-15T11:04:43+00:00">2020-02-15</time>
               
             
           </span>
@@ -1405,7 +1547,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-15 10:44:50" itemprop="dateModified" datetime="2020-02-15T10:44:50+00:00">2020-02-15</time>
+                <time title="Modified: 2020-02-15 11:04:43" itemprop="dateModified" datetime="2020-02-15T11:04:43+00:00">2020-02-15</time>
               
             
           </span>
@@ -1586,7 +1728,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-15 10:44:50" itemprop="dateModified" datetime="2020-02-15T10:44:50+00:00">2020-02-15</time>
+                <time title="Modified: 2020-02-15 11:04:43" itemprop="dateModified" datetime="2020-02-15T11:04:43+00:00">2020-02-15</time>
               
             
           </span>
@@ -1755,7 +1897,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-15 10:44:50" itemprop="dateModified" datetime="2020-02-15T10:44:50+00:00">2020-02-15</time>
+                <time title="Modified: 2020-02-15 11:04:43" itemprop="dateModified" datetime="2020-02-15T11:04:43+00:00">2020-02-15</time>
               
             
           </span>
@@ -1859,160 +2001,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhoufangy.github.io/2016/05/09/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yuanzi">
-      <meta itemprop="description" content="......">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yuanzi">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/05/09/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2016-05-09 19:58:27" itemprop="dateCreated datePublished" datetime="2016-05-09T19:58:27+00:00">2016-05-09</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2020-02-15 10:44:50" itemprop="dateModified" datetime="2020-02-15T10:44:50+00:00">2020-02-15</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>o(╯□╰)o，不知道说啥，嗯，就这样吧~</p>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2053,7 +2048,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
