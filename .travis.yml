@@ -1,0 +1,19 @@
+sudo: false
+language: node_js
+node_js:
+  - 10 
+cache: npm
+branches:
+  only:
+    - code # 当hexo分支有新的commit时执行 
+script:
+  - hexo generate 
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local-dir: public
+  target-branch: master # 注意这里是部署到master, 默认是到gh-pages
+  github-token: $GH_TOKEN
+  keep-history: true
+  on:
+    branch: code # 博客的源码分支
