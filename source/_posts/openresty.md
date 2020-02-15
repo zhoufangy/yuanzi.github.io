@@ -24,7 +24,7 @@ sudo service openresty -c /usr/local/openresty/nginx/conf/nginx.conf
 #修改
 server {
         listen 80;
-        server_name yuanzi.info, www.yuanzi.info;
+        server_name zhoufangy.github.io, www.zhoufangy.github.io;
 
         location / {
             proxy_pass              http://0.0.0.0:4000/;

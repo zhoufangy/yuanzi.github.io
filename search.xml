@@ -5,39 +5,39 @@
     
     <entry>
       <title><![CDATA[OpenResty使用]]></title>
-      <url>http://yuanzi.info/2016/06/06/openresty/</url>
+      <url>http://zhoufangy.github.io/2016/06/06/openresty/</url>
       <content type="html"><![CDATA[<h3 id="1-安装编译"><a href="#1-安装编译" class="headerlink" title="1.安装编译"></a>1.安装编译</h3><a href="http://openresty.org/cn/download.html" title="[external] [OpenResty]" target="_blank" rel="external">OpenResty官网下载安装包openresty-1.x.x.x.tar.gz</a>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#解压</span></span><br><span class="line">tar -xzvf openresty-1.x.x.x.tar.gz</span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make instal</span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">sudo service openresty -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf</span></span><br><span class="line"><span class="comment">#修改</span></span><br><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name yuanzi.info, www.yuanzi.info;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass              http://47.88.9.206:4000/;</span><br><span class="line">            proxy_redirect          off;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Real-IP       <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#配置文件地址：/usr/local/openresty/nginx/conf/nginx.conf</span></span><br><span class="line"><span class="comment">#修改</span></span><br><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name zhoufangy.github.io, www.zhoufangy.github.io;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass              http://47.88.9.206:4000/;</span><br><span class="line">            proxy_redirect          off;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Real-IP       <span class="variable">$remote_addr</span>;</span><br><span class="line">            proxy_<span class="built_in">set</span>_header        X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-加载重新配置的nginx文件并启动"><a href="#3-加载重新配置的nginx文件并启动" class="headerlink" title="3.加载重新配置的nginx文件并启动"></a>3.加载重新配置的nginx文件并启动</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo /usr/<span class="built_in">local</span>/openresty/nginx/sbin/nginx  -c /usr/<span class="built_in">local</span>/openresty/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
 <h3 id="3-管理openresty"><a href="#3-管理openresty" class="headerlink" title="3.管理openresty"></a>3.管理openresty</h3><a href="https://fzrxefe.googlecode.com/files/openresty.init.d.script" title="[external] [OpenResty]" target="_blank" rel="external">google code</a>下载init.d 重命名openresty，放到服务器/etc/init.d目录下<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo chmod +x /etc/init.d/openresty</span><br><span class="line">sudo update-rc.d openresty defaults</span><br><span class="line"><span class="comment">#启动Nginx:</span></span><br><span class="line">sudo service openresty start</span><br><span class="line"><span class="comment">#停止Nginx:</span></span><br><span class="line">sudo service openresty stop</span><br><span class="line"><span class="comment">#重启Nginx:</span></span><br><span class="line">sudo service openresty restart</span><br><span class="line"><span class="comment">#测试配置文件:</span></span><br><span class="line">sudo service openresty <span class="built_in">test</span></span><br></pre></td></tr></table></figure>]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[IntelliJ IDEA SVN 更新报错]]></title>
-      <url>http://yuanzi.info/2016/05/23/SSL/</url>
+      <url>http://zhoufangy.github.io/2016/05/23/SSL/</url>
       <content type="html"><![CDATA[<h2 id="Error-Server-SSL-certificate-rejected"><a href="#Error-Server-SSL-certificate-rejected" class="headerlink" title="Error:Server SSL certificate rejected"></a>Error:Server SSL certificate rejected</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>更新报错，SSL失效<br><a id="more"></a></p>
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>SVN 设置 -&gt; 已保存数据 -&gt;清除认证数据 -&gt; 更新 -&gt; 输入账户信息</p>
-<p><img src="http://yuanzi.info/images/svnSet.png" alt="证物"></p>]]></content>
+<p><img src="http://zhoufangy.github.io/images/svnSet.png" alt="证物"></p>]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[spring-mvc-lazybone 学习笔记]]></title>
-      <url>http://yuanzi.info/2016/05/19/spring-mvc-lazybone/</url>
+      <url>http://zhoufangy.github.io/2016/05/19/spring-mvc-lazybone/</url>
       <content type="html"><![CDATA[<h2 id="1-搭建一个Maven项目"><a href="#1-搭建一个Maven项目" class="headerlink" title="1.搭建一个Maven项目"></a>1.搭建一个Maven项目</h2>]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[IntelliJ IDEA SVN 提交被终止后无法提交文件问题]]></title>
-      <url>http://yuanzi.info/2016/05/11/commit/</url>
+      <url>http://zhoufangy.github.io/2016/05/11/commit/</url>
       <content type="html"><![CDATA[<h2 id="Default和Rejected-Commit-Default"><a href="#Default和Rejected-Commit-Default" class="headerlink" title="Default和Rejected Commit Default"></a>Default和Rejected Commit Default</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>提交后取消，不能提交问题</p>
-<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default<br><a id="more"></a><br><img src="http://yuanzi.info/images/Default.PNG" alt="证物"></p>]]></content>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default<br><a id="more"></a><br><img src="http://zhoufangy.github.io/images/Default.PNG" alt="证物"></p>]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://yuanzi.info/2016/05/09/hello-world/</url>
+      <url>http://zhoufangy.github.io/2016/05/09/hello-world/</url>
       <content type="html"><![CDATA[<p>o(╯□╰)o，不知道说啥，嗯，就这样吧~</p>]]></content>
     </entry>
     

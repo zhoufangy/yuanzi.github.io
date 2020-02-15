@@ -11,4 +11,4 @@ visitors:
 ### 解决
 当提交后取消再提交时需要更改Change list 状态为Rejected Commit Default
 <!-- more -->
-![证物](http://yuanzi.info/images/Default.PNG)
+![证物](http://zhoufangy.github.io/images/Default.PNG)
