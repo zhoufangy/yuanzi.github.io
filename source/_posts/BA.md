@@ -1,8 +1,11 @@
-```
+---
 title: BA
 author: Yuanzi
-date: 2020-02-20 17:50:52
-```
+date: 2020-02-20 17:58:27
+categories: [interview]
+tags: 
+visitors:
+---
 
 Good afternoon! 
 

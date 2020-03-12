@@ -1,11 +1,11 @@
-```
+---
 title: 深入浅出React和Redux(实战)-程墨
 date: 2020-03-01 14:55:27
 categories: [React]
 tags: [Reading notes]
 author: Yuanzi
 visitors:
-```
+---
 
 ### React 相关概念
 
