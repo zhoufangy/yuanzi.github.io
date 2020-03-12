@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="Yuanzi">
 <meta property="og:description" content="java基础 12factor CAS双清委派 工具git命令组 SpringAOP 动态代理JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-24T10:45:06.869Z">
+<meta property="og:updated_time" content="2020-03-12T04:43:42.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试">
 <meta name="twitter:description" content="java基础 12factor CAS双清委派 工具git命令组 SpringAOP 动态代理JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的">
@@ -357,7 +357,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-24 10:45:06" itemprop="dateModified" datetime="2020-02-24T10:45:06+00:00">2020-02-24</time>
+                <time title="Modified: 2020-03-12 04:43:42" itemprop="dateModified" datetime="2020-03-12T04:43:42+00:00">2020-03-12</time>
               
             
           </span>
@@ -414,7 +414,18 @@
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>git命令组</p>
 <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p>AOP 动态代理<br>JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的实例,  生成目标类的代理对象<br>CGLIB动态代理：如果代理类没有实现 InvocationHandler 接口（或者说是基于父子类的），那么Spring AOP会选择使用CGLIB来动态代理目标类。CGLIB（Code Generation Library），是一个代码生成的类库，可以在运行时动态的生成指定类的一个子类对象，并覆盖其中特定方法并添加增强代码，从而实现AOP。CGLIB是通过继承的方式做的动态代理，因此如果某个类被标记为final，那么它是无法使用CGLIB做动态代理的</p>
 <h1 id="SpringBoot-Srpingsecurity-jpa"><a href="#SpringBoot-Srpingsecurity-jpa" class="headerlink" title="SpringBoot Srpingsecurity jpa"></a>SpringBoot Srpingsecurity jpa</h1><h1 id="Mybitis"><a href="#Mybitis" class="headerlink" title="Mybitis"></a>Mybitis</h1><h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h1 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h1><h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><p>react vue flexible</p>
-<h1 id="运维-nginx"><a href="#运维-nginx" class="headerlink" title="运维 nginx"></a>运维 nginx</h1><p>#</p>
+<h1 id="运维-nginx"><a href="#运维-nginx" class="headerlink" title="运维 nginx"></a>运维 nginx</h1><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>实现方式：1. 数据库乐观锁；2. 基于Redis的分布式锁；3. 基于ZooKeeper的分布式锁</p>
+<p>确保分布式锁可用</p>
+<ol>
+<li><p><strong>互斥性。</strong>在任意时刻，只有一个客户端能持有锁。</p>
+</li>
+<li><p><strong>不会发生死锁。</strong>即使有一个客户端在持有锁的期间崩溃而没有主动解锁，也能保证后续其他客户端能加锁。</p>
+</li>
+<li><p><strong>具有容错性。</strong>只要大部分的Redis节点正常运行，客户端就可以加锁和解锁。</p>
+</li>
+<li><p><strong>解铃还须系铃人。</strong>加锁和解锁必须是同一个客户端，客户端自己不能把别人加的锁给解了。</p>
+</li>
+</ol>
       
     </div>
 
@@ -527,7 +538,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -572,7 +583,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">categories</span>
                   
                 </div>
@@ -665,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java基础"><span class="nav-number">1.</span> <span class="nav-text">java基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">2.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring"><span class="nav-number">3.</span> <span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-Srpingsecurity-jpa"><span class="nav-number">4.</span> <span class="nav-text">SpringBoot Srpingsecurity jpa</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybitis"><span class="nav-number">5.</span> <span class="nav-text">Mybitis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#redis"><span class="nav-number">6.</span> <span class="nav-text">redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#消息队列"><span class="nav-number">7.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">8.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Http"><span class="nav-number">9.</span> <span class="nav-text">Http</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端"><span class="nav-number">10.</span> <span class="nav-text">前端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运维-nginx"><span class="nav-number">11.</span> <span class="nav-text">运维 nginx</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java基础"><span class="nav-number">1.</span> <span class="nav-text">java基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">2.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring"><span class="nav-number">3.</span> <span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-Srpingsecurity-jpa"><span class="nav-number">4.</span> <span class="nav-text">SpringBoot Srpingsecurity jpa</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybitis"><span class="nav-number">5.</span> <span class="nav-text">Mybitis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#redis"><span class="nav-number">6.</span> <span class="nav-text">redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#消息队列"><span class="nav-number">7.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">8.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Http"><span class="nav-number">9.</span> <span class="nav-text">Http</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端"><span class="nav-number">10.</span> <span class="nav-text">前端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运维-nginx"><span class="nav-number">11.</span> <span class="nav-text">运维 nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式锁"><span class="nav-number">11.0.1.</span> <span class="nav-text">分布式锁</span></a></li></ol></li></ol></div>
             
 
           </div>

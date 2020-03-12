@@ -4,6 +4,284 @@
   
     
     <entry>
+      <title></title>
+      <url>http://zhoufangy.github.io/2020/03/12/HashMap/</url>
+      <content type="html"><![CDATA[<ul>
+<li><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: HashMap</span><br><span class="line">date: 2020-03-11 14:55:27</span><br><span class="line">categories: [java]</span><br><span class="line">tags: [java]</span><br><span class="line">author: Yuanzi</span><br><span class="line">visitors:</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="HashMap原理"><a href="#HashMap原理" class="headerlink" title="HashMap原理"></a>HashMap原理</h3>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>http://zhoufangy.github.io/2020/03/12/Kafka/</url>
+      <content type="html"><![CDATA[<p>KA</p>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>http://zhoufangy.github.io/2020/03/12/React&amp;Redux/</url>
+      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 深入浅出React和Redux(实战)-程墨</span><br><span class="line">date: 2020-03-01 14:55:27</span><br><span class="line">categories: [React]</span><br><span class="line">tags: [Reading notes]</span><br><span class="line">author: Yuanzi</span><br><span class="line">visitors:</span><br></pre></td></tr></table></figure>
+<h3 id="React-相关概念"><a href="#React-相关概念" class="headerlink" title="React 相关概念"></a>React 相关概念</h3><p>UI=render(state)</p>
+<p>React理念：</p>
+<p>1.响应式编程(Reactive Programming)</p>
+<p>2.基于组件开发应用</p>
+<p>Redux：</p>
+<p>Component：React首要思想是通过组件(Component)来开发应用</p>
+<p>JSX：JavaScript的语法扩展，在JavaScript中编写像Html一样的代码。</p>
+<p>Webpack：进行模块打包</p>
+<p>Babel：转译JavaScript代码</p>
+<p>ES6语法糖，由Webpack和Babel转译成所有浏览器都支持的ES5语法</p>
+<p>Virtual DOM ：每次渲染都只重新渲染最少的DOM元素，比对上次生成的Virtual DOM树，进行差异化修改。</p>
+<p>​    Virtual DOM对DOM树的抽象，DOM树：对HTML的抽象。</p>
+<h3 id="React工作方式的优点"><a href="#React工作方式的优点" class="headerlink" title="React工作方式的优点"></a>React工作方式的优点</h3><p>JQuery:直观易懂，但代码往往互相纠缠，难以维护，特别是项目逐渐变得庞大时。</p>
+<p>React：利用函数式编程思维来解决用户界面渲染的问题，最大的优势是开发者的效率会大大提高，开发出来的代码可维护性和可阅读性也大大增强。</p>
+<p>事件</p>
+<p>事件    —&gt;    render —&gt;    Virtual DOM —&gt; DOM修改</p>
+<p>事件</p>
+<h3 id="设计高质量的React组件"><a href="#设计高质量的React组件" class="headerlink" title="设计高质量的React组件"></a>设计高质量的React组件</h3><p>合理的分而治之，尽量保持一个组件只做一件事。</p>
+<p>划分组件边界的原则:高内聚(High Cohesion)，低耦合(Low Couping)</p>
+<h4 id="React组件的数据种类"><a href="#React组件的数据种类" class="headerlink" title="React组件的数据种类"></a>React组件的数据种类</h4><p>​    prop：组件的对外接口</p>
+<p>​        propTypes：参数检查，开发时辅助检查，发布时可以使用 babel-react-optimize自动去除。</p>
+<p>​        需要引入prop-type插件</p>
+<p>​    state：组件的内部状态，赋值需要使用this.setState</p>
+<p>​    prop和state的区别</p>
+<p>​        prop用于定义外部接口，state用于记录内部状态。</p>
+<p>​        prop的赋值在外部世界使用组件时，state的赋值在组件内部。</p>
+<p>​        组件不应该改变prop的值，而state存在的目的就是让组件来改变的。</p>
+<h4 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h4><h5 id="装载过程-Mount-，组件第一次在DOM树中渲染的过程。"><a href="#装载过程-Mount-，组件第一次在DOM树中渲染的过程。" class="headerlink" title="装载过程(Mount)，组件第一次在DOM树中渲染的过程。"></a>装载过程(Mount)，组件第一次在DOM树中渲染的过程。</h5><p>​    Constructor</p>
+<p>​        初始化state</p>
+<p>​        绑定成员函数的this环境</p>
+<p>​    getInitialState：返回值用来初始化组件的this.state,但是只有用React.createClass(废弃)方法创造的组件类才会生效。</p>
+<p>​    getDefaultProps：返回值可以作为props的初始值，但是只有用React.createClass方法创造的组件类才会生效。</p>
+<p>​    componentWillMount：在render之前调用，可以在服务端和浏览器端被调用</p>
+<p>​    render：返回JSX描述的结构，最终由React来操作渲染过程。</p>
+<p>​    componentDidMount：在render之后调用，只能在浏览器端被调用。可以执行其他UI库代码，比如JQuery</p>
+<h5 id="更新过程-Update-，组件被重新渲染的过程。"><a href="#更新过程-Update-，组件被重新渲染的过程。" class="headerlink" title="更新过程(Update)，组件被重新渲染的过程。"></a>更新过程(Update)，组件被重新渲染的过程。</h5><p>​    componentWillReceiveProps：只要是父组件的render函数被调用，在render函数里面被渲染的子组件就会经历更新过程，不管父组件传给子组件的props有没有改变，都会触发componentWillReceiveProps函数。</p>
+<p>​    shouldComponentUpdate：决定了组件什么时候不需要渲染。返回一个布尔值，告诉React库这个组件在这次更新过程中是否要继续</p>
+<p>​    componentWillUpdate</p>
+<p>​    render</p>
+<p>​    componentDidUpdate：无论更新过程发生在服务器端还是浏览器端，该函数都会被调用。</p>
+<h5 id="卸载过程-Unmount-，组件从DOM中删除的过程。"><a href="#卸载过程-Unmount-，组件从DOM中删除的过程。" class="headerlink" title="卸载过程(Unmount)，组件从DOM中删除的过程。"></a>卸载过程(Unmount)，组件从DOM中删除的过程。</h5><p>​    componentWillUnmount：处理清理工作，如在componentDidMount中用非React方法创造的DOM元素，需要在componentWillUnmount中清理掉，以避免可能造成的内存泄露。</p>
+<p>问题</p>
+<p>1.React的PropTypes的string类型没有定义</p>
+<p>原因：React从V15.5版本就不支持PorpTypes属性了，改到了prop-types里了。</p>
+<p>解决办法：</p>
+<pre><code>1）下载prop-types包
+npm install --save-dev prop-types
+2）引入代码import PropTypes from &apos;prop-types&apos;;
+</code></pre><h3 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h3><p>Redux是Flux框架的巨大改进，强调单一数据源、保持状态只读和数据改变只能通过纯函数完成的基本原则</p>
+<p>store</p>
+<p>Context</p>
+<p>React-redux</p>
+<p>connect：连接容器组件和傻瓜组件</p>
+<p>Provider：提供包含store的context</p>
+<p>​    subscribe</p>
+<p>​    dispatch   组成 store</p>
+<p>​    getState</p>
+<h3 id="代码文件的组织方式"><a href="#代码文件的组织方式" class="headerlink" title="代码文件的组织方式"></a>代码文件的组织方式</h3><h5 id="按角色组织"><a href="#按角色组织" class="headerlink" title="按角色组织"></a>按角色组织</h5><p>reducer ：所有redux的reducer</p>
+<p>actions：所有action构造函数</p>
+<p>components:所有傻瓜组件</p>
+<p>containers: 所有容器组件</p>
+<h5 id="按功能组织-Organzied-by-Feature-开发redux应用首选"><a href="#按功能组织-Organzied-by-Feature-开发redux应用首选" class="headerlink" title="按功能组织 (Organzied by Feature) (开发redux应用首选)"></a>按功能组织 (Organzied by Feature) (开发redux应用首选)</h5><p>actionTypes.js定义action类型</p>
+<p>actions.js定义action构造函数，决定这个功能模块可以接受的动作</p>
+<p>views目录，包含这个功能模块中所有的React组件，包括傻瓜组件和容器组件</p>
+<p>index.js这个文件把所有的角色导入然后统一导出</p>
+<h3 id="Store状态树设计"><a href="#Store状态树设计" class="headerlink" title="Store状态树设计"></a>Store状态树设计</h3><p>原则：</p>
+<p>一个模块控制一个状态节点</p>
+<p>避免冗余数据</p>
+<p>树形结构扁平</p>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>http://zhoufangy.github.io/2020/03/12/BA/</url>
+      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: BA</span><br><span class="line">author: Yuanzi</span><br><span class="line">date: 2020-02-20 17:50:52</span><br></pre></td></tr></table></figure>
+<p>Good afternoon! </p>
+<p>It’s really my honor to have this opportunity for this interview. </p>
+<p>First let me introduce myself. I’m Fangyuan Zhou, I currently live in Shanghai. I was born in 1992. I like reading at my free time. and I like challenge myself like skidiving. But I’ll never do it again. And my hometown is Changde, the city of Hunan province. And I graduated from Hunan normal University Shuda college in 2014. My major is Computer Science and Technology, I had five years full-time work experience in two Shenzhen companies. then I went to Ireland for learning Engish, During this period of time I had Three months part-time work experience in a Hangzhou company. and travel alone 11 countries.</p>
+<p>I worked for aisidi company as a programmer from 2014 to 2016 for Yihaoji B2B website.then</p>
+<p>I worked for Hundsun Technologies Inc. as a programmer from 2016 to 2018. I had three projets. First one is Guohai Securities Office Management Platform. It’s an OA project . Secound one is Cockpit, Cockpit is an analysis system based on Big Data.<br>Last one is GF Securities logging streaming system. It’s an analysis platform for logging streaming. During this period of time I spent free time to leaning and got Project Management Professional certificate.</p>
+<p>I worked for Hangzhou YIRU TECHNOLOGIES. as a part time programmer from 2018 to 2019. My major project is Alora Valley. It’s an e-business system based on WeChat. I was responsible for design and development of some functional modules.</p>
+<p>I’m not a traditional programmer, most of time I need do some extra work ,for example I created Product Requirements Document for the GF Securities logging streaming system. and I created flow chart for Guohai projects and GF project  like  UML E-R diagrams. to help people understand well.</p>
+<p>I had been used some tools for manage like 禅道 、Confluence，and some for design like 墨刀、ProcessOn</p>
+<p>I’m a quick learner and a good team player. I’m good at communicating with players. </p>
+<p>That’s all, thanks 。</p>
+<p>项目管理工具</p>
+<p>Jira Confluence 禅道 flow chart</p>
+<p>trello </p>
+<p>visio ProcessOn</p>
+<p>FineReport etl ssii ssiar</p>
+<p> sql</p>
+<p>disborad cratcle</p>
+<p>Shell </p>
+<p>Business requirements document x</p>
+<p>function design document </p>
+<p>sRS document </p>
+<p>Product Requirements Document  墨刀</p>
+<p>user story maps</p>
+<p>UML diagrams E-R图</p>
+<p>BABok</p>
+<p>llb website</p>
+<p>jony BI ATL sql</p>
+<p>tsql</p>
+<p>Sql </p>
+<p>mysql</p>
+<p>It’s right to become a BA?</p>
+<p>1.natural curiosity  Water Color Pen</p>
+<p>2.dissatisfied until you understand.  want dig deeper </p>
+<p>3.I always helping people to find a solution. My husband ‘s  Muse </p>
+<p>4.fact-based material</p>
+<p>5.be able to write</p>
+<p>6.can take a lot of different varying information and some house narrow down to me to make sense and then explain that to somebody else</p>
+<p>7.don’t have to be an extrovert , you just have to be sociable and be willing to talk to strangers </p>
+<p>8.confortable for the change</p>
+<p>9.ambiguity</p>
+<p>SDLC</p>
+<p>planning phase - requirements  you undersell the clients try to build and purpose of it,</p>
+<p>You having to find the stakeholder</p>
+<p>Planning and Requirement Analysis</p>
+<p>Defining Requirements</p>
+<p>Designing the Product Architecture</p>
+<p>Building or Developing the Product</p>
+<p>Testing the Product</p>
+<p>Deployment in the Market and Maintenance</p>
+<p>SDLC model</p>
+<ul>
+<li>Waterfall Model</li>
+<li>Iterative Model 迭代模型</li>
+<li>Agile Model 敏捷</li>
+<li>Spiral Model</li>
+<li>V-Model</li>
+<li>Big Bang Model</li>
+</ul>
+<p>FCA</p>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[中台]]></title>
+      <url>http://zhoufangy.github.io/2020/03/04/%E4%B8%AD%E5%8F%B0/</url>
+      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install antd --save 下载全部包</span><br><span class="line">yarn add antd 锁版本</span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+      
+        <categories>
+            
+            <category> admin </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[工具]]></title>
+      <url>http://zhoufangy.github.io/2020/03/04/tools/</url>
+      <content type="html"><![CDATA[<p>command+shift+t 打开上次网页</p>
+<p>command+T 、D 新开tab</p>
+<p>command+w 关闭tab</p>
+<p>command+X 删除当前行</p>]]></content>
+      
+        <categories>
+            
+            <category> tools </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[工具收藏]]></title>
+      <url>http://zhoufangy.github.io/2020/03/01/%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h3 id="运维"><a href="#运维" class="headerlink" title="运维"></a>运维</h3><p>微软远程开发插件</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack" target="_blank" rel="noopener">https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack</a></p>
+<p>proxifier</p>
+<p>command+shift+t 打开上次网页</p>
+<p>command+T 、D 新开tab</p>
+<p>command+w 关闭tab</p>
+<p>command+X 删除当前行</p>]]></content>
+      
+        <categories>
+            
+            <category> tools </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Redis]]></title>
+      <url>http://zhoufangy.github.io/2020/02/26/Redis/</url>
+      <content type="html"><![CDATA[<h3 id="Redis相关问题"><a href="#Redis相关问题" class="headerlink" title="Redis相关问题"></a>Redis相关问题</h3><h4 id="缓存与数据一致性问题"><a href="#缓存与数据一致性问题" class="headerlink" title="缓存与数据一致性问题"></a>缓存与数据一致性问题</h4><p>对于既有数据库操作又有缓存操作的接口，一般分为两种执行顺序。</p>
+<ol>
+<li>先操作数据库，再操作缓存。这种情况下如果数据库操作成功，缓存操作失败就会导致缓存和数据库不一致。</li>
+<li>第二种情况就是先操作缓存再操作数据库，这种情况下如果缓存操作成功，数据库操作失败也会导致数据库和缓存不一致。</li>
+</ol>
+<p>大部分情况下，我们的缓存理论上都是需要可以从数据库恢复出来的，所以基本上采取第一种顺序都是不会有问题的。针对那些必须保证数据库和缓存一致的情况，通常是不建议使用缓存的，如果必须使用的话，可以参考<a href="https://www.jianshu.com/p/a532962cb9e9" target="_blank" rel="noopener">这篇文章</a>来解决这个缓解缓存与数据库的一致性问题。</p>
+<h4 id="缓存击穿问题"><a href="#缓存击穿问题" class="headerlink" title="缓存击穿问题"></a>缓存击穿问题</h4><p>缓存击穿表示恶意用户频繁的模拟请求缓存中不存在的数据，以致这些请求短时间内直接落在了数据库上，导致数据库性能急剧下降，最终影响服务整体的性能。这个在实际项目很容易遇到，如抢购活动、秒杀活动的接口 API 被大量的恶意用户刷，导致短时间内数据库宕机。</p>
+<p>解决方案：</p>
+<ol>
+<li>使用互斥锁排队。当从缓存中获取数据失败时，给当前接口加上锁，从数据库中加载完数据并写入后再释放锁。若其它线程获取锁失败，则等待一段时间后重试。</li>
+<li>使用布隆过滤器。将所有可能存在的数据缓存放到布隆过滤器中，当黑客访问不存在的缓存时迅速返回避免缓存及 DB 挂掉。</li>
+</ol>
+<h4 id="缓存雪崩问题"><a href="#缓存雪崩问题" class="headerlink" title="缓存雪崩问题"></a>缓存雪崩问题</h4><p>问题：短时间内有大量缓存失效，如果这期间有大量的请求发生同样也有可能导致数据库发生宕机。在 Redis 机群的数据分布算法上如果使用的是传统的 hash 取模算法，在增加或者移除 Redis 节点的时候就会出现大量的缓存临时失效的情形。</p>
+<p>解决方案：</p>
+<ol>
+<li>像解决缓存穿透一样加锁排队。</li>
+<li>建立备份缓存，缓存 A 和缓存 B，A 设置超时时间，B 不设值超时时间，先从 A 读缓存，A 没有读 B，并且更新 A 缓存和 B 缓存。</li>
+<li>计算数据缓存节点的时候采用一致性 hash 算法，这样在节点数量发生改变时不会存在大量的缓存数据需要迁移的情况发生。</li>
+</ol>
+<h4 id="缓存并发问题"><a href="#缓存并发问题" class="headerlink" title="缓存并发问题"></a>缓存并发问题</h4><p>问题：多个 Redis 客户端同时 set 值引起的并发问题。</p>
+<p>解决方案：把 set 操作放在队列中使其串行化，必须得一个一个执行。</p>
+<h3 id="SpringBoot-整合Redis"><a href="#SpringBoot-整合Redis" class="headerlink" title="SpringBoot 整合Redis"></a>SpringBoot 整合Redis</h3><p>1.创建一个SpringBoot项目</p>
+<p>2.pom添加Redis依赖</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>3.application.properties配置Redis参数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"># Redis数据库索引（默认为0）</span><br><span class="line">spring.redis.database=<span class="number">0</span> </span><br><span class="line"># Redis服务器地址</span><br><span class="line">spring.redis.host=localhost</span><br><span class="line"># Redis服务器连接端口</span><br><span class="line">spring.redis.port=<span class="number">6379</span> </span><br><span class="line"># Redis服务器连接密码（默认为空）</span><br><span class="line">spring.redis.password=</span><br><span class="line">#连接池最大连接数（使用负值表示没有限制）</span><br><span class="line">spring.redis.pool.max-active=<span class="number">8</span> </span><br><span class="line"># 连接池最大阻塞等待时间（使用负值表示没有限制）</span><br><span class="line">spring.redis.pool.max-wait=-<span class="number">1</span> </span><br><span class="line"># 连接池中的最大空闲连接</span><br><span class="line">spring.redis.pool.max-idle=<span class="number">8</span> </span><br><span class="line"># 连接池中的最小空闲连接</span><br><span class="line">spring.redis.pool.min-idle=<span class="number">0</span> </span><br><span class="line"># 连接超时时间（毫秒）</span><br><span class="line">spring.redis.timeout=<span class="number">5000</span></span><br></pre></td></tr></table></figure>
+<p>4.config文件夹下创建RedisConfig</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonAutoDetect;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.PropertyAccessor;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.EnableAutoConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.StringRedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by ZhouFangyuan on 2020-02-24.</span></span><br><span class="line"><span class="comment"> * Time: 20:02</span></span><br><span class="line"><span class="comment"> * Information:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span>(exclude = &#123;DataSourceAutoConfiguration.class&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(RedisConfig.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConditionalOnMissingBean</span>(name = <span class="string">"redisTemplate"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String, Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory redisConnectionFactory)</span> </span>&#123;</span><br><span class="line">        Jackson2JsonRedisSerializer&lt;Object&gt; jackson2JsonRedisSerializer = <span class="keyword">new</span> Jackson2JsonRedisSerializer&lt;Object&gt;(Object.class);</span><br><span class="line">        ObjectMapper om = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class="line">        jackson2JsonRedisSerializer.setObjectMapper(om);</span><br><span class="line"></span><br><span class="line">        RedisTemplate&lt;String, Object&gt; template = <span class="keyword">new</span> RedisTemplate&lt;String, Object&gt;();</span><br><span class="line">        template.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">        <span class="comment">//key采用jackson的序列化方式</span></span><br><span class="line">        template.setKeySerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        template.setValueSerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        template.setHashKeySerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        template.setHashValueSerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        <span class="keyword">return</span> template;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConditionalOnMissingBean</span>(StringRedisTemplate.class)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> StringRedisTemplate <span class="title">stringRedisTemplate</span><span class="params">(RedisConnectionFactory redisConnectionFactory)</span> </span>&#123;</span><br><span class="line">        StringRedisTemplate template = <span class="keyword">new</span> StringRedisTemplate();</span><br><span class="line">        template.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">        <span class="keyword">return</span> template;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>SpringBoot 的 spring-boot-starter-data-redis 为 Redis 的相关操作提供了一个高度封装的 <code>RedisTemplate</code> 类，而且对每种类型的数据结构都进行了归类，将同一类型操作封装为 operation 接口。RedisTemplate 对五种数据结构分别定义了操作，如下所示：</p>
+<ul>
+<li>操作字符串：<code>redisTemplate.opsForValue()</code></li>
+<li>操作 <code>Hash：redisTemplate.opsForHash()</code></li>
+<li>操作 <code>List：redisTemplate.opsForList()</code></li>
+<li>操作 <code>Set：redisTemplate.opsForSet()</code></li>
+<li>操作 <code>ZSet：redisTemplate.opsForZSet()</code></li>
+</ul>
+<p>但是对于 string 类型的数据，SpringBoot 还专门提供了 <code>StringRedisTemplate</code> 类，而且官方也建议使用该类来操作 String 类型的数据。那么它和 <code>RedisTemplate</code> 又有啥区别呢？</p>
+<ol>
+<li><code>RedisTemplate</code> 是一个泛型类，而 <code>StringRedisTemplate</code> 不是，后者只能对键和值都为 <code>String</code> 类型的数据进行操作，而前者则可以操作任何类型。</li>
+<li>两者的数据是不共通的，<code>StringRedisTemplate</code> 只能管理 <code>StringRedisTemplate</code> 里面的数据，<code>RedisTemplate</code> 只能管理 <code>RedisTemplate</code> 中 的数据。</li>
+</ol>
+<p>参考资料：<a href="https://www.ibm.com/developerworks/cn/java/know-redis-and-use-it-in-springboot-projects/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/java/know-redis-and-use-it-in-springboot-projects/index.html</a></p>
+<h3 id="Redis-分布式锁实现"><a href="#Redis-分布式锁实现" class="headerlink" title="Redis 分布式锁实现"></a>Redis 分布式锁实现</h3><p>加锁</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisTool</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOCK_SUCCESS = <span class="string">"OK"</span>;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String SET_IF_NOT_EXIST = <span class="string">"NX"</span>;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String SET_WITH_EXPIRE_TIME = <span class="string">"PX"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 尝试获取分布式锁</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> jedis Redis客户端</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> lockKey 锁</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> requestId 请求标识</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> expireTime 超期时间</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> 是否获取成功</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">tryGetDistributedLock</span><span class="params">(Jedis jedis, String lockKey, String requestId, <span class="keyword">int</span> expireTime)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">      String result = jedis.set(lockKey, requestId, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (LOCK_SUCCESS.equals(result)) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解锁</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisTool</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Long RELEASE_SUCCESS = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 释放分布式锁</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> jedis Redis客户端</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> lockKey 锁</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> requestId 请求标识</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> 是否释放成功</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">releaseDistributedLock</span><span class="params">(Jedis jedis, String lockKey, String requestId)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">      String script = <span class="string">"if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end"</span>;</span><br><span class="line">      Object result = jedis.eval(script, Collections.singletonList(lockKey), Collections.singletonList(requestId));</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (RELEASE_SUCCESS.equals(result)) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="https://xiaozhuanlan.com/topic/4672859130" target="_blank" rel="noopener">https://xiaozhuanlan.com/topic/4672859130</a></p>
+<p><a href="https://redis.io/topics/distlock" target="_blank" rel="noopener">https://redis.io/topics/distlock</a></p>]]></content>
+      
+        <categories>
+            
+            <category> Redis </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[maven]]></title>
       <url>http://zhoufangy.github.io/2020/02/24/maven-1/</url>
       <content type="html"><![CDATA[<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><pre><code>clean install -X
@@ -130,7 +408,18 @@ new创建对象实例，对象实例在堆内存，对象引用指向对象实�
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>git命令组</p>
 <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p>AOP 动态代理<br>JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的实例,  生成目标类的代理对象<br>CGLIB动态代理：如果代理类没有实现 InvocationHandler 接口（或者说是基于父子类的），那么Spring AOP会选择使用CGLIB来动态代理目标类。CGLIB（Code Generation Library），是一个代码生成的类库，可以在运行时动态的生成指定类的一个子类对象，并覆盖其中特定方法并添加增强代码，从而实现AOP。CGLIB是通过继承的方式做的动态代理，因此如果某个类被标记为final，那么它是无法使用CGLIB做动态代理的</p>
 <h1 id="SpringBoot-Srpingsecurity-jpa"><a href="#SpringBoot-Srpingsecurity-jpa" class="headerlink" title="SpringBoot Srpingsecurity jpa"></a>SpringBoot Srpingsecurity jpa</h1><h1 id="Mybitis"><a href="#Mybitis" class="headerlink" title="Mybitis"></a>Mybitis</h1><h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h1 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h1><h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><p>react vue flexible</p>
-<h1 id="运维-nginx"><a href="#运维-nginx" class="headerlink" title="运维 nginx"></a>运维 nginx</h1><p>#</p>]]></content>
+<h1 id="运维-nginx"><a href="#运维-nginx" class="headerlink" title="运维 nginx"></a>运维 nginx</h1><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>实现方式：1. 数据库乐观锁；2. 基于Redis的分布式锁；3. 基于ZooKeeper的分布式锁</p>
+<p>确保分布式锁可用</p>
+<ol>
+<li><p><strong>互斥性。</strong>在任意时刻，只有一个客户端能持有锁。</p>
+</li>
+<li><p><strong>不会发生死锁。</strong>即使有一个客户端在持有锁的期间崩溃而没有主动解锁，也能保证后续其他客户端能加锁。</p>
+</li>
+<li><p><strong>具有容错性。</strong>只要大部分的Redis节点正常运行，客户端就可以加锁和解锁。</p>
+</li>
+<li><p><strong>解铃还须系铃人。</strong>加锁和解锁必须是同一个客户端，客户端自己不能把别人加的锁给解了。</p>
+</li>
+</ol>]]></content>
       
         <categories>
             
@@ -161,6 +450,17 @@ new创建对象实例，对象实例在堆内存，对象引用指向对象实�
       <content type="html"><![CDATA[<h5 id="1-Github配置"><a href="#1-Github配置" class="headerlink" title="1.Github配置"></a>1.Github配置</h5><p>Github创建项目xxx.github.io,master为静态页面展示项目，code为hexo代码。</p>
 <h5 id="2-Travis-CI配置"><a href="#2-Travis-CI配置" class="headerlink" title="2.Travis CI配置"></a>2.Travis CI配置</h5><p> 用 Github 账号注册并登录 Travis CI，配置好 Travis CI 在 Github 的权限和 Token。</p>
 <h5 id="3-在code分支下新建配置文件-travis-yml"><a href="#3-在code分支下新建配置文件-travis-yml" class="headerlink" title="3.在code分支下新建配置文件 .travis.yml"></a>3.在code分支下新建配置文件 .travis.yml</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo: <span class="literal">false</span></span><br><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">  - 10 </span><br><span class="line">cache: npm</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - code <span class="comment"># 当hexo分支有新的commit时执行 </span></span><br><span class="line">script:</span><br><span class="line">  - hexo generate </span><br><span class="line">deploy:</span><br><span class="line">  provider: pages</span><br><span class="line">  skip-cleanup: <span class="literal">true</span></span><br><span class="line">  <span class="built_in">local</span>-dir: public</span><br><span class="line">  target-branch: master <span class="comment"># 注意这里是部署到master, 默认是到gh-pages</span></span><br><span class="line">  github-token: <span class="variable">$GH_TOKEN</span></span><br><span class="line">  keep-history: <span class="literal">true</span></span><br><span class="line">  on:</span><br><span class="line">    branch: code <span class="comment"># 博客的源码分支</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<h5 id="4-推送代码至code分支，完成部署"><a href="#4-推送代码至code分支，完成部署" class="headerlink" title="4.推送代码至code分支，完成部署"></a>4.推送代码至code分支，完成部署</h5><h5 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h5><p><a href="https://blog.csdn.net/badcow/article/details/102503102" target="_blank" rel="noopener">https://blog.csdn.net/badcow/article/details/102503102</a></p>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Travis CI 自动部署Hexo博客至Github]]></title>
+      <url>http://zhoufangy.github.io/2020/02/15/Spring/</url>
+      <content type="html"><![CDATA[<h5 id="1-Github配置"><a href="#1-Github配置" class="headerlink" title="1.Github配置"></a>1.Github配置</h5><p>Github创建项目xxx.github.io,master为静态页面展示项目，code为hexo代码。</p>
+<h5 id="2-Travis-CI配置"><a href="#2-Travis-CI配置" class="headerlink" title="2.Travis CI配置"></a>2.Travis CI配置</h5><p> 用 Github 账号注册并登录 Travis CI，配置好 Travis CI 在 Github 的权限和 Token。</p>
+<h5 id="3-在code分支下新建配置文件-travis-yml"><a href="#3-在code分支下新建配置文件-travis-yml" class="headerlink" title="3.在code分支下新建配置文件 .travis.yml"></a>3.在code分支下新建配置文件 .travis.yml</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo: <span class="literal">false</span></span><br><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">  - 10 </span><br><span class="line">cache: npm</span><br><span class="line">branches:</span><br><span class="line">    only:</span><br><span class="line">    - code <span class="comment"># 当hexo分支有新的commit时执行 </span></span><br><span class="line">script:</span><br><span class="line">  - hexo generate </span><br><span class="line">deploy:</span><br><span class="line">    provider: pages</span><br><span class="line">    skip-cleanup: <span class="literal">true</span></span><br><span class="line">    <span class="built_in">local</span>-dir: public</span><br><span class="line">    target-branch: master <span class="comment"># 注意这里是部署到master, 默认是到gh-pages</span></span><br><span class="line">    github-token: <span class="variable">$GH_TOKEN</span></span><br><span class="line">    keep-history: <span class="literal">true</span></span><br><span class="line">    on:</span><br><span class="line">    branch: code <span class="comment"># 博客的源码分支</span></span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h5 id="4-推送代码至code分支，完成部署"><a href="#4-推送代码至code分支，完成部署" class="headerlink" title="4.推送代码至code分支，完成部署"></a>4.推送代码至code分支，完成部署</h5><h5 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h5><p><a href="https://blog.csdn.net/badcow/article/details/102503102" target="_blank" rel="noopener">https://blog.csdn.net/badcow/article/details/102503102</a></p>]]></content>
       
         
