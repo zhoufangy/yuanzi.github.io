@@ -3,7 +3,47 @@ author: Yuanzi
 date: 2020-02-20 17:50:52
 tags:
 ---
+#### String,StringBuilder,StringBuffer
+
+| 区别          | 可变性 | 线程安全性 | 性能                        |
+| ------------- | ------ | ---------- | --------------------------- |
+| String        | X      | √          |                             |
+| StringBuffer  | √      | √同步锁    |                             |
+| StringBuilder | √      | X          | 比StringBuffer10%-15%的提升 |
+
+总结：
+
+```
+1.操作少量的数据，使用String
+2.单线程下操作大量数据，适用StringBuilder
+3.多线程下操作大量数据，StringBuffer
+```
+
+
+
+#### equals和==区别
+
+==对与基本类型来说是值比较，对与引用类型来说比较的是引用，而equals默认情况下是引用比较，只是很多类重写了equals方法，比如String、Integer等把它变成了值比较，所以一般情况下equals比较的是值是否相等。        
+
+#### 重写equals一定要重写hashcode方法吗？为什么？
+
+重写equals一定要重写hashcode方法，否则程序无法正常运行，hashcode()方法必须遵从Object规范。相等的对象必须具有相等的hash code。
+
+#### hashcode方法有什么作用?
+
+hashcode的存在主要用于提高查找效率，先进行hashcode比较，如果不同，就没必要进行equals比较了，这样就大大较少了，equals比较的次数，当比较大量数据时效率就显著提高了。比如在集合中的使用。
+
+
+
+### 一致性哈希 和哈希结果对10取模有什么区别吗
+如果增加或删除机器时（N变化）代价会很高，所有的数据都不得不根据id重新计算一遍哈希值，并将哈希值对新的机器数进行取模。然后进行大规模的数据迁移。为了解决这些问题引入一致性哈希，我们假设数据的id通过哈希函数转换成的哈希值范围是2^32，也就是0~(2^32)-1的数字空间中。现在我们可以将这些数字头尾相连，想象成一个闭合的环形，那么一个数据id在计算出哈希值之后认为对应到环中的一个位置上机器在环中的位置根据机器id（主机名或者主机IP，是主机唯一的就行）设计算出的哈希值对2^32取模对应到环上。那么一条数据如何确定归属哪台机器呢？我们可以在该数据对应环上的位置顺时针寻找离该位置最近的机器，将数据归属于该机器上…
+
+### 实现这样一种高效插入、查找的有序集合，你会怎么做
+
+我：我觉得对应一种数据结构吧，是什么来着……额……，就是一种数据结构，它的任意棵子树的头结点数值大于左子树的小于右子树的（没想起来是二叉搜索树，好笨），然后这样的话插入和查找的效率都是log(2,N)了
+
 ### 1.面向对象和面向过程
+
 	面向过程性能更高，但是面向对象易维护、易复用、易扩展
 
 ### 2.java语言有哪些特点
@@ -11,14 +51,14 @@ tags:
 
 ### 3.JVM、JDK、JRE
 	JVM 虚拟机
-    JDK java SDK
-    JRE java 运行时环境
-    .java文件 --jdk中javac编译-> .class文件（生成JVM可以理解的Java字节）--JVM-->机器可以执行的二进制机器码
+	JDK java SDK
+	JRE java 运行时环境
+	.java文件 --jdk中javac编译-> .class文件（生成JVM可以理解的Java字节）--JVM-->机器可以执行的二进制机器码
 
 ### 4.OracleJDK 和OpenJDK对比
 	OpenJDK是开源的参考模型，OracleJDK是它的一个实现，不是完全开源的
-    OracleJDK比OpenJDK更稳定性能更好
-    许可协议OracleJDK二进制代码获得许可OpenJDKGPL v2获得
+	OracleJDK比OpenJDK更稳定性能更好
+	许可协议OracleJDK二进制代码获得许可OpenJDKGPL v2获得
 
 ### 5.Java和C++的区别
 
@@ -39,7 +79,7 @@ tags:
     Add(String a)
     Add(String a,int b)
     Add(int a, String b)
-
+    
     重写
     父类Private方法不能被重写
     public String add（String a， String b）{}
@@ -56,11 +96,11 @@ tags:
 ### 12.String Stringbuffer Stringbuilder的区别？String为什么是不可变的？
 
     区别           可变性  线程安全性  性能 
-	String           ×       √         
-	StringBuffer     √       √同步锁    
-	StringBuilder	√       ×          比StringBuffer10%-15%提升
+    String           ×       √         
+    StringBuffer     √       √同步锁    
+    StringBuilder	√       ×          比StringBuffer10%-15%提升
     
-	1.操作少量的数据，使用String
+    1.操作少量的数据，使用String
     2.单线程下操作大量数据，适用StringBuilder
     3.多线程下操作大量数据，StringBuffer
 
@@ -109,7 +149,7 @@ tags:
     静态方法在访问本类的成员时，只允许访问静态成员（即静态成员变量和静态方法），而不允许访问实例成员变量和实例方法；实例方法则无此限制。
 
 
-    
+​    
 
 
 

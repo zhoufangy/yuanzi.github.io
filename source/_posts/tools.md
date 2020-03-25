@@ -5,11 +5,16 @@ categories: [tools]
 tags: 
 visitors:
 ---
-command+shift+t 打开上次网页
+### 运维
 
-command+T 、D 新开tab
+微软远程开发插件
 
-command+w 关闭tab
+<https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack>
 
-command+X 删除当前行
+proxifier
 
+
+
+网站
+
+<https://www.journaldev.com/>
