@@ -101,17 +101,17 @@
     }
   };
 </script>
-  <meta name="description" content="java基础 12factor CAS双清委派 工具git命令组 SpringAOP 动态代理JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的">
+  <meta name="description" content="1,自我介绍面试官你好，我叫周芳园，来自深圳，毕业于湖南师范大学树达学院计算机科学与技术专业，2014年毕业，毕业后进入深圳爱施德股份有限公司，参与其B2B和F2R电商项目的开发工作，主要负责支付模块开发，第三方支付对接，如易宝支付。                    后进入恒生电子股份有限公司深圳研发部，主要做证券公司定制化开发，期间参与国海证券，广发证券相关项目开发以及实施交付。 第一个项">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试">
 <meta property="og:url" content="http://zhoufangy.github.io/2020/02/20/面试/index.html">
 <meta property="og:site_name" content="Yuanzi">
-<meta property="og:description" content="java基础 12factor CAS双清委派 工具git命令组 SpringAOP 动态代理JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的">
+<meta property="og:description" content="1,自我介绍面试官你好，我叫周芳园，来自深圳，毕业于湖南师范大学树达学院计算机科学与技术专业，2014年毕业，毕业后进入深圳爱施德股份有限公司，参与其B2B和F2R电商项目的开发工作，主要负责支付模块开发，第三方支付对接，如易宝支付。                    后进入恒生电子股份有限公司深圳研发部，主要做证券公司定制化开发，期间参与国海证券，广发证券相关项目开发以及实施交付。 第一个项">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-12T04:53:11.147Z">
+<meta property="og:updated_time" content="2020-03-25T18:42:39.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试">
-<meta name="twitter:description" content="java基础 12factor CAS双清委派 工具git命令组 SpringAOP 动态代理JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的">
+<meta name="twitter:description" content="1,自我介绍面试官你好，我叫周芳园，来自深圳，毕业于湖南师范大学树达学院计算机科学与技术专业，2014年毕业，毕业后进入深圳爱施德股份有限公司，参与其B2B和F2R电商项目的开发工作，主要负责支付模块开发，第三方支付对接，如易宝支付。                    后进入恒生电子股份有限公司深圳研发部，主要做证券公司定制化开发，期间参与国海证券，广发证券相关项目开发以及实施交付。 第一个项">
 
 
 
@@ -357,7 +357,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-03-12 04:53:11" itemprop="dateModified" datetime="2020-03-12T04:53:11+00:00">2020-03-12</time>
+                <time title="Modified: 2020-03-25 18:42:39" itemprop="dateModified" datetime="2020-03-25T18:42:39+00:00">2020-03-25</time>
               
             
           </span>
@@ -408,24 +408,341 @@
       
 
       
-        <h1 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h1>
-<a href="/2020/02/20/12factor/" title="12factor">12factor</a>
-<p>CAS<br>双清委派</p>
-<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>git命令组</p>
-<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p>AOP 动态代理<br>JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的实例,  生成目标类的代理对象<br>CGLIB动态代理：如果代理类没有实现 InvocationHandler 接口（或者说是基于父子类的），那么Spring AOP会选择使用CGLIB来动态代理目标类。CGLIB（Code Generation Library），是一个代码生成的类库，可以在运行时动态的生成指定类的一个子类对象，并覆盖其中特定方法并添加增强代码，从而实现AOP。CGLIB是通过继承的方式做的动态代理，因此如果某个类被标记为final，那么它是无法使用CGLIB做动态代理的</p>
-<h1 id="SpringBoot-Srpingsecurity-jpa"><a href="#SpringBoot-Srpingsecurity-jpa" class="headerlink" title="SpringBoot Srpingsecurity jpa"></a>SpringBoot Srpingsecurity jpa</h1><h1 id="Mybitis"><a href="#Mybitis" class="headerlink" title="Mybitis"></a>Mybitis</h1><h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h1 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h1><h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><p>react vue flexible</p>
-<h1 id="运维-nginx"><a href="#运维-nginx" class="headerlink" title="运维 nginx"></a>运维 nginx</h1><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>实现方式：1. 数据库乐观锁；2. 基于Redis的分布式锁；3. 基于ZooKeeper的分布式锁</p>
+        <h1 id="1-自我介绍"><a href="#1-自我介绍" class="headerlink" title="1,自我介绍"></a>1,自我介绍</h1><p>面试官你好，我叫周芳园，来自深圳，毕业于湖南师范大学树达学院计算机科学与技术专业，2014年毕业，毕业后进入深圳爱施德股份有限公司，参与其B2B和F2R电商项目的开发工作，主要负责支付模块开发，第三方支付对接，如易宝支付。                   </p>
+<p>后进入恒生电子股份有限公司深圳研发部，<br>主要做证券公司定制化开发，期间参与国海证券，广发证券相关项目开发以及实施交付。</p>
+<p>第一个项目是国海证券移动综合管理平台<br>这个是一个移动OA项目，为员工提供安全开放的数据服务，挂载在微信公众号、企业微信、钉钉等多平台<br>我负责核心服务的开发，微信钉钉平台同步与兼容，中控设计与开发，分布式服务器搭建以及代码部署和运维管理。技术选型为：OpenAPI+ oauth2网管授权+Spring + Redis+couchbase、mysql、tomcat+light。中台整合采用AntDesign+Springboot+mysql</p>
+<p>难点：内网隔离，外网访问问题。 一键脚本部署，</p>
+<p>开发问题，搭建gogs 作为私有git代码管理器。使用nexus搭建自有maven仓库。</p>
+<p>业务方面：</p>
+<p>vpn方案改造。原来的方案VPN+鉴权，用户需要登录两次，改造后仅需登录一次，即可完成登录。</p>
+<p>https 数据加密 手势登录 强制下线</p>
+<p>— shadowrocket 代理内网。</p>
+<p>第二个项目是国海证券领导驾驶舱<br>领导驾驶舱是基于FineReport生成报表后展示给管理层的<strong>dashboard</strong> 提供财务报表的数据订单制分析、以及财务状况支持。我负责将管理层需求进行FineReport报表开发，提供restful接口进行中台整合。技术选型为：FineReport+Springboot+mysql。</p>
+<p>难点：</p>
+<p>第三个项目是广发证券流式日志分析系统<br>流式日志分析系统是ELK大数据可视化分析平台，对各个子系统进行日志数据采集、处理、展示，为内部运维人员提供数据可视化分析。我负责项目招标文件的准备、业务分析、项目调度、业务模块开发等工作。<br>Angluar JS，RESTful Web Services 开发，SQL，PL / SQL 脚本，Elasticsearch， Filebeat，Logstash，Jstorm 脚本，kafka sliptstream elasticsearch&amp;k8s 平台部署，吞吐率性能调优 分布式调度系统 和警报模块的开发和部署。<br>为更好的进行项目管理，业余时间考了pmp。</p>
+<p>难点：</p>
+<p>50 </p>
+<p>后参与杭州弈儒软件技术有限公司十里芳菲西溪湿地度假村项目。负责系列小程序开发工作。</p>
+<p>负责商品管理、房间管理预定、付款和用户管理等的设计开发、以及代码审查和部署。</p>
+<p>难点：</p>
+<p>我对线上问题处理以及性能调优都有自己的理解，对业务的研发设计流程也十分熟悉。如果能有幸加入贵公司一起共事，我想我能第一时间上手并产出结果，以上就是我的自我介绍，谢谢面试官。</p>
+<h1 id="2-java"><a href="#2-java" class="headerlink" title="2,java"></a>2,java</h1><h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><a>集合.md</a>
+<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><a>Java基础.md</a>
+<h4 id="java多态及其特性？"><a href="#java多态及其特性？" class="headerlink" title="java多态及其特性？"></a>java多态及其特性？</h4><p><strong>封装</strong>：encapsulation 隐藏信息</p>
+<p><strong>继承</strong>:inheritance 延续+扩展父类信息</p>
+<p><strong>多态</strong>:polymorphism 模糊策略 以不变应万变</p>
+<p>overLoad  overRide</p>
+<h4 id="JAVA-8"><a href="#JAVA-8" class="headerlink" title="JAVA 8"></a>JAVA 8</h4><p>？新特性</p>
+<p>1.hashmap2.JVM,3.streamApi,4.Lambda表达式，Optional等</p>
+<p>流式调用：Java8 Stream 使用的是函数式编程模式，如同它的名字一样，它可以被用来对集合进行链状流式的操作。    </p>
+<h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h4><p><strong>泛型的本质是为了参数化类型（在不创建新的类型的情况下，通过泛型指定的不同类型来控制形参具体限制的类型）</strong>。也就是说在泛型使用过程中，操作的数据类型被指定为一个参数，这种参数类型可以用在类、接口和方法中，分别被称为泛型类、泛型接口、泛型方法。泛型只在编译阶段有效</p>
+<p>泛型类：如：List、Set、Map等集合</p>
+<p>int Integer  Integer 是int包装类，一个是基本类型一个是对象。</p>
+<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>每次线程产生的结果是否有二义性来判断是否是线程安全的。</p>
+<p><strong>如何解决线程安全问题</strong>？<br>（1）使用线程同步机制：通过对象的锁机制保证同一时间只有一个线程访问变量。这时该变量是多个线程共享的，使用同步机制要求程序缜密地分析什么时候对变量进行读写，什么时候需要锁定某个对象，什么时候释放对象锁等繁杂问题，程序设计和编写难度相对较大。<br>（2）使用ThreadLocal：为每一个线程提供一个独立的变量副本，从而隔离了多个线程对数据的访问冲突。因为每一个线程都拥有自己的变量副本，从而也就没有必要对该变量进行同步了。</p>
+<p>概括起来就是：对于多线程资源共享的问题，同步机制采用了“以时间换空间”的方式，而ThreadLocal采用了“以空间换时间”的方式。前者仅提供一份变量，让不同的线程排队访问，而后者为每一个线程都提供了一份变量，因此可以同时访问而互不影响。</p>
+<h4 id="单例，多例和工厂模式"><a href="#单例，多例和工厂模式" class="headerlink" title="单例，多例和工厂模式"></a>单例，多例和工厂模式</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Car car=<span class="keyword">new</span> Car();   <span class="comment">//实例</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Car</span><span class="params">()</span></span>&#123;  &#125;   <span class="comment">//构造函数私有</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//单例模式的getInstance方法==静态工厂方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Car <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> car;  </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"冒着烟奔跑中car........."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>单例</strong>：所有请求用同一个对象来处理。通过单例模式，可以保证系统中一个类只有一个实例，getInstance()方法.</p>
+<p>优点：减少新建实例消耗，从而减少JVM了GC回收，性能方面会很有优势。</p>
+<p>缺点：线程不安全，并发可能会出问题。</p>
+<p>spring ioc容器的bean都是默认单例的，那是怎么解决线程安全问题的呢？</p>
+<p>spring单例与线程安全的很多文章中，即有状态bean和无状态bean</p>
+<p><strong>无状态bean</strong>：无状态，就是一次操作，不能保存数据。无状态bean，就是没有实例变量的对象，不能保存数据，是不变类，在线程安全的。<br><strong>有状态bean</strong>：有状态，就是有数据存储功能。有状态bean，就是有实例变量的对象，可以保存数据，是非线程安全的。</p>
+<p><strong>多例</strong>：每个请求用一个新的对象来处理。</p>
+<p><strong>单例如何变多例</strong><br>Scope声明为prototype，即</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Scope</span>(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)</span><br></pre></td></tr></table></figure>
+<p><strong>工厂模式：</strong> </p>
+<p>有简单工厂模式、</p>
+<p>抽象工厂模式：产生抽象的工厂</p>
+<p>比如Spring的BeanFactory.通过生成</p>
+<h4 id="？？-arraylist-aragest"><a href="#？？-arraylist-aragest" class="headerlink" title="？？ arraylist  aragest"></a>？？ arraylist  aragest</h4><h4 id="对象的深浅复制"><a href="#对象的深浅复制" class="headerlink" title="对象的深浅复制"></a>对象的深浅复制</h4><p>浅拷贝：浅拷贝是按位拷贝对象，它会创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝。</p>
+<ul>
+<li>如果属性是基本类型，拷贝的就是基本类型的值；如果属性是内存地址（引用类型），拷贝的就是内存地址 ，因此如果其中一个对象改变了这个地址，就会影响到另一个对象。</li>
+</ul>
+<p>深拷贝：深拷贝会拷贝所有的属性,并拷贝属性指向的动态分配的内存。</p>
+<h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><a>_posts/ JVM.md</a>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>多线程</p>
+<p>平时不怎么使用，也并不主张使用。</p>
+<p>低级接口</p>
+<p>关键字: synchronized<br>Volite  cas线程安全</p>
+<p>高级接口</p>
+<p>框架</p>
+<p>java官方框架</p>
+<p>第三方框架</p>
+<h4 id="线程池优点"><a href="#线程池优点" class="headerlink" title="线程池优点"></a>线程池优点</h4><p>保证线程不溢出，保证系统边界，保证吞吐量</p>
+<p>cpu级 n+1</p>
+<h4 id="synchronized和lock的区别"><a href="#synchronized和lock的区别" class="headerlink" title="synchronized和lock的区别"></a>synchronized和lock的区别</h4><p>参考： <a href="https://www.cnblogs.com/baizhanshi/p/6419268.html" target="_blank" rel="noopener">https://www.cnblogs.com/baizhanshi/p/6419268.html</a></p>
+<p>线程池的工作机制,Java通过Executors工具类创建出来的线程池有什么区别，为什么这样定义？</p>
+<p>4：线程池有哪些参数，具体含义是什么?<br>4：AQS 重入锁 读写锁 countdownlatch 栅栏（cyclicBarrier） 信号量（semaphore）<br>5：有四个线程A、B、C、D、E，现在需要E线程在ABCD四个线程结束之后再执行</p>
+<p>控制线程顺序执行 我知道的 </p>
+<ol>
+<li>join 让主线程等待子线程运行结束后再继续运行</li>
+<li>利用并发包里的Excutors的newSingleThreadExecutor产生一个单线程的线程池，而这个线程池的底层原理就是一个先进先出（FIFO）的        队列。代码中executor.submit依次添加了123线程，按照FIFO的特性，执行顺序也就是123的执行结果，从而保证了执行顺序。</li>
+<li>使用 CountDownLatch 控制多个线程执行顺序 cutDown()方法和await()方法  参考：<a href="https://www.cnblogs.com/flyme/p/4568063.html" target="_blank" rel="noopener">https://www.cnblogs.com/flyme/p/4568063.html</a></li>
+</ol>
+<p>2.java创建线程是怎么做的？</p>
+<p>5.多线程中线程池的作用？</p>
+<p>6.实现线程池用java那个类来实现？可以创建几种？</p>
+<p>7.线程池的原理？</p>
+<p>8.线程并发的解决方案？redis+Nginx+锁</p>
+<p>9.用过哪些锁？乐观锁，悲观锁，共享锁，自旋锁</p>
+<p>10.这些锁得具体实现？</p>
+<p>40.synchronize是那个层面底层实现的，JVM层面，与reentryLock的区别？</p>
+<p>多线程：</p>
+<p>wait,sleep分别是谁的方法，区别</p>
+<p>sleep是Thread类的方法，wait是Object类的方法。</p>
+<p>countLatch的await方法是否安全，怎么改造</p>
+<p>线程池参数，整个流程描述</p>
+<p>ThreadLocal的使用场景</p>
+<p>ThreadLocal 适用于每个线程需要自己独立的实例且该实例需要在多个方法中被使用，也即变量在线程间隔离而在方法或类间共享的场景。</p>
+<p>还有Java的锁，内置锁，显示锁，各种容器</p>
+<p>及锁优化：锁消除，锁粗化，锁偏向，轻量级锁</p>
+<h1 id="3-原理"><a href="#3-原理" class="headerlink" title="3,原理"></a>3,原理</h1><p>CAS</p>
+<p>6.简述一项技术或设计模式的原理 </p>
+<p>背后的底层原理aqs，cas</p>
+<p>ThreadLocal原理，注意事项，参数传递</p>
+<h1 id="4-数据库"><a href="#4-数据库" class="headerlink" title="4,数据库"></a>4,数据库</h1><h4 id="三范式"><a href="#三范式" class="headerlink" title="三范式"></a>三范式</h4><p>第一范式（1NF）列的原子性</p>
+<p>第二范式（2NF）属性完全依赖于主键 [ 消除部分子函数依赖 ]</p>
+<p>第三范式（3NF）属性不依赖于其它非主属性 [ 消除传递依赖 ]</p>
+<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><p>1：索引都有什么类型<br>2：聚集索引和非聚集索引，主键删掉之后还有聚集索引吗？<br>3：建了索引，什么时候会不命中索引<br>4：innodb与myisam存储引擎的区别<br>5：分库分表，主从复制的延迟<br>6：查询优化，</p>
+<p>ACID</p>
+<p>原子性（atomicity，或稱不可分割性）、一致性（consistency）、隔离性（isolation，又称独立性）、持久性（durability）</p>
+<p>redis<br>淘汰机制<br>失效策略<br>持久化rdb、aof<br>pipeline<br>主从、集群</p>
+<p>2.事务,什么是事务,为何用事务 </p>
+<p>保证数据的一致性和完整性</p>
+<p>数据库事物，隔离级别、传播行为，</p>
+<p>1.问下项目应用技术，负责模块，表设计等。</p>
+<p>MySQL</p>
+<p>26.查询优化问题是如何解决的？建索引</p>
+<p>27.读多写少的表应该怎么设计？</p>
+<p>阿里巴巴电话面试二面</p>
+<p>28.有两个整数数组A1，A2，</p>
+<p>设计函数求其两个数组的最大值和第二大的值，说出设计思路？</p>
+<p>29.字符串数组，写函数求字符串最长的公共前缀，例如一是abcdgh，二是abcdhj，那么最长公共前缀是abcd，说出你的设计思路，for循环次数以及意义</p>
+<p>31.表数据大如何诊断查询慢的原因？</p>
+<p>32.索引是什么样的数据结构？Mysql的默认索引形式</p>
+<p>sql优化方式</p>
+<p>sql 三范式</p>
+<p>mysql<br>索引结构 平衡二叉树<br>数据库优化<br>慢sql优化<br>索引（B+树）<br>开启日志导出慢sql<br>分表分库 取模 xy 切割<br>缓存 热数据<br>sql检查 ddl dtl 删除 新建 不能上 去掉</p>
+<p>数据库 隔离级别<br>h2</p>
+<p>数据库：</p>
+<p>最重要的索性及底层实现<br>1）数据库层面上：</p>
+<p>•除了主键索引，唯一索引之外，对于常用的查询字段也要加索引。查询的时候尽量使用主键索引，因为MySQL 的 InnoDB 的主键索引索引的是整行数据，而普通索引索引的是主键，会有回表操作。当然索引并不是越多越好，索引固然可以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率，需要酌情考虑。 2、优化查询语句，尽量采用确认性查询语句，减少 or，in，not in，%xxx%语法的使用。</p>
+<p>2）应用层面上：</p>
+<p>•采用缓存机制，将常用的数据进行缓存，增加访问速度；•分库分表，读写分离，将数据分开读写，提升性能</p>
+<p>9、强一致性，弱一致性，最终一致性</p>
+<p>•强一致性：对于更新后的数据，要求后续所有节点的任何操作都要获取最新值的情况；•弱一致性：对于更新后的数据，后续节点的数据操作可以是新值，也可以是旧值，通过一段时间后后续节点对数据的操作都是新值；•最终一致性：是弱一致性的特殊形式，存储系统保证在没有新的更新的条件下，最终所有的访问都是最后更新的值。</p>
+<p>10、有一个一百万行的文件，内部是购买的商品ID，如何获取到购买最多的前一百个商品。</p>
+<p>•思路：首先考察的肯定是大数据处理方案，这些数据肯定不能一次性读取到内存，那就需要拆分，将数据分隔处理。假设要分隔为 n 个文件。•分隔：如果 ID 是整型的话，可以直接采用取模（id % n）的方式；如果 ID 是字符串可以先计算 hash 值然后再取模（hash(x) % n）的方式，将相同 ID 的商品分到同一个文件中。•针对每个小文件进行 top100的排序，返回购买最多的100个商品 ID•根据 n 个文件中的100个 ID，在进行一次排序，即可得到需要的数据。</p>
+<p>MySQL事务隔离级别</p>
+<p>事务隔离级别 读未提交（read-uncommitted）不可重复读（read-committed）可重复读（repeatable-read）串行化（serializable）</p>
+<p>索性失效的场景</p>
+<p>最左原则</p>
+<p>查看执行计划</p>
+<p>及carndiation</p>
+<p>然后是锁的类型，行级表级</p>
+<p>悲观乐观锁</p>
+<p>解释数据库事物及特性</p>
+<p>隔离级别</p>
+<p>及实现，redo log .undo log</p>
+<p>bin log主从复制</p>
+<p>mvcc,Next-Key Lock</p>
+<p>分库分表</p>
+<p>MySQL 的事务特性有哪些？</p>
+<p>•首先事务是作为单个逻辑工作单元执行的一系列操作，这些操作作为一个整体一起向系统提交，要么都执行，要么都不执行。事务是一个不可分割的逻辑单元。•A（原子性）事务的各步操作是不可分的，保证一系列的操作要么都完成，要么都不完成；•C（一致性）事务完成，数据必须处于一致的状态；•I（隔离性）对数据进行修改的所有并发事务彼此之间是相互隔离，这表明事务必须是独立的，不应以任何方式依赖或影响其他事务；•D（持久性）表示事务对数据处理结束后，对数据更改必须持久化，不管是事务成功还是回滚。事务日志都能够保持事务的永久性。</p>
+<p>11、如果现在一台生产的数据库挂了怎么处理？</p>
+<p>首先这题没有 get 的面试官想问的点是什么，所以就根据自己项目本身的情况做答了。我们项目生产上的数据库是有主备的，在主数据库挂掉的情况下是会切换到备数据库，先保证业务的稳定性，然后在对崩溃现场进行保留，方便后续分析问题，找到原因。这里面试官追问了一下，我们主备的切换是自动的还是手动的，这个由于是公司运维团队负责的，自己本身不是特别清楚，但是根据对公司运维团队的了解，应该是自动的。所以就这样如实的回答了。</p>
+<p>12、数据库如何实现 rollback 的？</p>
+<p>数据库在写入数据之前是先讲对数据的改动写入 redo log 和 undo log，然后在操作数据，如果成功提交事务就会讲操作写入磁盘；如果失败就会根据redo log 和 undo log 逆向还原到事务操作之前的状态。</p>
+<p>工作这么久你遇到的最难的技术点是什么？</p>
+<p>我这边根据具体的工具经理，回答的是 kafka 的初次使用，因为当时是公司内部第一个引入 kafka，之前没有小组使用过，所以要采很多坑。并且那个时候 kafka 还没有发布1.0版本，官网和网上提供的版本很杂乱不兼容</p>
+<p>8、如果优化数据库的数据查询，另外应用层上还能如何优化？</p>
+<h1 id="5-框架"><a href="#5-框架" class="headerlink" title="5,框架"></a>5,框架</h1><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><p>bean的注入过程</p>
+<p>如果要让一个普通类交给Spring容器管理，通常有以下方法：</p>
+<p>1、使用 @Configuration与@Bean 注解</p>
+<p>2、使用@Controller @Service @Repository @Component 注解标注该类，然后启用@ComponentScan自动扫描</p>
+<p>3、使用@Import 方法</p>
+<p>面向切面(AOP),原理是什么 </p>
+<p>spring的IOC、面向切面的原理</p>
+<p>IOC:好莱坞原则，Don’t Call me，I’ll Call you. 控制权由对象翻转成BeanFactory。</p>
+<p>IOC</p>
+<p>AOP：面向</p>
+<p>15.Spring的核心是那两点？分别是怎么做的？</p>
+<p>16.注入类组件的标签？@Autowired，@resource等</p>
+<p>17.那些可以被注入?</p>
+<p>18.注入到Spring容器里，实例化的配置的注解？@Configrution @Bean</p>
+<p>19.Spring有几中配置方式？基于java，基于xml</p>
+<p>20.BeanFactory与Applicationcontext的区别？</p>
+<p>BeanFacotry是spring中比较原始的Factory。如XMLBeanFactory就是一种典型的BeanFactory。原始的BeanFactory无法支持spring的许多插件，如AOP功能、Web应用等。ApplicationContext接口,它由BeanFactory接口派生而来，因而提供BeanFactory所有的功能</p>
+<p>21.ApplicationContext有几种实现？</p>
+<p>4种ClassPathXmlApplicationContext:类路径加载</p>
+<p>FileSystemXmlApplicationContext:文件系统路径加载</p>
+<p>AnnotationConfigApplicationContext:用于基于注解的配置</p>
+<p>WebApplicationContext:专门为web应用准备的，从相对于Web根目录的路径中装载配置文件完成初始化。</p>
+<p>@Qualifier的作用?<br>@Qualifier 注释指定注入 Bean 的名称</p>
+<p>23.@requestMapping与@responseBody的替换注解？</p>
+<p>24.传参数的标签， 注解中@RequestParam、@QueryParam、@PathParam和@PathVariable都可以实现</p>
+<p>25.@Autowired与@resource的区别</p>
+<p>spring ioc 、aspect《-cglib（aop）</p>
+<p>SpringBoot 关键词 jpa</p>
+<p>springmvc 单列<br>工厂模式  enum</p>
+<p>spring:</p>
+<p>ioc,aop原理</p>
+<p>ioc初始化流程</p>
+<p>springmvc的流程</p>
+<p>springboot,spring cloud相关组件</p>
+<p>AOP 动态代理<br>JDK代理：基于接口的代理，不支持类的代理。核心InvocationHandler接口和Proxy类，InvocationHandler 通过invoke()方法反射来调用目标类中的代码，动态地将横切逻辑和业务编织在一起；接着，Proxy利用 InvocationHandler动态创建一个符合某一接口的的实例,  生成目标类的代理对象<br>CGLIB动态代理：如果代理类没有实现 InvocationHandler 接口（或者说是基于父子类的），那么Spring AOP会选择使用CGLIB来动态代理目标类。CGLIB（Code Generation Library），是一个代码生成的类库，可以在运行时动态的生成指定类的一个子类对象，并覆盖其中特定方法并添加增强代码，从而实现AOP。CGLIB是通过继承的方式做的动态代理，因此如果某个类被标记为final，那么它是无法使用CGLIB做动态代理的</p>
+<p>spring提供了5中scope，分别是singleton，prototype，request，session，global session，常用是前两种</p>
+<h2 id="springboot"><a href="#springboot" class="headerlink" title="springboot"></a>springboot</h2><p>mvvc</p>
+<p>SpringMVC</p>
+<p>Spring MVC是一个基于Java的实现了MVC设计模式的请求驱动类型的轻量级Web框架，通过把Model，View，Controller分离，将web层进行职责解耦，把复杂的web应用分成逻辑清晰的几部分，简化开发，减少出错，方便组内开发人员之间的配合。</p>
+<h3 id="springcloud"><a href="#springcloud" class="headerlink" title="springcloud"></a>springcloud</h3><p>服务自发现 Eureka</p>
+<p>负载均衡 Ribbon</p>
+<p>熔断机制 Hystrix</p>
+<h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><p><a href="https://blog.csdn.net/qq_35190492/article/details/102889333?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/qq_35190492/article/details/102889333?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
+<p>37.redis的过期时间是如何设置的？为什么这么设计？</p>
+<p>redis使用场景 会话中心 缓存 分布式锁（下单 超卖）并发转队列 消息系统<br>两种模式 本地 了，乐观锁 数据库 cas<br>分几步<br>1量级</p>
+<h5 id="集群部署"><a href="#集群部署" class="headerlink" title="集群部署"></a>集群部署</h5><p>1.官方</p>
+<p>2.开源</p>
+<p>3.阿里云服务</p>
+<h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><p>调用链路</p>
+<p>38.dubbo的版本是那个？手动脸红。</p>
+<p>java 区别<br>分布式服务 springboot<br>springcould（7层协议）12factor<br>doubo(5层协议 快) zk ip 端口 服务<br>hessian 序列化 rmi netty canteria<br>eureka zk 服务自发性</p>
+<p>springmvc 单列<br>工厂模式  enum</p>
+<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>Maven<br>模块化管理<br>nexus</p>
+<p>gitlab<br>gogs git服务</p>
+<p>doker Jenkins<br>travis CI 持续集成</p>
+<p>maven打包怎么跳过测试 </p>
+<p>跳过测试，参数<br>nexus</p>
+<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><p>*kafka  kafaka高性能<br>数据可靠性 多个分片<br>ack 01 or<br>吞吐量 15w/s<br>4个节点 3</p>
+<p>ks8</p>
+<p>elk<br>feelbeat<br>elkserch 倒排索引<br>kianan 查询</p>
+<p>4、用过Kafka 的话说下 Kafka优缺点有哪些？</p>
+<p>•Kafka 是一个高吞吐量的消息队列。基本的组件有生产者，消费者，node 节点，生产者负责生产消息，将消息发送到指定的 topic 或者 partition 当中。•每个 partition 可以有多个分区副本，并且存放在不同的 broker 节点上，保证数据的安全。partiton 的底层是根据 segment 段存放的一系列日志文件，文件里面存放的具体的消息内容，每条消息都有一个唯一的 offset 偏移量，并且是按照磁盘顺序存放的。由于磁盘是顺序读写，所以 kafka 可以有很高的吞吐量。磁盘的顺序读写比随机读写的性能高很多。•每个消费者都属于一个消费者组，可以消费指定 topic 下的数据。</p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>Lxc容器</p>
+<p>doker Jenkins 持续集成</p>
+<h3 id="zookeeper"><a href="#zookeeper" class="headerlink" title="zookeeper"></a>zookeeper</h3><p>小型数据存储中间件，核心是实现paxos算法</p>
+<p>paxos算法，达成共识的选举算法 </p>
+<h4 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h4><h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><p>SpringBoot Srpingsecurity jpa</p>
+<h2 id="mybitis"><a href="#mybitis" class="headerlink" title="mybitis"></a>mybitis</h2><p>分页查询</p>
+<h1 id="6-Linux"><a href="#6-Linux" class="headerlink" title="6.Linux"></a>6.Linux</h1><p>Linux相关</p>
+<p>33.Linux定时任务如何配置？</p>
+<p><a href="https://www.cnblogs.com/shuaiqing/p/7742382.html" target="_blank" rel="noopener">https://www.cnblogs.com/shuaiqing/p/7742382.html</a></p>
+<p>Linux<br>rz -b<br>scp<br>java - jar<br>tomacat jdk<br>top<br>ps -f<br>nohup 挂起<br>centos</p>
+<p>linux 怎么增量传输 sync java无法增量，前端增量，回滚 </p>
+<h1 id="7-运维"><a href="#7-运维" class="headerlink" title="7.运维"></a>7.运维</h1><p>34.Nginx如何配置负载和代理？</p>
+<p>35.docker命令的差异？拉取镜像，进入容器，docker exec 和Docker attach 区别？</p>
+<p><a href="https://blog.csdn.net/halcyonbaby/article/details/46884605" target="_blank" rel="noopener">https://blog.csdn.net/halcyonbaby/article/details/46884605</a></p>
+<p>shell 脚本</p>
+<p>git  命令组</p>
+<p>Merge、Rebase</p>
+<p>gitlab<br>gogs git服务</p>
+<p>doker Jenkins<br>travis CI 持续集成</p>
+<p>jecker +docker 持续集成</p>
+<p>io阻塞 队列 定长 不定长 回调接口 支付场景<br>查线程挂在哪儿 top -H 查cup最高子进程 gstack 查线程占用 pid号转成16进制的，找到方法名<br>jprofie dump 进程 查看占用量</p>
+<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><p>负载均衡</p>
+<p>加权轮询，</p>
+<p>IP哈希</p>
+<p>最少连接数</p>
+<p>一致性哈希</p>
+<p>反向代理 </p>
+<p>nginx 怎么实现粘性会话 ip_hash </p>
+<p>灰度发布</p>
+<p>阿里云 cdn ecs slb rds redis<br>aws</p>
+<h1 id="8-算法"><a href="#8-算法" class="headerlink" title="8.算法"></a>8.算法</h1><p><a href="https://blog.csdn.net/K346K346/article/details/50791102" target="_blank" rel="noopener">https://blog.csdn.net/K346K346/article/details/50791102</a></p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>常见排序算法分为：</p>
+<p><a href="https://github.com/francistao/LearningNotes/blob/master/Part3/Algorithm/Sort/%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%2010%20%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93.md" target="_blank" rel="noopener">https://github.com/francistao/LearningNotes/blob/master/Part3/Algorithm/Sort/%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%2010%20%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93.md</a></p>
+<p>非线性时间比较类排序：</p>
+<p>​    交换类排序(快速排序、冒泡排序)：两两比较，交换不满足顺序要求的偶对，直到全部满足位置。</p>
+<p>​    插入类排序(简单插入排序和希尔排序)：</p>
+<p>​    选择类排序(简单选择排序和堆排序)</p>
+<p>​    归并排序(二路归并排序和多路归并排序)</p>
+<p>线性时间非比较类排序</p>
+<p>​    计数排序、基数排序和桶排序</p>
+<p>冒泡排序：从第一个数开始，依次遍历数组中的每一个数，通过相邻比较交换，每一轮循环下来，找出剩余未排序数中最大数，并冒泡至数列顶端。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, temp;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt; n - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[j - <span class="number">1</span>] &gt; a[j]) &#123;</span><br><span class="line">                temp = a[j - <span class="number">1</span>];</span><br><span class="line">                a[j - <span class="number">1</span>] = a[j];</span><br><span class="line">                a[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>快速排序</p>
+<h1 id="9-前端"><a href="#9-前端" class="headerlink" title="9.前端"></a>9.前端</h1><p>协议<br>tcp<br>http</p>
+<p>http osi传输模型</p>
+<p>restful</p>
+<p>4.两个项目之间如何通信 10分</p>
+<p>5.在上个问题基础之上问,碰到乱码怎么解决,utf-8和gbk可以直接转换么</p>
+<p>30.前端的es6用过吗？如何写ajax请求</p>
+<p>react</p>
+<p>cors跨域</p>
+<p>vue 怎么进行环境发布<br>webpake</p>
+<p>post， put区别</p>
+<p>PUT可以指定资源路径，POST无法指定资源路径。</p>
+<p>因而，PUT是幂等的操作，即重复操作不会产生变化，10次PUT 的创建请求与1次PUT 的创建请求相同，只会创建一个资源，其实后面9次的请求只是对已创建资源的更新，且更新内容与原内容相同，所以不会产生变化。</p>
+<p>POST 的重复操作截然不同，10次POST请求将会创建10个资源</p>
+<p>web方面：</p>
+<p>servlet是否线程安全，如何改造</p>
+<p>session与cookie的区别，get和post区别，tcp3次握手，文件上传用post还是get</p>
+<p>session的存储</p>
+<p>如何防止表单重复提交</p>
+<p>15、TCP/IP 协议是如何保证数据可靠性的？</p>
+<p>首先 TCP是面向连接的传输协议。主要通过消息确认和重试机制来保证数据传输的可靠性。</p>
+<p>react vue flexible</p>
+<p># </p>
+<h1 id="10-数据结构"><a href="#10-数据结构" class="headerlink" title="10.数据结构"></a>10.数据结构</h1><p>数据结构<br>1：链表，链表倒置、节点交换<br>2：Btree B+tree 红黑树</p>
+<h4 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h4><p>最后谈谈设计模式，算是一个高频的面试题。</p>
+<p>我们至少要知道以下这些设计模式的功能、代码实现、使用场景问题。</p>
+<p>单例模式、原型模式、工厂模式、观察者模式、策略模式、代理模式等等。</p>
+<h1 id="11-分布式："><a href="#11-分布式：" class="headerlink" title="11,分布式："></a>11,分布式：</h1><p>问了CAP，跟base</p>
+<p>zookeeper满足了CAP的哪些特性，paxos</p>
+<p>缓存穿透怎么解决</p>
+<p>redis的io模型</p>
+<p>如果保证redis高可用</p>
+<p>redis是单线程还是多线程</p>
+<p>Redis 为什么这么高效，使用的场景是什么？</p>
+<p>分布式服务是否了解，zookeeper，dubbo 是否使用过？</p>
+<p>关于 zk 和 dubbo 这块用的不多，zk 主要是在使用 kafka 的时候会用到，但是不涉及原理上面的研究。dubbo 虽然项目中有用过，但是并不是很深入，就没说用过，直接说没用过</p>
+<p>回答了一下我们使用 redis 做缓存和登录 session 存在的场景，以及 redis 是单线程的。</p>
+<p>1、完全基于内存，大多数请求都是内存操作，非常快速； 2、数据结构简单，操作简单； 3、采用单线程，避免了不必要的上下文切换和竞争条件，不存在多进程或者多线程的切换，不用考虑锁带来的性能消耗； 4、使用多路 I/O复用模型，非阻塞 IO</p>
+<p>线上cpu占比过高怎么排查</p>
+<p>一致性hash</p>
+<h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>实现方式：1. 数据库乐观锁；2. 基于Redis的分布式锁；3. 基于ZooKeeper的分布式锁</p>
 <p>确保分布式锁可用</p>
 <ol>
-<li><p><strong>互斥性。</strong>在任意时刻，只有一个客户端能持有锁。</p>
-</li>
-<li><p><strong>不会发生死锁。</strong>即使有一个客户端在持有锁的期间崩溃而没有主动解锁，也能保证后续其他客户端能加锁。</p>
-</li>
-<li><p><strong>具有容错性。</strong>只要大部分的Redis节点正常运行，客户端就可以加锁和解锁。</p>
-</li>
-<li><p><strong>解铃还须系铃人。</strong>加锁和解锁必须是同一个客户端，客户端自己不能把别人加的锁给解了。</p>
-</li>
+<li><strong>互斥性。</strong>在任意时刻，只有一个客户端能持有锁。</li>
+<li><strong>不会发生死锁。</strong>即使有一个客户端在持有锁的期间崩溃而没有主动解锁，也能保证后续其他客户端能加锁。</li>
+<li><strong>具有容错性。</strong>只要大部分的Redis节点正常运行，客户端就可以加锁和解锁。</li>
+<li><strong>解铃还须系铃人。</strong>加锁和解锁必须是同一个客户端，客户端自己不能把别人加的锁给解了。</li>
 </ol>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>设计过什么亮点</p>
+<p>保证幂等 token + redis</p>
+<p>数据库层面 唯一索引</p>
+<p>缓存热数据</p>
+<p>如何避免重复支付</p>
+<p>分布式锁或者本地缓存</p>
+<p>设计模式</p>
+<p>策略模式 aop</p>
+<p>监听者模式</p>
+<p>状态模式</p>
+<h2 id="性能调优"><a href="#性能调优" class="headerlink" title="性能调优"></a>性能调优</h2><p>性能调优包含多个层次，比如：架构调优、代码调优、JVM调优、数据库调优、操作系统调优等。</p>
+<p>架构调优和代码调优是JVM调优的基础，其中架构调优是对系统影响最大的。</p>
+<p>性能调优基本上按照以下步骤进行：明确优化目标、发现性能瓶颈、性能调优、通过监控及数据统计工具获得数据、确认是否达到目标。</p>
+<p>持续集成 CI</p>
+<p>面经：</p>
+<p>阅文的面试从语言，数据库，网络协议，架构思想访问问</p>
+<p>1、jvm内存结构，堆是由GC负责，谈谈full gc和minor gc的区别（往深处不会。。）</p>
+<p>2、多线程安全策略</p>
+<p>3、hashmap和concurrenthashmap的原理</p>
+<p>4、谈谈cas</p>
+<p>5、sql语句有了解么，规定场景下使用sql查询（好像没有答上）</p>
+<p>6、谈谈acid以及隔离级别</p>
+<p>7、tcp三次握手和四次挥手的区别</p>
+<p>8、给定一个移动端可以点赞，可以查看点赞人数的场景，问怎么实现（当时有点懵逼，短路了，没有思路。。。）</p>
+<p>9、对于上个问题，请求的流转过程，</p>
+<p>10、对于上个问题，假如多个请求同时到达db，怎么减小压力，使用缓存？？？（好像是缓存+分布式锁）</p>
+<p>二面：</p>
+<p>不太像技术面。。。可能一面表现不好</p>
+<p>1、谈谈项目</p>
+<p>2、谈谈与编码的看法不啦不啦。。。。</p>
+<p>hashmap线程安全吗 （不）那怎么改进/有线程安全的hashmap吗 （ConcurrentHashMap）ConcurrentHashMap底层怎么实现的<br>MySQL索引了解吗 几种索引的区别 索引有什么好处（加速查找） 为什么索引效率高（底层用的B+树）B+树的原理说一说<br>Linux 命令了解多少<br>会用git吗<br>堆排序怎么实现的 怎么插入新元素 时间复杂度<br>Tcp三次握手四次挥手 流程</p>
+<p>作者：黄金罗盘_<br>链接：<a href="https://www.nowcoder.com/discuss/118902" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/118902</a><br>来源：牛客网</p>
+<p>一面：<br> 1.问项目，介绍一下，几个人做的，你做的哪部分<br> 2.jvm内存模型<br> 3.几种jvm垃圾回收算法介绍一下，minorGC发生在什么时候<br> 4.复制算法详细介绍一下<br> 5.对象什么时候会进入老年代<br> 6.int和Integer在jvm中怎么存的，两种变量怎么进行比较，Integer i =new Integer(1);Integer j =new Integer(1);i==j成立吗<br> 7.tcp连接三次握手，tcp释放连接四次挥手，讲讲四次挥手的过程，以及为什么连接的时候三次而挥手的时候四次<br> 8.讲讲计算机网络模型<br> 9.http1.0和http1.1主要的区别<br> 10.keep-alive字段的长链接有什么用途<br> 11.熟悉的mysql引擎，哪一个引擎具有行锁<br> 12.写sql语句，一个表有一个字段age，写sql查出age&lt;27，先根据age字段分组，求id最大的那个数据<br> 13.redis项目中怎么用的<br> 14.缓存穿透怎么处理的，你有什么解决方案（我说在项目中商品查询时，先查询redis，没有再查数据库，然后把查询结果存在redis，面试官说如果高并发情况下，多线程同时查一项数据，在线程1查数据库还没返回时，线程2，3等等发现redis缓存没有该数D据，他们也会去查数据库，缓存就失去它的作用，导致缓存穿透，怎么解决）<br> 15.什么叫线程安全，JAVA实现线程安全的方法<br> 16.在并发包中，CAS除了用在原子更新类中，还哪里用到了<br> 17.三个线程执行用时，分别为10秒，9秒，8秒，怎么控制三个线程在10秒完成<br> 18.你熟悉什么设计模式，具体讲讲应用<br>19.过滤器的责任链模式，具体怎么做得<br>20.Linux的创建文件命令，更改文件权限命令，查看进程详细信息命令，具体讲讲chmod命令</p>
+<p> 二面：<br> 1.主要是针对我的两个项目问了不少，你从中学到了什么，你项目的做的亮点，遇到的困难等等<br> 2.项目中数据库用到的最大关联是多少，MySQL中outer join和left join的区别<br> 3.学JAVA开发多久了<br> 4.平时都干啥<br> 5.你对未来的职业规划</p>
       
     </div>
 
@@ -462,8 +779,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/20/Java基础/" rel="prev" title="Java基础">
-                Java基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/20/JVM/" rel="prev" title="JVM">
+                JVM <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -538,7 +855,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -593,7 +910,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">categories</span>
                   
                 </div>
@@ -636,7 +955,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -688,7 +1009,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java基础"><span class="nav-number">1.</span> <span class="nav-text">java基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">2.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring"><span class="nav-number">3.</span> <span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-Srpingsecurity-jpa"><span class="nav-number">4.</span> <span class="nav-text">SpringBoot Srpingsecurity jpa</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybitis"><span class="nav-number">5.</span> <span class="nav-text">Mybitis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#redis"><span class="nav-number">6.</span> <span class="nav-text">redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#消息队列"><span class="nav-number">7.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">8.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Http"><span class="nav-number">9.</span> <span class="nav-text">Http</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端"><span class="nav-number">10.</span> <span class="nav-text">前端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运维-nginx"><span class="nav-number">11.</span> <span class="nav-text">运维 nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式锁"><span class="nav-number">11.0.1.</span> <span class="nav-text">分布式锁</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-自我介绍"><span class="nav-number">1.</span> <span class="nav-text">1,自我介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-java"><span class="nav-number">2.</span> <span class="nav-text">2,java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集合"><span class="nav-number">2.0.1.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础"><span class="nav-number">2.0.2.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#java多态及其特性？"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">java多态及其特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JAVA-8"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">JAVA 8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型"><span class="nav-number">2.0.2.3.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程安全"><span class="nav-number">2.0.2.4.</span> <span class="nav-text">线程安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单例，多例和工厂模式"><span class="nav-number">2.0.2.5.</span> <span class="nav-text">单例，多例和工厂模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#？？-arraylist-aragest"><span class="nav-number">2.0.2.6.</span> <span class="nav-text">？？ arraylist  aragest</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的深浅复制"><span class="nav-number">2.0.2.7.</span> <span class="nav-text">对象的深浅复制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM"><span class="nav-number">2.0.3.</span> <span class="nav-text">JVM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程"><span class="nav-number">2.1.</span> <span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线程池优点"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">线程池优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized和lock的区别"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">synchronized和lock的区别</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#3-原理"><span class="nav-number">3.</span> <span class="nav-text">3,原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-数据库"><span class="nav-number">4.</span> <span class="nav-text">4,数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三范式"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">三范式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql"><span class="nav-number">4.0.1.</span> <span class="nav-text">mysql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-框架"><span class="nav-number">5.</span> <span class="nav-text">5,框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">5.1.</span> <span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot"><span class="nav-number">5.2.</span> <span class="nav-text">springboot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#springcloud"><span class="nav-number">5.2.1.</span> <span class="nav-text">springcloud</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis"><span class="nav-number">5.3.</span> <span class="nav-text">redis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#集群部署"><span class="nav-number">5.3.0.0.1.</span> <span class="nav-text">集群部署</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dubbo"><span class="nav-number">5.4.</span> <span class="nav-text">Dubbo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven"><span class="nav-number">5.5.</span> <span class="nav-text">Maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka"><span class="nav-number">5.6.</span> <span class="nav-text">Kafka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker"><span class="nav-number">5.7.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zookeeper"><span class="nav-number">5.7.1.</span> <span class="nav-text">zookeeper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JWT"><span class="nav-number">5.7.1.1.</span> <span class="nav-text">JWT</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消息队列"><span class="nav-number">5.8.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybitis"><span class="nav-number">5.9.</span> <span class="nav-text">mybitis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Linux"><span class="nav-number">6.</span> <span class="nav-text">6.Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-运维"><span class="nav-number">7.</span> <span class="nav-text">7.运维</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">7.1.</span> <span class="nav-text">nginx</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-算法"><span class="nav-number">8.</span> <span class="nav-text">8.算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">8.1.</span> <span class="nav-text">排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-前端"><span class="nav-number">9.</span> <span class="nav-text">9.前端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-数据结构"><span class="nav-number">10.</span> <span class="nav-text">10.数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设计模式"><span class="nav-number">10.0.0.1.</span> <span class="nav-text">设计模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-分布式："><span class="nav-number">11.</span> <span class="nav-text">11,分布式：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式锁"><span class="nav-number">11.0.1.</span> <span class="nav-text">分布式锁</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">12.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性能调优"><span class="nav-number">12.1.</span> <span class="nav-text">性能调优</span></a></li></ol></li></div>
             
 
           </div>

@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+  <meta name="description" content="JVMJVM内存结构主要包含了PC寄存器（程序计数器）、Java虚拟机栈、本地方法栈、Java堆、方法区以及运行时常量池。 JVM中存在着大量的声明短暂的对象，还有一些生命周期比较长的对象。为了对他们采用不同的收集策略，采用了分代收集算法，所以HotSpot虚拟机把的根据对象的年龄不同，把堆分位新生代、老年代和永久代。   程序计数器：当前线程所指向的字节码的行号指示器，会指出下一条将要指向指令的">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM">
+<meta property="og:url" content="http://zhoufangy.github.io/2020/02/20/JVM/index.html">
+<meta property="og:site_name" content="Yuanzi">
+<meta property="og:description" content="JVMJVM内存结构主要包含了PC寄存器（程序计数器）、Java虚拟机栈、本地方法栈、Java堆、方法区以及运行时常量池。 JVM中存在着大量的声明短暂的对象，还有一些生命周期比较长的对象。为了对他们采用不同的收集策略，采用了分代收集算法，所以HotSpot虚拟机把的根据对象的年龄不同，把堆分位新生代、老年代和永久代。   程序计数器：当前线程所指向的字节码的行号指示器，会指出下一条将要指向指令的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcrt47dw8qj310i0o67kd.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcrc2dihs6j310u0j8gvt.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcrm2cm84jj31140u07iz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcrt680dqdj30zc0co0zh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcrrvthzbgj311s0pm7gd.jpg">
+<meta property="og:updated_time" content="2020-03-25T18:42:39.311Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JVM">
+<meta name="twitter:description" content="JVMJVM内存结构主要包含了PC寄存器（程序计数器）、Java虚拟机栈、本地方法栈、Java堆、方法区以及运行时常量池。 JVM中存在着大量的声明短暂的对象，还有一些生命周期比较长的对象。为了对他们采用不同的收集策略，采用了分代收集算法，所以HotSpot虚拟机把的根据对象的年龄不同，把堆分位新生代、老年代和永久代。   程序计数器：当前线程所指向的字节码的行号指示器，会指出下一条将要指向指令的">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcrt47dw8qj310i0o67kd.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Yuanzi" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://zhoufangy.github.io/2020/02/20/JVM/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>JVM | Yuanzi</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?be2881c2bf8252655588419f97b7babc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yuanzi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhoufangy.github.io/2020/02/20/JVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuanzi">
+      <meta itemprop="description" content="......">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanzi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JVM
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-02-20 00:07:00" itemprop="dateCreated datePublished" datetime="2020-02-20T00:07:00+00:00">2020-02-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-03-25 18:42:39" itemprop="dateModified" datetime="2020-03-25T18:42:39+00:00">2020-03-25</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><h4 id="JVM内存结构"><a href="#JVM内存结构" class="headerlink" title="JVM内存结构"></a>JVM内存结构</h4><p>主要包含了PC寄存器（程序计数器）、Java虚拟机栈、本地方法栈、Java堆、方法区以及运行时常量池。</p>
+<p>JVM中存在着大量的声明短暂的对象，还有一些生命周期比较长的对象。为了对他们采用不同的收集策略，采用了分代收集算法，所以HotSpot虚拟机把的根据对象的年龄不同，把堆分位新生代、老年代和永久代。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcrt47dw8qj310i0o67kd.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcrc2dihs6j310u0j8gvt.jpg" alt=""></p>
+<h6 id="程序计数器："><a href="#程序计数器：" class="headerlink" title="程序计数器："></a>程序计数器：</h6><p>当前线程所指向的字节码的行号指示器，会指出下一条将要指向指令的地址，线程私有，不会出现OutOfMemoryError。</p>
+<h6 id="Java虚拟机栈："><a href="#Java虚拟机栈：" class="headerlink" title="Java虚拟机栈："></a>Java虚拟机栈：</h6><p>是为虚拟机执行Java方法服务，是线程私有的，在线程创建时会被创建，每个方法在执行的同时都会创建一个 栈帧，用于存放局部变量表、操作数栈、动态链接、方法出口等信息。</p>
+<p>一般所谓的“栈”，指的是虚拟机栈中局部变量表部分，其中存放了各种基本数据类型( <code>8</code> 种)，对象引用(<code>reference</code> 类型) 和 <code>returnAddress</code> 类型。局部变量表所需的空间在编译期就已经确定并完成分配，在方法运行期间不会被改变。</p>
+<p><code>Java</code> 虚拟栈中可能出现两种异常：</p>
+<ul>
+<li><code>StackOverflowError</code>：线程请求的栈深度大于虚拟机所允许的深度</li>
+<li><code>OutOfMemoryError</code>：虚拟机栈扩展时无法申请到足够的内存</li>
+</ul>
+<h6 id="本地方法栈："><a href="#本地方法栈：" class="headerlink" title="本地方法栈："></a>本地方法栈：</h6><p>是为虚拟机执行Native方法服务，可能会抛出StackOverflowError or OutOfMemoryError。</p>
+<h6 id="Java堆："><a href="#Java堆：" class="headerlink" title="Java堆："></a>Java堆：</h6><p>虚拟机中最主要的内存区域，是线程共享的，在虚拟机启动时创建，几乎所有的对象实例都存储在Java堆中。</p>
+<p>Java堆也被称作GC堆。从内存回收角度看，可以分为新生代和老年代。新生代有可以分为Eden区、From Survivor区，To Survivor区等。</p>
+<p>Java堆的实现既可以实现为固定的，也可以是扩展的，可以通过-Xmx和-Xms来控制堆的大小。</p>
+<p>如果堆中没有内存并且也无法再扩展时，会抛出OutOfMemoryError。</p>
+<h6 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h6><p>也是线程共享的，用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码数据。也叫做Non-Heap。</p>
+<p>如果方法去无法满足内存分配需求，会抛出OutOfMemoryError。</p>
+<h6 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h6><p>是方法区的一部分，Class文件中的常量池用于编译期生成的各种字面量和符号引用，这部分内容在类加载后被存入运行时常量池。</p>
+<p>运行时常量池受到方法区内存的限制，如果常量池无法再申请内存，就会抛出 <code>OutOfMemoryError</code> 异常。</p>
+<h6 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h6><p>直接内存并不由 <code>JVM</code> 管理，它是利用 <code>Native</code> 函数库在 <code>Java</code> 堆外申请分配的内存区域，可以避免在 <code>Java</code> 堆和 <code>Native</code> 堆中复制数据以提高性能。</p>
+<p>例如 <code>NIO</code> 中的 <code>DirectByteBuffer</code> 就可以作为这块内存的引用进行操作直接内存。</p>
+<h6 id="永久代与元空间"><a href="#永久代与元空间" class="headerlink" title="永久代与元空间"></a>永久代与元空间</h6><p>有时会看到方法区被称为永久代，其实两者有着本质的区别。方法区是 <code>JVM</code> 规范中的定义，而永久代是 <code>JVM</code> 规范的一种实现，并且只有在 <code>HotSpot</code> 虚拟机中如此，其他虚拟机中没有永久代的说法。</p>
+<p>在 <code>JDK1.6</code> 之前，<code>HotSpot</code> 虚拟机把 <code>GC</code> 分代收集扩展至方法区，或者说使用永久代实现方法区。不过永久代有 <code>-XX:MaxPermSize</code> 的上限，很容易遇到内存溢出问题。</p>
+<p>所以在 <code>JDK1.7</code> 中，将部分数据已经转移 <code>Java Heap</code> 或 <code>Native Heap</code> 中，例如：将原本放在永久代中的字符串池和类的静态变量移出到 <code>Java Heap</code> 中，将符号引用转移到 <code>Native Heap</code> 中。但永久代仍然存在，并没有移除。</p>
+<p>在 <code>JDK1.8</code> 中，取消了永久代，代替为元空间实现，它也是 <code>JVM</code> 规范中方法区的一种实现。不过它与永久代最大的不同是：元空间并不在虚拟机中，而是将元空间放到本地内存中。所以默认情况下，它只受本地内存的限制，可以通过 <code>-XX:MetaspaceSize</code> 参数设置初始空间大小，默认没有最大空间限制。</p>
+<h4 id="常见的-OOM-及原因"><a href="#常见的-OOM-及原因" class="headerlink" title="常见的 OOM 及原因"></a>常见的 OOM 及原因</h4><p>OOM：java.lang.OutOfMemoryError</p>
+<p><strong>java.lang.OutOfMemoryError:Java heap space</strong></p>
+<ul>
+<li>流量访问量大，超过设置的堆空间大小；</li>
+<li>内存泄露，不能被回收的对象消耗过多堆空间；</li>
+</ul>
+<p><strong>java.lang.OutOfMemoryError:Permgen space</strong></p>
+<p>在 <code>JDK7</code> 中，<code>HotSpot</code> 虚拟机使用永久代实现方法区，永久代较小，而且回收效率较低，很容易出现内存溢出。</p>
+<p>因此，<code>JDK8</code> 取消了永久代，使用元空间来实现方法区，存放在本地内存中。</p>
+<p><strong>java.lang.OutOfMemoryError:Metaspace</strong></p>
+<p>引起元数据区空间不足的原因主要有：</p>
+<ul>
+<li>加载的类太多，常见于 <code>jsp</code> 页面过多时；</li>
+<li>元空间被实现在堆外，主要受到进程本身的内存限制，一般很难出现溢出。</li>
+</ul>
+<h4 id="什么是内存模型"><a href="#什么是内存模型" class="headerlink" title="什么是内存模型"></a>什么是内存模型</h4><p><strong>为了保证共享内存的正确性（可见性、有序性、原子性），内存模型定义了共享内存系统中多线程程序读写操作行为的规范。</strong>通过这些规则来规范对内存的读写操作，从而保证指令执行的正确性。它与处理器有关、与缓存有关、与并发有关、与编译器也有关。他解决了CPU多级缓存、处理器优化、指令重排等导致的内存访问问题，保证了并发场景下的一致性、原子性和有序性。</p>
+<h4 id="什么是Java内存模型"><a href="#什么是Java内存模型" class="headerlink" title="什么是Java内存模型"></a>什么是Java内存模型</h4><p>**Java内存模型（Java Memory Model ,JMM）就是一种符合内存模型规范的，屏蔽了各种硬件和操作系统的访问差异的，保证了Java程序在各种平台下对内存的访问都能保证效果一致的机制及规范。</p>
+<h4 id="Java内存模型的实现"><a href="#Java内存模型的实现" class="headerlink" title="Java内存模型的实现"></a>Java内存模型的实现</h4><p><strong>原子性：</strong>使用<code>synchronized</code>来保证方法和代码块内的操作是原子性的。</p>
+<p><strong>可见性：</strong> Java中的<code>volatile</code>关键字提供了一个功能，那就是被其修饰的变量在被修改后可以立即同步到主内存，被其修饰的变量在每次是用之前都用CAS从主内存刷新。因此，可以使用<code>volatile</code>来保证多线程操作时变量的可见性。除了<code>volatile</code>，Java中的<code>synchronized</code>和<code>final</code>两个关键字也可以实现可见性。只不过实现方式不同。</p>
+<p> volatile  通过内存屏障<br> synchronized 通过修饰的程序段同一时间只能由同一线程运行，释放锁前会刷新到主内存</p>
+<p><strong>有序性：</strong>在Java中，可以使用<code>synchronized</code>和<code>volatile</code>来保证多线程之间操作的有序性。</p>
+<p>但是<code>synchronized</code>是比较影响性能的，虽然编译器提供了很多锁优化技术，但是也不建议过度使用。</p>
+<h4 id="JVM-为什么survivor需要有2个。"><a href="#JVM-为什么survivor需要有2个。" class="headerlink" title="JVM,为什么survivor需要有2个。"></a>JVM,为什么survivor需要有2个。</h4><p>survivor需要2个，主要是为了规避内存碎片化</p>
+<h4 id="为什么要有内存模型"><a href="#为什么要有内存模型" class="headerlink" title="为什么要有内存模型"></a>为什么要有内存模型</h4><h6 id="CPU和缓存一致性"><a href="#CPU和缓存一致性" class="headerlink" title="CPU和缓存一致性"></a>CPU和缓存一致性</h6><p><strong>当程序在运行过程中，会将运算需要的数据从主存复制一份到CPU的高速缓存当中，那么CPU进行计算时就可以直接从它的高速缓存读取数据和向其中写入数据，当运算结束之后，再将高速缓存中的数据刷新到主存当中。</strong></p>
+<p><strong>当CPU要读取一个数据时，首先从一级缓存中查找，如果没有找到再从二级缓存中查找，如果还是没有就从三级缓存或内存中查找。</strong></p>
+<p>单核CPU只含有一套L1，L2，L3缓存；如果CPU含有多个核心，即多核CPU，则每个核心都含有一套L1（甚至和L2）缓存，而共享L3（或者和L2）缓存。</p>
+<p><strong>单线程。</strong>cpu核心的缓存只被一个线程访问。缓存独占，不会出现访问冲突等问题。</p>
+<p><strong>单核CPU，多线程。</strong>进程中的多个线程会同时访问进程中的共享数据，CPU将某块内存加载到缓存后，不同线程在访问相同的物理地址的时候，都会映射到相同的缓存位置，这样即使发生线程的切换，缓存仍然不会失效。但由于任何时刻只能有一个线程在执行，因此不会出现缓存访问冲突。</p>
+<p><strong>多核CPU，多线程。</strong>每个核都至少有一个L1 缓存。多个线程访问进程中的某个共享内存，且这多个线程分别在不同的核心上执行，则每个核心都会在各自的caehe中保留一份共享内存的缓冲。由于多核是可以并行的，可能会出现多个线程同时写各自的缓存的情况，而各自的cache之间的数据就有可能不同。</p>
+<p>在CPU和主存之间增加缓存，在多线程场景下就可能存在<strong>缓存一致性问题</strong>，也就是说，在多核CPU中，每个核的自己的缓存中，关于同一个数据的缓存内容可能不一致。</p>
+<h6 id="处理器优化和指令重排"><a href="#处理器优化和指令重排" class="headerlink" title="处理器优化和指令重排"></a>处理器优化和指令重排</h6><h6 id="并发编程的问题"><a href="#并发编程的问题" class="headerlink" title="并发编程的问题"></a>并发编程的问题</h6><p>原子性问题，可见性问题和有序性问题。</p>
+<p><strong>原子性</strong>是指在一个操作中就是cpu不可以在中途暂停然后再调度，既不被中断操作，要不执行完成，要不就不执行。</p>
+<p><strong>可见性</strong>是指当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。</p>
+<p><strong>有序性</strong>即程序执行的顺序按照代码的先后顺序执行。</p>
+<p>有没有发现，<strong>缓存一致性问题</strong>其实就是<strong>可见性问题</strong>。而<strong>处理器优化</strong>是可以导致<strong>原子性问题</strong>的。<strong>指令重排</strong>即会导致<strong>有序性问题</strong>。所以，后文将不再提起硬件层面的那些概念，而是直接使用大家熟悉的原子性、可见性和有序性。</p>
+<h4 id="JVM内存结构-VS-Java内存模型-VS-Java对象模型"><a href="#JVM内存结构-VS-Java内存模型-VS-Java对象模型" class="headerlink" title="JVM内存结构 VS Java内存模型 VS Java对象模型"></a>JVM内存结构 VS Java内存模型 VS Java对象模型</h4><p>Java内存模型是根据英文Java Memory Model（JMM）翻译过来的。其实JMM并不像JVM内存结构一样是真实存在的。他只是一个抽象的概念。</p>
+<p>JMM是和多线程相关的，他描述了一组规则或规范，这个规范定义了一个线程对共享变量的写入时对另一个线程是可见的。</p>
+<p>Java的多线程之间是通过共享内存进行通信的，而由于采用共享内存进行通信，在通信过程中会存在一系列如可见性、原子性、顺序性等问题，而JMM就是围绕着多线程通信以及与其相关的一系列特性而建立的模型。JMM定义了一些语法集，这些语法集映射到Java语言中就是volatile、synchronized等关键字。正是由于有了JMM，Java的并发编程才能避免很多问题。</p>
+<p>JVM内存结构，和Java虚拟机的运行时区域有关。 Java内存模型，和Java的并发编程有关。 Java对象模型，和Java对象在虚拟机中的表现形式有关。</p>
+<h4 id="Java对象的内存分配过程是如何保证线程安全的？"><a href="#Java对象的内存分配过程是如何保证线程安全的？" class="headerlink" title="Java对象的内存分配过程是如何保证线程安全的？"></a>Java对象的内存分配过程是如何保证线程安全的？</h4><p><strong>为了保证对象的内存分配过程中的线程安全性，HotSpot虚拟机提供了一种叫做TLAB(Thread Local Allocation Buffer)的技术。</strong></p>
+<p>在线程初始化时，虚拟机会为每个线程分配一块TLAB空间，只给当前线程使用，当需要分配内存时，就在自己的空间上分配，这样就不存在竞争的情况，可以大大提升分配效率。</p>
+<p><strong>所以，“堆是线程共享的内存区域”这句话并不完全正确，因为TLAB是堆内存的一部分，他在读取上确实是线程共享的，但是在内存分分配上，是线程独享的。</strong></p>
+<p>对象的内存分配步骤就是先尝试TLAB分配，但是TLAB空间其实不大，当空间不足之后，再判断是否应该直接进入老年代，然后再确定是再eden分配还是在老年代分配。</p>
+<h4 id="不同的虚拟机在实现运行时内存的时候有什么区别？"><a href="#不同的虚拟机在实现运行时内存的时候有什么区别？" class="headerlink" title="不同的虚拟机在实现运行时内存的时候有什么区别？"></a>不同的虚拟机在实现运行时内存的时候有什么区别？</h4><p>虚拟机规范对方法区实现的位置并没有明确要求，在最著名的HotSopt虚拟机实现中（在Java 8 之前），方法区仅是逻辑上的独立区域，在物理上并没有独立于堆而存在，而是位于永久代中。所以，这时候方法区也是可以被垃圾回收的。</p>
+<blockquote>
+<p>JVM中存在着大量的声明短暂的对象，还有一些生命周期比较长的对象。为了对他们采用不同的收集策略，采用了分代收集算法，所以HotSpot虚拟机把的根据对象的年龄不同，把堆分位新生代、老年代和永久代。</p>
+</blockquote>
+<p>在Java 8中 ，HotSpot虚拟机移除了永久代，使用本地内存来存储类元数据信息并称之为：元空间（Metaspace）</p>
+<h4 id="运行时数据区中哪些区域是线程共享的？哪些是独享的？"><a href="#运行时数据区中哪些区域是线程共享的？哪些是独享的？" class="headerlink" title="运行时数据区中哪些区域是线程共享的？哪些是独享的？"></a>运行时数据区中哪些区域是线程共享的？哪些是独享的？</h4><p>在JVM运行时内存区域中，PC寄存器、虚拟机栈和本地方法栈是线程独享的。</p>
+<p>而Java堆、方法区是线程共享的。但是值得注意的是，Java堆其实还为每一个线程单独分配了一块<a href="http://www.hollischuang.com/archives/3855" target="_blank" rel="noopener">TLAB空间</a>，这部分空间在分配时是线程独享的，在使用时是线程共享的。</p>
+<h4 id="除了JVM运行时内存以外，还有什么区域可以用吗？"><a href="#除了JVM运行时内存以外，还有什么区域可以用吗？" class="headerlink" title="除了JVM运行时内存以外，还有什么区域可以用吗？"></a>除了JVM运行时内存以外，还有什么区域可以用吗？</h4><p>直接内存的分配不受Java堆大小的限制，但是他还是会收到服务器总内存的影响。可以使用Native函数直接分配堆外内存，然后通过一个存储在Java堆中的DirectByteBuffer对象作为这块内存的应用进行操作。</p>
+<h4 id="堆和栈的区别是什么？"><a href="#堆和栈的区别是什么？" class="headerlink" title="堆和栈的区别是什么？"></a>堆和栈的区别是什么？</h4><p>堆和栈（虚拟机栈）是完全不同的两块内存区域，一个是线程独享的，一个是线程共享的，二者之间最大的区别就是存储的内容不同：</p>
+<p>堆中主要存放对象实例。<br>栈（局部变量表）中主要存放各种基本数据类型、对象的引用。</p>
+<p>堆内存是线程共享的，栈内存是线程私有的；</p>
+<p>堆内存用来存放由new创建的对象和数组，栈内存中存放一些基本类型的变量和对象的引用变量</p>
+<h4 id="Java中的数组是存储在堆上还是栈上的？"><a href="#Java中的数组是存储在堆上还是栈上的？" class="headerlink" title="Java中的数组是存储在堆上还是栈上的？"></a>Java中的数组是存储在堆上还是栈上的？</h4><p>在Java中，数组同样是一个对象，所以对象在内存中如何存放同样适用于数组；</p>
+<p>所以，数组的实例是保存在堆中，而数组的引用是保存在栈上的。</p>
+<h4 id="Java中的对象创建有多少种方式？"><a href="#Java中的对象创建有多少种方式？" class="headerlink" title="Java中的对象创建有多少种方式？"></a>Java中的对象创建有多少种方式？</h4><p>Java中有很多方式可以创建一个对象，最简单的方式就是使用new关键字。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User user = new User();</span><br></pre></td></tr></table></figure>
+<p>除此以外，还可以使用反射机制创建对象：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">User user = User.class.newInstance();</span><br></pre></td></tr></table></figure>
+<p>或者使用Constructor类的newInstance：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Constructor&lt;User&gt; constructor = User.class.getConstructor();</span><br><span class="line">User user = constructor.newInstance();</span><br></pre></td></tr></table></figure>
+<p>除此之外还可以使用clone方法和反序列化的方式，这两种方式不常用并且代码比较复杂。</p>
+<h4 id="Java中对象创建的过程是怎么样的？"><a href="#Java中对象创建的过程是怎么样的？" class="headerlink" title="Java中对象创建的过程是怎么样的？"></a>Java中对象创建的过程是怎么样的？</h4><p>对于一个普通的Java对象的创建，大致过程如下：</p>
+<p>1、虚拟机遇到new指令，到常量池定位到这个类的符号引用。<br>2、检查符号引用代表的类是否被加载、解析、初始化过。<br>3、虚拟机为对象分配内存。<br>4、虚拟机将分配到的内存空间都初始化为零值。<br>5、虚拟机对对象进行必要的设置。<br>6、执行方法，成员变量进行初始化</p>
+<h4 id="Java中的对象一定在堆上分配内存吗？"><a href="#Java中的对象一定在堆上分配内存吗？" class="headerlink" title="Java中的对象一定在堆上分配内存吗？"></a>Java中的对象一定在堆上分配内存吗？</h4><p>Java堆中主要保存了对象实例，但是也不是绝对，编译期间，JIT会对代码做很多优化。其中有一部分优化的目的就是减少内存堆分配压力，比如逃逸分析。如果JIT经过逃逸分析，发现有些对象没有逃逸出方法，那么有可能堆内存分配会被优化成栈内存分配。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcrm2cm84jj31140u07iz.jpg" alt=""></p>
+<h4 id="如何获取堆和栈的dump文件？"><a href="#如何获取堆和栈的dump文件？" class="headerlink" title="如何获取堆和栈的dump文件？"></a>如何获取堆和栈的dump文件？</h4><p>Java Dump，Java虚拟机的运行时快照。将Java虚拟机运行时的状态和信息保存到文件。</p>
+<p>可以使用在服务器上使用<a href="http://www.hollischuang.com/archives/303" target="_blank" rel="noopener">jmap</a>命令来获取堆dump，使用<a href="http://www.hollischuang.com/archives/110" target="_blank" rel="noopener">jstack</a>命令来获取线程的调用栈dump。</p>
+<h4 id="JVM三大性能调优参数，JVM-几个重要的参数"><a href="#JVM三大性能调优参数，JVM-几个重要的参数" class="headerlink" title="JVM三大性能调优参数，JVM 几个重要的参数"></a>JVM三大性能调优参数，JVM 几个重要的参数</h4><p><strong>-Xms:设置初始分配大小，默认为物理内存的“1/64”</strong></p>
+<p><strong>-Xmx:最大分配内存，默认为物理内存的“1/4”</strong></p>
+<p><strong>-Xss规定了每个线程堆栈的大小。一般情况下256K是足够了。影响了此进程中并发线程数大小。</strong></p>
+<p>在很多情况下，-Xms和-Xmx设置成一样的。这么设置，是因为当Heap不够用时，会发生内存抖动，影响程序运行稳定性。</p>
+<h4 id="JVM调优"><a href="#JVM调优" class="headerlink" title="JVM调优"></a>JVM调优</h4><h5 id="何时进行JVM调优"><a href="#何时进行JVM调优" class="headerlink" title="何时进行JVM调优"></a>何时进行JVM调优</h5><ul>
+<li>Heap内存（老年代）持续上涨达到设置的最大内存值； </li>
+<li>Full GC 次数频繁； </li>
+<li>GC 停顿时间过长（超过1秒）； </li>
+<li>应用出现OutOfMemory 等内存异常； </li>
+<li>应用中有使用本地缓存且占用大量内存空间； </li>
+<li>系统吞吐量与响应性能不高或下降。</li>
+</ul>
+<h5 id="JVM调优的基本原则"><a href="#JVM调优的基本原则" class="headerlink" title="JVM调优的基本原则"></a>JVM调优的基本原则</h5><p>JVM调优是一个手段，但并不一定所有问题都可以通过JVM进行调优解决，因此，在进行JVM调优时，我们要遵循一些原则：</p>
+<ul>
+<li>大多数的Java应用不需要进行JVM优化； </li>
+<li>大多数导致GC问题的原因是代码层面的问题导致的（代码层面）； </li>
+<li>上线之前，应先考虑将机器的JVM参数设置到最优； </li>
+<li>减少创建对象的数量（代码层面）； </li>
+<li>减少使用全局变量和大对象（代码层面）； </li>
+<li>优先架构调优和代码调优，JVM优化是不得已的手段（代码、架构层面）； </li>
+<li>分析GC情况优化代码比优化JVM参数更好（代码层面）； </li>
+</ul>
+<h5 id="JVM调优可通过以下步骤进行："><a href="#JVM调优可通过以下步骤进行：" class="headerlink" title="JVM调优可通过以下步骤进行："></a>JVM调优可通过以下步骤进行：</h5><ul>
+<li>使用GCViewer日志分析工具分析GC日志及dump文件，判断是否需要优化，确定瓶颈问题点； </li>
+<li>确定JVM调优量化目标； </li>
+<li>确定JVM调优参数（根据历史JVM参数来调整）； </li>
+<li>依次调优内存、延迟、吞吐量等指标； </li>
+<li>对比观察调优前后的差异； </li>
+<li>不断的分析和调整，直到找到合适的JVM参数配置； </li>
+<li>找到最合适的参数，将这些参数应用到所有服务器，并进行后续跟踪。</li>
+</ul>
+<h4 id="JVM内存管理"><a href="#JVM内存管理" class="headerlink" title="JVM内存管理"></a>JVM内存管理</h4><p>Java内存管理采用的是自动内存管理机制，具体来讲是内存分配和内存回收。</p>
+<h4 id="JVM的常见的垃圾收集器"><a href="#JVM的常见的垃圾收集器" class="headerlink" title="JVM的常见的垃圾收集器"></a>JVM的常见的垃圾收集器</h4><p>Serial Collector 串行收集器</p>
+<p>Parallel Collector 并行收集器</p>
+<p>CMS 并发收集器 用于老年代, 采用标记-清除算法</p>
+<p>Ｇ１垃圾收集器主要针对多核处理器和大内存的服务器, 同时还能保证高吞吐量. </p>
+<h4 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h4><p><strong>Java垃圾回收器是一种自适应的、分代的、停止—复制、标记-清扫”式的垃圾回收器</strong></p>
+<p><a href="http://www.hollischuang.com/archives/2509" target="_blank" rel="noopener">http://www.hollischuang.com/archives/2509</a></p>
+<h4 id="Minor-GC-，Full-GC-触发条件"><a href="#Minor-GC-，Full-GC-触发条件" class="headerlink" title="Minor GC ，Full GC 触发条件"></a>Minor GC ，Full GC 触发条件</h4><h5 id="Young-GC"><a href="#Young-GC" class="headerlink" title="Young GC"></a>Young GC</h5><p>又叫Minor GC(次收集), Young GC经常发生, 且其每次消耗的时间较短.</p>
+<p>—— <strong>它只对Young Generation中的对象进行垃圾收集</strong>.</p>
+<p><strong>触发条件:</strong></p>
+<p>在Young Generation(新生代)的Eden区的空间不足以容纳新生成的对象时执行, 同时会将 Eden 区与 From Survivor 区中尚且存活的对象移动至空闲的 To Survivor 区中.</p>
+<p>—— 程序运行过程中, <strong>始终有一个 Survivor 区是完全处于空闲状态的</strong>, 如果不是, 说明应用程序出现故障了.</p>
+<h5 id="Full-GC"><a href="#Full-GC" class="headerlink" title="Full GC"></a>Full GC</h5><p>又叫Major GC(主收集), 是<strong>对整个Java Heap中的对象(不包括永久代/元空间)进行垃圾收集</strong>.</p>
+<p>Full GC操作耗时久, 对系统的性能影响较大, 因此在 JVM 的调优中, 很多工作是针对 Full GC 的调优 —— 要尽可能减少Full GC的频率.</p>
+<blockquote>
+<p>Full GC 是一种”昂贵”的垃圾收集方式, 它要对整个Heap进行垃圾收集, 并做一定的空间整理, 这会使Stop-The-World的时间变长.</p>
+</blockquote>
+<p><strong>Full GC的触发条件:</strong></p>
+<blockquote>
+<p>(1) 年老代(Tenured)空间不足:</p>
+<ul>
+<li>通过Minor GC后进入老年代的对象的体积大于老年代的可用空间;</li>
+<li>由Eden块、From Space块向To Space复制存活对象时, 它们的体积大于To Space的大小, 系统就会把这些对象转存到老年代, 而老年代的可用空间小于这些对象的体积.</li>
+</ul>
+<p>(2) <code>System.gc()</code>方法被显式调用, 系统建议执行Full GC, 但并不会立即执行 —— <strong>非常影响程序性能, 建议禁止使用</strong>;</p>
+<p>(3) 上一次GC之后Heap中各个区域空间的动态变化.</p>
+<p> <strong>Full GC 次数过多</strong>，主要有以下两种原因：</p>
+<ul>
+<li><p>代码中一次获取了大量的对象，导致内存溢出，此时可以通过 Eclipse 的 Mat 工具查看内存中有哪些对象比较多。</p>
+</li>
+<li><p>内存占用不高，但是 Full GC 次数还是比较多，此时可能是显示的 System.gc() 调用导致 GC 次数过多，这可以通过添加 -XX:+DisableExplicitGC 来禁用 JVM 对显示 GC 的响应</p>
+<p><strong>CPU 过高</strong></p>
+<p>jstack</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="描述JVM中一次Full-gc过程"><a href="#描述JVM中一次Full-gc过程" class="headerlink" title="描述JVM中一次Full gc过程"></a>描述JVM中一次Full gc过程</h4><h4 id="JVM中类加载机制，类加载过程，什么是双亲委派模型？"><a href="#JVM中类加载机制，类加载过程，什么是双亲委派模型？" class="headerlink" title="JVM中类加载机制，类加载过程，什么是双亲委派模型？"></a>JVM中类加载机制，类加载过程，什么是双亲委派模型？</h4><p><code>Java</code>中的所有类，必须被装载到<code>jvm</code>中才能运行，这个装载工作是由<code>jvm</code>中的类装载器完成的，类装载器所做的工作实质是把类文件从硬盘读取到内存中，<code>JVM</code>在加载类的时候，都是通过<code>ClassLoader</code>的<code>loadClass（）</code>方法来加载class的，<code>loadClass</code>使用<strong>双亲委派模式</strong>。</p>
+<p>一个应用程序总是由n多个类组成，Java程序启动时，并不是一次把所有的类全部加载后再运行，它总是先把保证程序运行的基础类一次性加载到jvm中，其它类等到jvm用到的时候再加载，这样的好处是节省了内存的开销，因为java最早就是为嵌入式系统而设计的，内存宝贵，这是一种可以理解的机制，而用到时再加载这也是java动态性的一种体现</p>
+<p><strong>类加载机制：</strong>Java虚拟机把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的加载机制。</p>
+<p><strong>类加载过程</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcrt680dqdj30zc0co0zh.jpg" alt=""></p>
+<p>  (1) 装载：查找和导入Class文件；</p>
+<p>  (2) 链接：把类的二进制数据合并到JRE中；</p>
+<pre><code>(a)校验：检查载入Class文件数据的正确性；
+
+(b)准备：给类的静态变量分配存储空间；
+
+(c)解析：将符号引用转成直接引用；
+</code></pre><p>  (3) 初始化：对类的静态变量，静态代码块执行初始化操作</p>
+<p><strong>双亲委派模型</strong></p>
+<p>该模型要求除了顶层的启动类加载器外，其余的类加载器都应当有自己的父类加载器。子类加载器和父类加载器不是以继承（Inheritance）的关系来实现，而是通过组合（Composition）关系来复用父加载器的代码。</p>
+<p>双亲委派模型的工作过程为：如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器去完成，每一个层次的加载器都是如此，因此所有的类加载请求都会传给顶层的启动类加载器，只有当父加载器反馈自己无法完成该加载请求（该加载器的搜索范围中没有找到对应的类）时，子加载器才会尝试自己去加载。</p>
+<h4 id="类加载器有哪些"><a href="#类加载器有哪些" class="headerlink" title="类加载器有哪些."></a>类加载器有哪些.</h4><p>根类加载器，由C++实现，没有父类。<br>扩展类加载器(ExtClassLoader)，由Java语言实现，父类加载器为null<br>应用类加载器(AppClassLoader)，由Java语言实现，父类加载器为ExtClassLoader<br>自定义类加载器，父类加载器肯定为AppClassLoader。</p>
+<p>除了根类加载器之外，其他两个扩展类加载器和应用类加载器都是通过类sun.misc.Launcher进行初始化，而Launcher类则由根类加载器进行加载。</p>
+<h4 id="如何判断是否有内存泄露？"><a href="#如何判断是否有内存泄露？" class="headerlink" title="如何判断是否有内存泄露？"></a>如何判断是否有内存泄露？</h4><p>在Java中，内存泄漏就是存在一些被分配的对象，这些对象有下面两个特点：<br>1）首先，这些对象是可达的，即在有向图中，存在通路可以与其相连；<br>2）其次，这些对象是无用的，即程序以后不会再使用这些对象。<br>如果对象满足这两个条件，这些对象就可以判定为Java中的内存泄漏，这些对象不会被GC所回收，然而它却占用内存。</p>
+<p>jstat [ option vmid [interval[s|ms] [count]] ]查看JVM各种运行状态</p>
+<h4 id="Java垃圾回收机制"><a href="#Java垃圾回收机制" class="headerlink" title="Java垃圾回收机制"></a>Java垃圾回收机制</h4><p><strong>新生代采用复制算法</strong></p>
+<p>GC回收过程中，当Eden区满时，还存活的对象会被复制到其中一个Survivor区；当回收时，会将Eden和使用的Survivor区还存活的对象，复制到另外一个Survivor区，然后对Eden和用过的Survivor区进行清理。</p>
+<p>如果另外一个Survivor区没有足够的内存存储时，则会进入老年代。</p>
+<p>这里针对哪些对象会进入老年代有这样的机制：对象每经历一次复制，年龄加1，达到晋升年龄阈值后，转移到老年代。</p>
+<p>在这整个过程中，由于Eden中的对象属于像浮萍一样“瞬生瞬灭”的对象，所以并不需要1：1的比例来分配内存，而是采用了8：1：1的比例来分配。</p>
+<p>而针对那些像“水熊虫”一样，历经多次清理依旧存活的对象，则会进入老年代，而老年的清理算法则采用下面要讲到的“标记整理算法”。</p>
+<p><strong>老年代使用标记整理算法</strong></p>
+<p>标记整理（Mark-Compact）算法：标记过程与“标记-清除”算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。</p>
+<p><strong>分代收集算法</strong></p>
+<p>分代收集算法，基本思路：将Java的堆内存逻辑上分成两块，新生代和老年代，针对不同存活周期、不同大小的对象采取不同的垃圾回收策略。</p>
+<p>而在新生代中大多数对象都是瞬间对象，只有少量对象存活，复制较少对象即可完成清理，因此采用复制算法。而针对老年代中的对象，存活率较高，又没有额外的担保内存，因此采用标记整理算法。</p>
+<p>其实，回头看，分代收集算法就是对新生代和老年代算法从策略维度的规划而已</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcrrvthzbgj311s0pm7gd.jpg" alt=""></p>
+<h4 id="Java-中都有哪些引用类型？"><a href="#Java-中都有哪些引用类型？" class="headerlink" title="Java 中都有哪些引用类型？"></a>Java 中都有哪些引用类型？</h4><p>强引用 -&gt; 软引用 -&gt; 弱引用 -&gt; 虚引用</p>
+<table>
+<thead>
+<tr>
+<th>引用类型</th>
+<th>被垃圾回收时间</th>
+<th>用途</th>
+<th>生存时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>强引用</td>
+<td>从来不会</td>
+<td>对象的一般状态</td>
+<td>JVM停止运行时终止</td>
+</tr>
+<tr>
+<td>软引用</td>
+<td>当内存不足时</td>
+<td>对象缓存  浏览器后退按钮</td>
+<td>内存不足时终止</td>
+</tr>
+<tr>
+<td>弱引用</td>
+<td>正常垃圾回收时</td>
+<td>对象缓存</td>
+<td>垃圾回收后终止</td>
+</tr>
+<tr>
+<td>虚引用</td>
+<td>正常垃圾回收时</td>
+<td>跟踪对象的垃圾回收</td>
+<td>垃圾回收后终止</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Java序列化，有ID和没ID会出现问题吗？"><a href="#Java序列化，有ID和没ID会出现问题吗？" class="headerlink" title="Java序列化，有ID和没ID会出现问题吗？"></a>Java序列化，有ID和没ID会出现问题吗？</h4><p>序列化ID的作用：  </p>
+<p>它决定着是否能够成功反序列化！简单来说，java的序列化机制是通过在运行时判断类的serialVersionUID来验证版本一致性的。在进行反序列化时，JVM会把传来的字节流中的serialVersionUID与本地实体类中的serialVersionUID进行比较，如果相同则认为是一致的，便可以进行反序列化，否则就会报序列化版本不一致的异常。</p>
+<p>序列化ID如何产生：</p>
+<p>当我们一个实体类中没有显示的定义一个名为“serialVersionUID”、类型为long的变量时，Java序列化机制会根据编译时的class自动生成一个serialVersionUID作为序列化版本比较，这种情况下，只有同一次编译生成的class才会生成相同的serialVersionUID。譬如，当我们编写一个类时，随着时间的推移，我们因为需求改动，需要在本地类中添加其他的字段，这个时候再反序列化时便会出现serialVersionUID不一致，导致反序列化失败。那么如何解决呢？便是在本地类中添加一个“serialVersionUID”变量，值保持不变，便可以进行序列化和反序列化。</p>
+<p>虚拟机是否允许反序列化，不仅取决于类路径和功能代码是否一致，一个非常重要的一点是两个类的序列化 ID 是否一致。</p>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/20/面试/" rel="next" title="面试">
+                <i class="fa fa-chevron-left"></i> 面试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/20/Java基础/" rel="prev" title="Java基础">
+                Java基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yuanzi</p>
+              <p class="site-description motion-element" itemprop="description">......</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/zhoufangy" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM"><span class="nav-number">1.</span> <span class="nav-text">JVM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM内存结构"><span class="nav-number">1.1.</span> <span class="nav-text">JVM内存结构</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#程序计数器："><span class="nav-number">1.1.0.1.</span> <span class="nav-text">程序计数器：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Java虚拟机栈："><span class="nav-number">1.1.0.2.</span> <span class="nav-text">Java虚拟机栈：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#本地方法栈："><span class="nav-number">1.1.0.3.</span> <span class="nav-text">本地方法栈：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Java堆："><span class="nav-number">1.1.0.4.</span> <span class="nav-text">Java堆：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#方法区"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行时常量池"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">运行时常量池</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#直接内存"><span class="nav-number">1.1.0.7.</span> <span class="nav-text">直接内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#永久代与元空间"><span class="nav-number">1.1.0.8.</span> <span class="nav-text">永久代与元空间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的-OOM-及原因"><span class="nav-number">1.2.</span> <span class="nav-text">常见的 OOM 及原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是内存模型"><span class="nav-number">1.3.</span> <span class="nav-text">什么是内存模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Java内存模型"><span class="nav-number">1.4.</span> <span class="nav-text">什么是Java内存模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java内存模型的实现"><span class="nav-number">1.5.</span> <span class="nav-text">Java内存模型的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM-为什么survivor需要有2个。"><span class="nav-number">1.6.</span> <span class="nav-text">JVM,为什么survivor需要有2个。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要有内存模型"><span class="nav-number">1.7.</span> <span class="nav-text">为什么要有内存模型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#CPU和缓存一致性"><span class="nav-number">1.7.0.1.</span> <span class="nav-text">CPU和缓存一致性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#处理器优化和指令重排"><span class="nav-number">1.7.0.2.</span> <span class="nav-text">处理器优化和指令重排</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#并发编程的问题"><span class="nav-number">1.7.0.3.</span> <span class="nav-text">并发编程的问题</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM内存结构-VS-Java内存模型-VS-Java对象模型"><span class="nav-number">1.8.</span> <span class="nav-text">JVM内存结构 VS Java内存模型 VS Java对象模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java对象的内存分配过程是如何保证线程安全的？"><span class="nav-number">1.9.</span> <span class="nav-text">Java对象的内存分配过程是如何保证线程安全的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不同的虚拟机在实现运行时内存的时候有什么区别？"><span class="nav-number">1.10.</span> <span class="nav-text">不同的虚拟机在实现运行时内存的时候有什么区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行时数据区中哪些区域是线程共享的？哪些是独享的？"><span class="nav-number">1.11.</span> <span class="nav-text">运行时数据区中哪些区域是线程共享的？哪些是独享的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#除了JVM运行时内存以外，还有什么区域可以用吗？"><span class="nav-number">1.12.</span> <span class="nav-text">除了JVM运行时内存以外，还有什么区域可以用吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆和栈的区别是什么？"><span class="nav-number">1.13.</span> <span class="nav-text">堆和栈的区别是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java中的数组是存储在堆上还是栈上的？"><span class="nav-number">1.14.</span> <span class="nav-text">Java中的数组是存储在堆上还是栈上的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java中的对象创建有多少种方式？"><span class="nav-number">1.15.</span> <span class="nav-text">Java中的对象创建有多少种方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java中对象创建的过程是怎么样的？"><span class="nav-number">1.16.</span> <span class="nav-text">Java中对象创建的过程是怎么样的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java中的对象一定在堆上分配内存吗？"><span class="nav-number">1.17.</span> <span class="nav-text">Java中的对象一定在堆上分配内存吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何获取堆和栈的dump文件？"><span class="nav-number">1.18.</span> <span class="nav-text">如何获取堆和栈的dump文件？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM三大性能调优参数，JVM-几个重要的参数"><span class="nav-number">1.19.</span> <span class="nav-text">JVM三大性能调优参数，JVM 几个重要的参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM调优"><span class="nav-number">1.20.</span> <span class="nav-text">JVM调优</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#何时进行JVM调优"><span class="nav-number">1.20.1.</span> <span class="nav-text">何时进行JVM调优</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JVM调优的基本原则"><span class="nav-number">1.20.2.</span> <span class="nav-text">JVM调优的基本原则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JVM调优可通过以下步骤进行："><span class="nav-number">1.20.3.</span> <span class="nav-text">JVM调优可通过以下步骤进行：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM内存管理"><span class="nav-number">1.21.</span> <span class="nav-text">JVM内存管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM的常见的垃圾收集器"><span class="nav-number">1.22.</span> <span class="nav-text">JVM的常见的垃圾收集器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GC"><span class="nav-number">1.23.</span> <span class="nav-text">GC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Minor-GC-，Full-GC-触发条件"><span class="nav-number">1.24.</span> <span class="nav-text">Minor GC ，Full GC 触发条件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Young-GC"><span class="nav-number">1.24.1.</span> <span class="nav-text">Young GC</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Full-GC"><span class="nav-number">1.24.2.</span> <span class="nav-text">Full GC</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描述JVM中一次Full-gc过程"><span class="nav-number">1.25.</span> <span class="nav-text">描述JVM中一次Full gc过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM中类加载机制，类加载过程，什么是双亲委派模型？"><span class="nav-number">1.26.</span> <span class="nav-text">JVM中类加载机制，类加载过程，什么是双亲委派模型？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器有哪些"><span class="nav-number">1.27.</span> <span class="nav-text">类加载器有哪些.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何判断是否有内存泄露？"><span class="nav-number">1.28.</span> <span class="nav-text">如何判断是否有内存泄露？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java垃圾回收机制"><span class="nav-number">1.29.</span> <span class="nav-text">Java垃圾回收机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-中都有哪些引用类型？"><span class="nav-number">1.30.</span> <span class="nav-text">Java 中都有哪些引用类型？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java序列化，有ID和没ID会出现问题吗？"><span class="nav-number">1.31.</span> <span class="nav-text">Java序列化，有ID和没ID会出现问题吗？</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuanzi</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

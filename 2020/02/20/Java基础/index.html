@@ -101,17 +101,17 @@
     }
   };
 </script>
-  <meta name="description" content="1.面向对象和面向过程面向过程性能更高，但是面向对象易维护、易复用、易扩展 2.java语言有哪些特点面向对象（封装，集成，多态）平台无关 可靠性 安全性 支持多线程 3.JVM、JDK、JREJVM 虚拟机 JDK java SDK JRE java 运行时环境 .java文件 --jdk中javac编译-&amp;gt; .class文件（生成JVM可以理解的Java字节）--JVM--&amp;gt;机器可">
+  <meta name="description" content="String,StringBuilder,StringBuffer   区别 可变性 线程安全性 性能     String X √    StringBuffer √ √同步锁    StringBuilder √ X 比StringBuffer10%-15%的提升    总结： 1.操作少量的数据，使用String2.单线程下操作大量数据，适用StringBuilder3.多线程下操作大量数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java基础">
 <meta property="og:url" content="http://zhoufangy.github.io/2020/02/20/Java基础/index.html">
 <meta property="og:site_name" content="Yuanzi">
-<meta property="og:description" content="1.面向对象和面向过程面向过程性能更高，但是面向对象易维护、易复用、易扩展 2.java语言有哪些特点面向对象（封装，集成，多态）平台无关 可靠性 安全性 支持多线程 3.JVM、JDK、JREJVM 虚拟机 JDK java SDK JRE java 运行时环境 .java文件 --jdk中javac编译-&amp;gt; .class文件（生成JVM可以理解的Java字节）--JVM--&amp;gt;机器可">
+<meta property="og:description" content="String,StringBuilder,StringBuffer   区别 可变性 线程安全性 性能     String X √    StringBuffer √ √同步锁    StringBuilder √ X 比StringBuffer10%-15%的提升    总结： 1.操作少量的数据，使用String2.单线程下操作大量数据，适用StringBuilder3.多线程下操作大量数据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-12T04:53:11.147Z">
+<meta property="og:updated_time" content="2020-03-25T18:42:39.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础">
-<meta name="twitter:description" content="1.面向对象和面向过程面向过程性能更高，但是面向对象易维护、易复用、易扩展 2.java语言有哪些特点面向对象（封装，集成，多态）平台无关 可靠性 安全性 支持多线程 3.JVM、JDK、JREJVM 虚拟机 JDK java SDK JRE java 运行时环境 .java文件 --jdk中javac编译-&amp;gt; .class文件（生成JVM可以理解的Java字节）--JVM--&amp;gt;机器可">
+<meta name="twitter:description" content="String,StringBuilder,StringBuffer   区别 可变性 线程安全性 性能     String X √    StringBuffer √ √同步锁    StringBuilder √ X 比StringBuffer10%-15%的提升    总结： 1.操作少量的数据，使用String2.单线程下操作大量数据，适用StringBuilder3.多线程下操作大量数据">
 
 
 
@@ -357,7 +357,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-03-12 04:53:11" itemprop="dateModified" datetime="2020-03-12T04:53:11+00:00">2020-03-12</time>
+                <time title="Modified: 2020-03-25 18:42:39" itemprop="dateModified" datetime="2020-03-25T18:42:39+00:00">2020-03-25</time>
               
             
           </span>
@@ -390,7 +390,44 @@
       
 
       
-        <h3 id="1-面向对象和面向过程"><a href="#1-面向对象和面向过程" class="headerlink" title="1.面向对象和面向过程"></a>1.面向对象和面向过程</h3><pre><code>面向过程性能更高，但是面向对象易维护、易复用、易扩展
+        <h4 id="String-StringBuilder-StringBuffer"><a href="#String-StringBuilder-StringBuffer" class="headerlink" title="String,StringBuilder,StringBuffer"></a>String,StringBuilder,StringBuffer</h4><table>
+<thead>
+<tr>
+<th>区别</th>
+<th>可变性</th>
+<th>线程安全性</th>
+<th>性能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td>X</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>StringBuffer</td>
+<td>√</td>
+<td>√同步锁</td>
+<td></td>
+</tr>
+<tr>
+<td>StringBuilder</td>
+<td>√</td>
+<td>X</td>
+<td>比StringBuffer10%-15%的提升</td>
+</tr>
+</tbody>
+</table>
+<p>总结：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.操作少量的数据，使用String</span><br><span class="line">2.单线程下操作大量数据，适用StringBuilder</span><br><span class="line">3.多线程下操作大量数据，StringBuffer</span><br></pre></td></tr></table></figure>
+<h4 id="equals和-区别"><a href="#equals和-区别" class="headerlink" title="equals和==区别"></a>equals和==区别</h4><p>==对与基本类型来说是值比较，对与引用类型来说比较的是引用，而equals默认情况下是引用比较，只是很多类重写了equals方法，比如String、Integer等把它变成了值比较，所以一般情况下equals比较的是值是否相等。        </p>
+<h4 id="重写equals一定要重写hashcode方法吗？为什么？"><a href="#重写equals一定要重写hashcode方法吗？为什么？" class="headerlink" title="重写equals一定要重写hashcode方法吗？为什么？"></a>重写equals一定要重写hashcode方法吗？为什么？</h4><p>重写equals一定要重写hashcode方法，否则程序无法正常运行，hashcode()方法必须遵从Object规范。相等的对象必须具有相等的hash code。</p>
+<h4 id="hashcode方法有什么作用"><a href="#hashcode方法有什么作用" class="headerlink" title="hashcode方法有什么作用?"></a>hashcode方法有什么作用?</h4><p>hashcode的存在主要用于提高查找效率，先进行hashcode比较，如果不同，就没必要进行equals比较了，这样就大大较少了，equals比较的次数，当比较大量数据时效率就显著提高了。比如在集合中的使用。</p>
+<h3 id="一致性哈希-和哈希结果对10取模有什么区别吗"><a href="#一致性哈希-和哈希结果对10取模有什么区别吗" class="headerlink" title="一致性哈希 和哈希结果对10取模有什么区别吗"></a>一致性哈希 和哈希结果对10取模有什么区别吗</h3><p>如果增加或删除机器时（N变化）代价会很高，所有的数据都不得不根据id重新计算一遍哈希值，并将哈希值对新的机器数进行取模。然后进行大规模的数据迁移。为了解决这些问题引入一致性哈希，我们假设数据的id通过哈希函数转换成的哈希值范围是2^32，也就是0~(2^32)-1的数字空间中。现在我们可以将这些数字头尾相连，想象成一个闭合的环形，那么一个数据id在计算出哈希值之后认为对应到环中的一个位置上机器在环中的位置根据机器id（主机名或者主机IP，是主机唯一的就行）设计算出的哈希值对2^32取模对应到环上。那么一条数据如何确定归属哪台机器呢？我们可以在该数据对应环上的位置顺时针寻找离该位置最近的机器，将数据归属于该机器上…</p>
+<h3 id="实现这样一种高效插入、查找的有序集合，你会怎么做"><a href="#实现这样一种高效插入、查找的有序集合，你会怎么做" class="headerlink" title="实现这样一种高效插入、查找的有序集合，你会怎么做"></a>实现这样一种高效插入、查找的有序集合，你会怎么做</h3><p>我：我觉得对应一种数据结构吧，是什么来着……额……，就是一种数据结构，它的任意棵子树的头结点数值大于左子树的小于右子树的（没想起来是二叉搜索树，好笨），然后这样的话插入和查找的效率都是log(2,N)了</p>
+<h3 id="1-面向对象和面向过程"><a href="#1-面向对象和面向过程" class="headerlink" title="1.面向对象和面向过程"></a>1.面向对象和面向过程</h3><pre><code>面向过程性能更高，但是面向对象易维护、易复用、易扩展
 </code></pre><h3 id="2-java语言有哪些特点"><a href="#2-java语言有哪些特点" class="headerlink" title="2.java语言有哪些特点"></a>2.java语言有哪些特点</h3><pre><code>面向对象（封装，集成，多态）平台无关 可靠性 安全性 支持多线程
 </code></pre><h3 id="3-JVM、JDK、JRE"><a href="#3-JVM、JDK、JRE" class="headerlink" title="3.JVM、JDK、JRE"></a>3.JVM、JDK、JRE</h3><pre><code>JVM 虚拟机
 JDK java SDK
@@ -449,7 +486,7 @@ new创建对象实例，对象实例在堆内存，对象引用指向对象实�
 3.生成类的对象时自动执行，无需调用。
 </code></pre><h3 id="23-静态方法和实例方法有何不同"><a href="#23-静态方法和实例方法有何不同" class="headerlink" title="23. 静态方法和实例方法有何不同"></a>23. 静态方法和实例方法有何不同</h3><pre><code>在外部调用静态方法时，可以使用&quot;类名.方法名&quot;的方式，也可以使用&quot;对象名.方法名&quot;的方式。而实例方法只有后面这种方式。也就是说，调用静态方法可以无需创建对象。
 静态方法在访问本类的成员时，只允许访问静态成员（即静态成员变量和静态方法），而不允许访问实例成员变量和实例方法；实例方法则无此限制。
-</code></pre>
+</code></pre><p>​    </p>
       
     </div>
 
@@ -476,8 +513,8 @@ new创建对象实例，对象实例在堆内存，对象引用指向对象实�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/20/面试/" rel="next" title="面试">
-                <i class="fa fa-chevron-left"></i> 面试
+              <a href="/2020/02/20/JVM/" rel="next" title="JVM">
+                <i class="fa fa-chevron-left"></i> JVM
               </a>
             
           </div>
@@ -562,7 +599,7 @@ new创建对象实例，对象实例在堆内存，对象引用指向对象实�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -617,7 +654,9 @@ new创建对象实例，对象实例在堆内存，对象引用指向对象实�
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">categories</span>
                   
                 </div>
@@ -660,7 +699,9 @@ new创建对象实例，对象实例在堆内存，对象引用指向对象实�
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -712,7 +753,7 @@ new创建对象实例，对象实例在堆内存，对象引用指向对象实�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-面向对象和面向过程"><span class="nav-number">1.</span> <span class="nav-text">1.面向对象和面向过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-java语言有哪些特点"><span class="nav-number">2.</span> <span class="nav-text">2.java语言有哪些特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-JVM、JDK、JRE"><span class="nav-number">3.</span> <span class="nav-text">3.JVM、JDK、JRE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OracleJDK-和OpenJDK对比"><span class="nav-number">4.</span> <span class="nav-text">4.OracleJDK 和OpenJDK对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Java和C-的区别"><span class="nav-number">5.</span> <span class="nav-text">5.Java和C++的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-什么是Java程序的主类？应用程序和小程序的主类有和不同"><span class="nav-number">6.</span> <span class="nav-text">6.什么是Java程序的主类？应用程序和小程序的主类有和不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Java应用程序与小程序之间差别"><span class="nav-number">7.</span> <span class="nav-text">7.Java应用程序与小程序之间差别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-字符型常量和字符串常量的区别"><span class="nav-number">8.</span> <span class="nav-text">8.字符型常量和字符串常量的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-构造器Constructor是否可以被Override？"><span class="nav-number">9.</span> <span class="nav-text">9.构造器Constructor是否可以被Override？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-重载和重写的区别"><span class="nav-number">10.</span> <span class="nav-text">10.重载和重写的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Java面向对象编程三大特性"><span class="nav-number">11.</span> <span class="nav-text">11.Java面向对象编程三大特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-String-Stringbuffer-Stringbuilder的区别？String为什么是不可变的？"><span class="nav-number">12.</span> <span class="nav-text">12.String Stringbuffer Stringbuilder的区别？String为什么是不可变的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-自动装箱与拆箱"><span class="nav-number">13.</span> <span class="nav-text">13.自动装箱与拆箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-在静态方法内调用一个非静态成员为什么是非法的"><span class="nav-number">14.</span> <span class="nav-text">14.在静态方法内调用一个非静态成员为什么是非法的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-在JAVA中定义一个不做事且没有参数的构造方法的作用。"><span class="nav-number">15.</span> <span class="nav-text">15.在JAVA中定义一个不做事且没有参数的构造方法的作用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-import-java和javax有什么区别？"><span class="nav-number">16.</span> <span class="nav-text">16.import java和javax有什么区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-接口和抽象类的区别是什么？"><span class="nav-number">17.</span> <span class="nav-text">17.接口和抽象类的区别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-成员变量与局部变量的区别？"><span class="nav-number">18.</span> <span class="nav-text">18.成员变量与局部变量的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19。创建一个对象用什么运算符-对象实体与对象引用有何不同"><span class="nav-number">19.</span> <span class="nav-text">19。创建一个对象用什么运算符?对象实体与对象引用有何不同?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-什么是方法的返回值-返回值在类的方法里的作用是什么"><span class="nav-number">20.</span> <span class="nav-text">20. 什么是方法的返回值?返回值在类的方法里的作用是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-一个类的构造方法的作用是什么-若一个类没有声明构造方法，该程序能正确执行吗-为什么"><span class="nav-number">21.</span> <span class="nav-text">21. 一个类的构造方法的作用是什么? 若一个类没有声明构造方法，该程序能正确执行吗? 为什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-构造方法有哪些特性？"><span class="nav-number">22.</span> <span class="nav-text">22. 构造方法有哪些特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-静态方法和实例方法有何不同"><span class="nav-number">23.</span> <span class="nav-text">23. 静态方法和实例方法有何不同</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#String-StringBuilder-StringBuffer"><span class="nav-number">1.</span> <span class="nav-text">String,StringBuilder,StringBuffer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#equals和-区别"><span class="nav-number">2.</span> <span class="nav-text">equals和==区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重写equals一定要重写hashcode方法吗？为什么？"><span class="nav-number">3.</span> <span class="nav-text">重写equals一定要重写hashcode方法吗？为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hashcode方法有什么作用"><span class="nav-number">4.</span> <span class="nav-text">hashcode方法有什么作用?</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#一致性哈希-和哈希结果对10取模有什么区别吗"><span class="nav-number"></span> <span class="nav-text">一致性哈希 和哈希结果对10取模有什么区别吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现这样一种高效插入、查找的有序集合，你会怎么做"><span class="nav-number"></span> <span class="nav-text">实现这样一种高效插入、查找的有序集合，你会怎么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-面向对象和面向过程"><span class="nav-number"></span> <span class="nav-text">1.面向对象和面向过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-java语言有哪些特点"><span class="nav-number"></span> <span class="nav-text">2.java语言有哪些特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-JVM、JDK、JRE"><span class="nav-number"></span> <span class="nav-text">3.JVM、JDK、JRE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OracleJDK-和OpenJDK对比"><span class="nav-number"></span> <span class="nav-text">4.OracleJDK 和OpenJDK对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Java和C-的区别"><span class="nav-number"></span> <span class="nav-text">5.Java和C++的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-什么是Java程序的主类？应用程序和小程序的主类有和不同"><span class="nav-number"></span> <span class="nav-text">6.什么是Java程序的主类？应用程序和小程序的主类有和不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Java应用程序与小程序之间差别"><span class="nav-number"></span> <span class="nav-text">7.Java应用程序与小程序之间差别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-字符型常量和字符串常量的区别"><span class="nav-number"></span> <span class="nav-text">8.字符型常量和字符串常量的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-构造器Constructor是否可以被Override？"><span class="nav-number"></span> <span class="nav-text">9.构造器Constructor是否可以被Override？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-重载和重写的区别"><span class="nav-number"></span> <span class="nav-text">10.重载和重写的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Java面向对象编程三大特性"><span class="nav-number"></span> <span class="nav-text">11.Java面向对象编程三大特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-String-Stringbuffer-Stringbuilder的区别？String为什么是不可变的？"><span class="nav-number"></span> <span class="nav-text">12.String Stringbuffer Stringbuilder的区别？String为什么是不可变的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-自动装箱与拆箱"><span class="nav-number"></span> <span class="nav-text">13.自动装箱与拆箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-在静态方法内调用一个非静态成员为什么是非法的"><span class="nav-number"></span> <span class="nav-text">14.在静态方法内调用一个非静态成员为什么是非法的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-在JAVA中定义一个不做事且没有参数的构造方法的作用。"><span class="nav-number"></span> <span class="nav-text">15.在JAVA中定义一个不做事且没有参数的构造方法的作用。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-import-java和javax有什么区别？"><span class="nav-number"></span> <span class="nav-text">16.import java和javax有什么区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-接口和抽象类的区别是什么？"><span class="nav-number"></span> <span class="nav-text">17.接口和抽象类的区别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-成员变量与局部变量的区别？"><span class="nav-number"></span> <span class="nav-text">18.成员变量与局部变量的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19。创建一个对象用什么运算符-对象实体与对象引用有何不同"><span class="nav-number"></span> <span class="nav-text">19。创建一个对象用什么运算符?对象实体与对象引用有何不同?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-什么是方法的返回值-返回值在类的方法里的作用是什么"><span class="nav-number"></span> <span class="nav-text">20. 什么是方法的返回值?返回值在类的方法里的作用是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-一个类的构造方法的作用是什么-若一个类没有声明构造方法，该程序能正确执行吗-为什么"><span class="nav-number"></span> <span class="nav-text">21. 一个类的构造方法的作用是什么? 若一个类没有声明构造方法，该程序能正确执行吗? 为什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-构造方法有哪些特性？"><span class="nav-number"></span> <span class="nav-text">22. 构造方法有哪些特性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-静态方法和实例方法有何不同"><span class="nav-number"></span> <span class="nav-text">23. 静态方法和实例方法有何不同</span></a></li></div>
             
 
           </div>
